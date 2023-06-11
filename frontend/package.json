@@ -37,6 +37,7 @@
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "sass": "^1.63.3",
     "typescript": "^5.1.3"
   }
