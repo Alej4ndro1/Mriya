@@ -9,6 +9,8 @@ app.listen(PORT, () => {
 });
 
 app.get('/api', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
   res.json({
     message: "Response from backend express.js"
   })
