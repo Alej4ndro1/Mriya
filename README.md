@@ -2,8 +2,7 @@
 Project about helping each other
 
 ## To start server:
-use command `npm start`
+use command `npm start` in backend folder
 
 ## To start project:
-use command `cd frontend`
-then use command `npm start`
+then use command `npm start` in frontend folder
