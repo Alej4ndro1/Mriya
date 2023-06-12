@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api')
+    fetch('/api')
     .then((response) => response.json())
     .then((response) => setData(response.message))
   }, [])
@@ -17,7 +17,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           {
-            !data ? "Loading..." : data
+            !data ? "Hello World" : data
           }
         </p>
         <a
