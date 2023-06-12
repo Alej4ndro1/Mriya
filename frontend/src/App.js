@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import './main.scss'
 
 function App() {
   const [data, setData] = useState(null);
