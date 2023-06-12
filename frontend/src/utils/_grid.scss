@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat($mobile-columns, 1fr);
+  column-gap: $gap;
+  
+  &--desktop {
+    @include onDesktop {
+      grid-template-columns: repeat($desktop-columns, 1fr);
+      column-gap: $gap;
+      display: grid;
+    }
+  }
+
+  &__item {
+    @for $start from 1 through $mobile-columns {
+      @for $end from $start through $mobile-columns {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+
+    @for $start from 1 through $desktop-columns {
+      @for $end from $start through $desktop-columns {
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
