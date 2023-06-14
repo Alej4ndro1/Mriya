@@ -32,6 +32,7 @@
       }
     }
     
+
     &__come-back-alive {
       background-image: url('../../images/return_alive.png');
       background-repeat: no-repeat;
@@ -93,14 +94,36 @@
   }
 
   &__navigation {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    top: 56px;
     height: 100vh;
-    left: 0;
     padding: 16px 15px;
     width: 100%;
+    transition: top 0.5s;
+
+    &--open {
+      top: 56px;
+      animation: slideDown 0.5s ease;
+    }
+
+    @keyframes slideDown {
+      0% {
+        top: -100%;
+      }
+      10% {
+        top: 46px;
+      }
+      20% {
+        top: 36px;
+      }
+      30% {
+        top: 26px;
+      }
+      100% {
+        top: 56px;
+      }
+    }
 
     @include onDesktop {
       position: relative;

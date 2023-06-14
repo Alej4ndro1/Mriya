@@ -40,7 +40,9 @@ export const Header = () => {
       </div>
 
       {(isMobile && isMenuOpen) || !isMobile ? (
-        <div className={`header__navigation ${isMobile && isMenuOpen ? 'header__navigation--open' : ''}`}>
+        <div className={`header__navigation 
+          ${isMobile && isMenuOpen ? 'header__navigation--open' : ''}`}
+        >
           <div className="header__navigation__search">
             <input
               className="header__navigation__search-input"
