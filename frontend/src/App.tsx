@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      Hello
+      Hello 123 123456
     </div>
   );
 }
