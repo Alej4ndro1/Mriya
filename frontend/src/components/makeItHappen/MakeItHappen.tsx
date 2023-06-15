@@ -1,7 +1,7 @@
 export const MakeItHappen = () => {
   return (
     <div className="make-it-happen">
-      <h1 className="make-it-happen__title">Make it happen</h1>
+      <h1 className="make-it-happen__title">Make it happen!</h1>
       <p className="make-it-happen__text">Fuel dreams of people and animals for not letting them burn out. Donate and provide non-monetary help with Mriya service.</p>
 
       <div className="make-it-happen__images">
@@ -49,6 +49,15 @@ export const MakeItHappen = () => {
         </div>
 
         <div className="make-it-happen__images__military">
+        </div>
+
+        <div className="make-it-happen__images__blue-el-3">
+        </div>
+
+        <div className="make-it-happen__images__blue-el-4">
+        </div>
+
+        <div className="make-it-happen__images__yellow-el-2">
         </div>
       </div>
 
