@@ -23,7 +23,7 @@ export const Header = () => {
   };
 
   return (
-    <div className={`header ${isMenuOpen ? 'open' : ''}`}>
+    <div className="header">
       <div className="header__container">
         <img className="header__container__logo" src="https.svg" alt="logo" />
         <a className="header__container__come-back-alive" href="https://savelife.in.ua/" target="_blank" rel="noopener noreferrer">

@@ -2,6 +2,8 @@
 import './App.scss';
 import './main.scss'
 import { Header } from './components/header/Header';
+import { MainPage } from './pages/MainPage';
+import { MakeItHappen } from './components/makeItHappen/MakeItHappen';
 
 function App() {
   // const [data, setData] = useState(null);
@@ -15,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <MakeItHappen />
     </div>
   );
 }
