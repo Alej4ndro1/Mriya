@@ -1,0 +1,202 @@
+@import '../../utils/mixins';
+
+.footer {
+  background: #6965F6;
+  padding: 16px 16px 25.5px;
+  margin-top: auto;
+
+  @include onDesktop {
+    padding: 40px 80px 80px 100px;
+  }
+
+  &__desktop-wrapper {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 4px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__logo-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__slogan {
+    margin-bottom: 24px;
+
+    font-family: 'Mukta', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+
+    color: #FAFAFA;
+
+    @include onDesktop {
+      font-family: 'Futura', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    font-family: 'Futura', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+
+    color: #FAFAFA;
+
+    @include onDesktop {
+      text-align: right;
+
+      font-family: 'Futura', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 120%;
+    }
+  }
+
+  &__developers-container {
+    margin-bottom: 30px;
+
+    font-family: 'Mukta';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+
+    color: #FAFAFA;
+
+    @include onDesktop {
+      font-family: 'Mukta';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__containers--gap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+
+    @include onDesktop {
+      gap: 70px;
+    }
+  }
+
+  &__email-horizontal-align {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  &__support {
+    display: block;
+    justify-content: space-between;
+    margin-bottom: 34px;
+
+    font-family: 'Mukta';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #FAFAFA;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__support-topics {
+    display: inline;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+
+  &__support-topics:not(:last-child) {
+    margin-right: 31px;
+  }
+
+  &__social {
+    margin-bottom: 27.5px;
+
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social-icons>img {
+    width: 20px;
+
+    @include onDesktop {
+      width: 26px;
+    }
+  }
+
+  &__social-icons:not(:last-child) {
+    margin-right: 20px;
+    width: 20px;
+  }
+
+  &__rights {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+
+    font-family: 'Mukta';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+
+    color: #FAFAFA;
+  }
+
+  &__desktop-info-line {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__desktop-info-line :nth-child(1) {
+    order: 1;
+  }
+
+  &__desktop-info-line :nth-child(2) {
+    order: 3;
+  }
+
+  &__desktop-info-line :nth-child(3) {
+    order: 2;
+  }
+}

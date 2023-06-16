@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+// import React, {useState, useEffect} from 'react';
 // import logo from './logo.svg';
 import './App.scss';
 import './main.scss'
-import { Header } from './components/header/Header';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer';
 
 function App() {
   // const [data, setData] = useState(null);
@@ -14,8 +15,9 @@ function App() {
   // }, [])
 
   return (
-    <div className="App">
+    <div className="page">
       <Header />
+      <Footer />
     </div>
   );
 }
