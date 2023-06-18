@@ -28,7 +28,6 @@ export const Header = () => {
         <img className="header__container__logo" src="https.svg" alt="logo" />
         <a className="header__container__come-back-alive" href="https://savelife.in.ua/" target="_blank" rel="noopener noreferrer">
           <div className="header__container__come-back-alive__text">
-            <img src="../../images/return_alive.png" alt="" className="header__container__come-back-alive__text__img" />
           </div>
         </a>
       </div>
@@ -43,21 +42,18 @@ export const Header = () => {
         <div className={`header__navigation 
           ${isMobile && isMenuOpen ? 'header__navigation--open' : ''}`}
         >
-          <div className="header__navigation__search">
-            <input
-              className="header__navigation__search-input"
-              type="text"
-              placeholder="Search"
-            />
-          </div>
 
           <ul className="header__navigation__list">
             <li className="header__navigation__list__item">About Us</li>
             <li className="header__navigation__list__item">Dreams</li>
             <li className="header__navigation__list__item">Ask for Help</li>
             <li className="header__navigation__list__item">Contact</li>
-            <li className="header__navigation__list__item">Profile</li>
           </ul>
+
+          <div className="header__navigation__profile-buttons">
+            <button className="header__navigation__profile-buttons__sign-up">Sign up</button>
+            <button className="header__navigation__profile-buttons__log-in">Log in</button>
+          </div>
         </div>
       ) : null}
     </div>

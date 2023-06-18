@@ -1,23 +1,17 @@
-// import logo from './logo.svg';
 import './App.scss';
 import './main.scss'
-import { Header } from './components/header/Header';
-import { MainPage } from './pages/MainPage';
-import { MakeItHappen } from './components/makeItHappen/MakeItHappen';
+import { Header } from './components/Header/Header';
+import { MakeItHappen } from './components/MakeItHappen/MakeItHappen';
+import { Ticker } from './components/Ticker/Ticker';
+
 
 function App() {
-  // const [data, setData] = useState(null);
-
-  // useEffect(() => {
-  //   fetch('http://localhost:3001/api')
-  //   .then((response) => response.json())
-  //   .then((response) => setData(response.message))
-  // }, [])
-
+  const star = require('./images/icons/stars.png');
   return (
     <div className="App">
       <Header />
       <MakeItHappen />
+      <Ticker imageSrc={star} word="DREAM" />
     </div>
   );
 }

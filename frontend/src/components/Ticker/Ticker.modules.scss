@@ -1,0 +1,45 @@
+.running-text {
+  height: 48px;
+  width: 100%;
+  background-color: #6965F6;
+  overflow: hidden;
+
+  &__container {
+    overflow: hidden;
+    height: 48px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: marquee-animation 5s linear infinite;
+    animation-timing-function: linear;
+  
+    &__item {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+  
+    &__text {
+      display: inline;
+      color: #FFF;
+      margin: 0;
+    }
+  
+    &__image {
+      display: inline;
+      width: 13px;
+      height: 13px;
+      margin-right: 5px;
+    }
+
+    @keyframes marquee-animation {
+      0% {
+        transform: translateX(-10%);
+      }
+      100% {
+        transform: translateX(6%);
+      }
+    }
+  }
+}
