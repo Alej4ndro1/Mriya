@@ -1,0 +1,520 @@
+.make-it-happen {
+  position: relative;
+  padding: 0 16px;
+  margin: 0 auto;
+  height: 563px;
+
+  @include onDesktop {
+    padding: 0 80px;
+    min-width: 1440px;
+    margin-bottom: 132px;
+    height: 914px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-family: 'Futura', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 130%;
+
+    color: #111111;
+
+    @include onDesktop {
+      position: absolute;
+      display: flex;
+      font-size: 72px;
+      margin-bottom: 16px;
+      top: 104px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 25px;
+    max-width: 288px;
+    font-family: 'Mukta', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 130%;
+
+    color: #2F2F35;
+
+    @include onDesktop {
+      position: absolute;
+      display: flex;
+      font-size: 16px;
+      max-width: 450px;
+      top: 214px;
+    }
+  }
+
+  &__images {
+    margin-bottom: 24px;
+
+    &__cat {
+      position: absolute;
+      width: 60px;
+      height: 100px;
+      left: 76px;
+      top: 141px;
+
+      background: $yellow;
+      border-radius: 90px;
+      background-image: url('../../images/homePage/cat.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include onDesktop {
+        width: 194px;
+        height: 331px;
+        left: 728px;
+        top: 451px;
+      }
+    }
+
+    &__heart {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      left: 152px;
+      top: 131px;
+      background-color: $light-blue;
+      border-radius: 50%;
+      background-image: url('../../images/icons/full-filled-heart.png');
+      background-repeat: no-repeat;
+      background-position: 50% 60%;
+      background-size: 35px;
+
+      @include onDesktop {
+        width: 200px;
+        height: 200.14px;
+        left: 944px;
+        top: 583px;
+        background-size: 116px;
+      }
+    }
+
+    &__dog{
+      position: absolute;
+      width: 60px;
+      height: 100px;
+      left: 224px;
+      background-image: url('../../images/homePage/dog.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border-radius: 90px;
+      overflow: hidden;
+
+      @include onDesktop {
+        width: 194px;
+        height: 325px;
+        left: 1160px;
+        top: 0px;
+        border-radius: 300px;
+      }
+    }
+
+    &__yellow-el {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      left: 46px;
+      top: 220px;
+
+      background: $yellow;
+      border-radius: 50% 50% 0 50%;
+
+      @include onDesktop {
+        width: 40px;
+        height: 40px;
+        left: 240px;
+        top: 604px;
+
+        border-radius: 50% 0 50% 50%;
+      }
+    }
+
+    &__yellow-el-2 {
+      @include onDesktop {
+        position: absolute;
+        width: 92px;
+        height: 92px;
+        left: 512px;
+        top: 690px;
+
+        background: $yellow;
+        border-radius: 50% 50% 0 50%;
+      }
+    }
+
+    &__love {
+      position: absolute;
+      width: 45px;
+      height: 19px;
+      left: 122px;
+      top: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      background: $comment;
+      border-radius: 10px 10px 10px 0px;
+
+      @include onDesktop {
+        width: 116px;
+        height: 67px;
+        left: 860px;
+        top: 267px;
+
+        border-radius: 46.0678px 46.0678px 46.0678px 0px;
+      }
+
+      &__text {
+        font-family: 'Mukta', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 17px;
+
+        color: #111111;
+
+        @include onDesktop {
+          font-size: 35px;
+          line-height: 57px;
+        }
+      }
+    }
+
+    &__woman{
+      position: absolute;
+      width: 60px;
+      height: 100px;
+      left: 152px;
+      top: 200px;
+      background-color: $light-blue;
+      background-image: url('../../images/homePage/woman.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border-radius: 90px;
+
+      @include onDesktop {
+        width: 200px;
+        height: 330px;
+        left: 728px;
+        top: 96px;
+      }
+    }
+
+    &__donate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 47px;
+      height: 19px;
+      left: 205px;
+      top: 220px;
+      z-index: 2;
+
+      background: $comment;
+      border-radius: 10px 10px 10px 0px;
+
+      @include onDesktop {
+        width: 155px;
+        height: 68px;
+        left: 1179px;
+        top: 330px;
+
+        border-radius: 46.0678px 46.0678px 46.0678px 0px;
+      }
+    }
+
+    &__elderly {
+      position: absolute;
+      width: 123px;
+      height: 65px;
+      left: 16px;
+      top: 251px;
+
+      background: $light-blue;
+      border-radius: 98px 98px 98px 0px;
+
+      @include onDesktop {
+        width: 416px;
+        height: 206px;
+        left: 296px;
+        top: 460px;
+
+        border-radius: 200px 200px 200px 0px;
+      }
+
+      &__img {
+        background-image: url('../../images/homePage/elderly.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 91px 80px;
+        width: 91px;
+        height: 80px;
+        position: absolute;
+        left: 14px;
+        top: -15px;
+
+        @include onDesktop {
+          width: 279px;
+          height: 256px;
+          left: 50px;
+          top: -50px;
+          background-size: 308px 270px;
+        }
+      }
+    }
+
+    &__girl {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      left: 228px;
+      top: 243px;
+
+      background: $yellow;
+      border-radius: 50%;
+
+      background-image: url(../../images/homePage/girl.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include onDesktop {
+        width: 200px;
+        height: 200px;
+        left: 1160px;
+        top: 583px;
+      }
+    }
+
+    &__blue-el {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 41px;
+      top: 333px;
+
+      background: $light-blue;
+      border-radius: 50% 0 50% 50%;
+
+      @include onDesktop {
+        width: 92px;
+        height: 92px;
+        left: 188px;
+        top: 496px;
+
+        border-radius: 50% 50% 0 50%;
+      }
+    }
+
+    &__heart-in-hand {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      left: 71px;
+      top: 325px;
+
+      background: $yellow;
+
+      background-image: url('../../images/icons/heart-in-hand.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20px 20px;
+      border-radius: 50% 50% 0 50%;
+
+      @include onDesktop {
+        width: 200px;
+        height: 200px;
+        left: 944px;
+        top: 163px;
+
+        border-radius: 50% 0 50% 50%;
+
+        background-size: 97px;
+      }
+    }
+
+    &__blue-el-2 {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      left: 114px;
+      top: 325px;
+      
+      background: $light-blue;
+      border-radius: 50% 50% 50% 0;
+
+      @include onDesktop {
+        width: 92px;
+        height: 92px;
+        left: 1052px;
+        top: 52px;
+
+        border-radius: 50% 50%  0 50%;
+      }
+    }
+
+    &__blue-el-3 {
+      @include onDesktop {
+        position: absolute;
+        width: 92px;
+        height: 92px;
+        top:335px;
+        left: 620px;
+
+        background-color: $light-blue;
+        border-radius: 50% 50% 0 50%;
+      }
+    }
+
+    &__blue-el-4 {
+      @include onDesktop {
+        position: absolute;
+        width: 92px;
+        height: 92px;
+        left: 620px;
+        top: 690px;
+
+        background: $light-blue;
+        border-radius: 50% 50% 50% 0;
+      }
+    }
+
+    &__help {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      width: 36px;
+      height: 19px;
+      left: 138px;
+      top: 331px;
+
+      background: $comment;
+      border-radius: 10px 10px 10px 0px;
+
+      @include onDesktop {
+        width: 125px;
+        height: 57px;
+        left: 657px;
+        top: 517px;
+
+        border-radius: 0 30px 30px 30px;
+      }
+    }
+
+    &__military {
+      position: absolute;
+      width: 136px;
+      height: 56px;
+      left: 168px;
+      top: 311px;
+
+      background: $light-blue;
+      border-radius: 98px;
+      z-index: 1;
+
+      background-image: url('../../images/homePage/military.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include onDesktop {
+        width: 416px;
+        height: 172px;
+        left: 944px;
+        top: 380px;
+
+        border-radius: 200px;
+      }
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 400px;
+    gap: 10px;
+    margin-bottom: 48px;
+
+    @include onDesktop {
+      flex-direction: row;
+      top: 302px;
+      gap: 20px;
+    }
+
+    &__donate {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 10px 12px;
+
+      width: 288px;
+      height: 48px;
+
+      background: #6965F6;
+      border-radius: 100px;
+      border: none;
+
+      font-family: 'Futura', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+
+      color: $comment;
+
+      &:hover {
+        background: #9C99FF;;
+      }
+
+      @include onDesktop {
+        width: 200px;
+      }
+    }
+
+    &__help {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 10px 12px;
+
+      width: 288px;
+      height: 48px;
+
+      background: $comment;
+      border-radius: 100px;
+      border: 3px solid #6965F6;
+
+      font-family: 'Futura', sans-serif;
+      font-style: bold;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+
+      color: #6965F6;
+
+      &:hover {
+        color: #9C99FF;;
+        border: 3px solid #9C99FF;
+      }
+
+      @include onDesktop {
+        width: 200px;
+      }
+    }
+  }
+}

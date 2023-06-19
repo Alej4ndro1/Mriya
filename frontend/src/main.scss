@@ -3,5 +3,7 @@
 @import './utils/_normalize.scss';
 @import './utils/_mixins.scss';
 
-@import './components/Header/Header.modules.scss';
-@import './components/Footer/Footer.scss';
+@import './components/header/Header.modules.scss';
+@import './components/makeItHappen/MakeItHappen.modules.scss';
+@import './components/Ticker/Ticker.modules.scss';
+@import './components/Footer/Footer.modules.scss';

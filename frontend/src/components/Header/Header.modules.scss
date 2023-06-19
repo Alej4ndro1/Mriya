@@ -1,0 +1,265 @@
+.header {
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px solid #C2C4CF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position:relative;
+  margin-bottom: 24px;
+
+  @include onDesktop {
+    height: 104px;
+    padding: 0 80px;
+    margin-bottom: 25px;
+  }
+
+  &__container {
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    @include onDesktop {
+      width: auto;
+    }
+
+    &__logo {
+      margin-right: 25px;
+
+      @include onDesktop {
+        margin-right: 80px;
+      }
+    }
+    
+
+    &__come-back-alive {
+      background-image: url('../../images/return_alive.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: transparent;
+      border: none;
+      width: 52px;
+      height: 26px;
+      cursor: pointer;
+      background-color: transparent;
+      border: 5px solid transparent;
+      border-radius: 3px;
+      transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #9C99FF;
+        border: 5px solid #9C99FF;
+        border-radius: 3px;
+      }
+
+      @include onDesktop {
+        width: 85px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__burger-menu {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &__line-1,
+    &__line-2,
+    &__line-3 {
+      width: 18px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #2F2F35;
+      margin-bottom: 4px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &__line-1--open {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    &__line-2--open {
+      opacity: 0;
+    }
+
+    &__line-3--open {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
+
+  &__navigation {
+    position: fixed;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    transition: top 0.5s;
+    z-index: 2;
+
+    &--open {
+      top: 56px;
+      animation: slideDown 0.5s ease;
+      width: 100%;
+      background-color: $comment;
+    }
+
+    @keyframes slideDown {
+      0% {
+        top: -100%;
+      }
+      10% {
+        top: 46px;
+      }
+      20% {
+        top: 36px;
+      }
+      30% {
+        top: 26px;
+      }
+      100% {
+        top: 56px;
+      }
+    }
+
+    @include onDesktop {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 104px;
+      top: 0;
+      padding: 0;
+      width: 100%;
+      transition: none;
+      transform: none;
+    }
+
+    &__list {
+      margin: 8px 32px 180px 0;
+
+      @include onDesktop {
+        width: max-content;
+        margin: 0 0 0 124px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 45px;
+      }
+
+      &__item {
+        font-family: 'Futura', sans-serif;
+        font-style: bold;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 150%;
+        margin-bottom: 24px;
+        color: #111111;
+        transform: color 0.3s ease-in-out;
+
+        &:hover {
+          color: #6965F6;
+        }
+
+        @include onDesktop {
+          font-size: 20px;
+          line-height: 100%;
+          margin-bottom: 0;
+          align-items: center;
+        }
+      }
+    }
+
+    &__profile-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 38px;
+      margin: 0 auto;
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      &__sign-up {
+        display: flex;
+        justify-content: center;
+        padding: 10px 10px 12px;
+        margin-bottom: 15px;
+
+        width: 288px;
+        height: 48px;
+
+        background: #6965F6;
+        box-shadow: 0px 2px 4px rgba(17, 17, 17, 0.05);
+        border-radius: 100px;
+        border: none;
+        font-family: 'Futura', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+
+        display: flex;
+        align-items: flex-end;
+        text-align: center;
+
+        color:$white;
+        cursor: pointer;
+
+        &:hover {
+          background: #9C99FF;;
+        }
+
+        @include onDesktop {
+          width: 200px;
+          height: 48px;
+          margin: 0;
+        }
+      }
+
+      &__log-in {
+        width: 288px;
+        padding: 10px 10px 12px;
+        font-family: 'Futura', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        text-decoration-line: underline;
+        align-items: center;
+        
+        color: #6965F6;
+
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          color: #9C99FF;;
+        }
+
+        @include onDesktop {
+          margin-left: 20px;
+          order: -1;
+        }
+      }
+    }
+  }
+}
