@@ -3,6 +3,7 @@ import './main.scss'
 import { Header } from './components/Header/Header';
 import { MakeItHappen } from './components/MakeItHappen/MakeItHappen';
 import { Ticker } from './components/Ticker/Ticker';
+import { Footer } from './components/Footer';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <MakeItHappen />
       <Ticker imageSrc={star} word="DREAM" />
+      <Footer />
     </div>
   );
 }
