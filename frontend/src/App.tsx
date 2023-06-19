@@ -8,7 +8,7 @@ import { Ticker } from './components/Ticker/Ticker';
 function App() {
   const star = require('./images/icons/stars.png');
   return (
-    <div className="App">
+    <div className="page">
       <Header />
       <MakeItHappen />
       <Ticker imageSrc={star} word="DREAM" />
