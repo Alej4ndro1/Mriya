@@ -6,7 +6,7 @@
   margin-top: auto;
 
   @include onDesktop {
-    padding: 40px 80px 80px 100px;
+    padding: 80px 80px 80px 100px;
   }
 
   &__desktop-wrapper {
@@ -86,6 +86,8 @@
     color: #FAFAFA;
 
     @include onDesktop {
+      margin-bottom: 145px;
+
       font-family: 'Mukta';
       font-style: normal;
       font-weight: 700;
