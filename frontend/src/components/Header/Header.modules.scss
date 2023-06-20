@@ -97,7 +97,8 @@
   }
 
   &__navigation {
-    position: fixed;
+    position: absolute;
+
     display: flex;
     text-align: center;
     justify-content: center;
@@ -112,6 +113,8 @@
       animation: slideDown 0.5s ease;
       width: 100%;
       background-color: $comment;
+      height: 100vh;
+      overflow-y: hidden;
     }
 
     @keyframes slideDown {

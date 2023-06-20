@@ -1,3 +1,8 @@
+.container {
+margin: 0 auto;
+width: 100%;
+display: flex;
+}
 .make-it-happen {
   position: relative;
   padding: 0 16px;
@@ -6,7 +11,8 @@
 
   @include onDesktop {
     padding: 0 80px;
-    min-width: 1440px;
+    width: 1440px;
+    margin: 0 auto;
     margin-bottom: 132px;
     height: 914px;
   }
@@ -219,7 +225,7 @@
       height: 19px;
       left: 205px;
       top: 220px;
-      z-index: 2;
+      z-index: 1;
 
       background: $comment;
       border-radius: 10px 10px 10px 0px;
@@ -423,7 +429,6 @@
 
       background: $light-blue;
       border-radius: 98px;
-      z-index: 1;
 
       background-image: url('../../images/homePage/military.png');
       background-repeat: no-repeat;
