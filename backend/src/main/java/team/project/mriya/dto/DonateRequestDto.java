@@ -10,8 +10,8 @@ import java.util.List;
 public class DonateRequestDto {
     @ApiModelProperty(notes = "Dream id", example = "1")
     private Long dreamId;
-    @ApiModelProperty(notes = "List id of users", example = "[1, 2, 3, 4]")
-    private List<Long> userIds;
+    @ApiModelProperty(notes = "Donater id", example = "1")
+    private Long userId;
     @ApiModelProperty(notes = "Sum of donate", example = "250.00")
     private BigDecimal sum;
     @ApiModelProperty(notes = "Date donate", example = "01.05.2023")

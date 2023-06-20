@@ -2,13 +2,11 @@ package team.project.mriya.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Data;
@@ -19,14 +17,12 @@ import lombok.Data;
 public class Donate {
     @Id
     private Long id;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "dream_id")
     private Dream dream;
-    @OneToMany
-    @JoinTable(name = "donates_users",
-        joinColumns = @JoinColumn(name = "donate_id"),
-        inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private List<User> users;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     private BigDecimal sum;
     @Column(name = "d_pay")
     private LocalDate datePay;
