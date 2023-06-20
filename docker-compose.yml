@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15.2
+    restart: always
+    env_file: ./.env
+    environment:
+      - POSTGRES_DB=$POSTGRESDB_DB
+      - POSTGRES_USER=$POSTGRESDB_USERNAME
+      - POSTGRES_PASSWORD=$POSTGRESDB_PASSWORD
+    ports:
+      - $POSTGRESDB_LOCAL_PORT:$POSTGRESDB_DOCKER_PORT
+
+  app:
+    depends_on:
+      - db
+    image: valentynchepiha/mriya-server-app
+    build: .
+    env_file: ./.env
+    ports:
+      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url" : "jdbc:postgresql://db:$POSTGRESDB_DOCKER_PORT/$POSTGRESDB_DB",
+        "spring.datasource.username" : "$POSTGRESDB_USERNAME",
+        "spring.datasource.password" : "$POSTGRESDB_PASSWORD",
+        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.PostgreSQLDialect",
+        "spring.jpa.hibernate.ddl-auto" : "validate"
+      }'
