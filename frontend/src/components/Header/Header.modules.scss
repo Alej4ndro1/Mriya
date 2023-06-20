@@ -45,7 +45,7 @@
       background-color: transparent;
       border: none;
       width: 52px;
-      height: 26px;
+      height: 25px;
       cursor: pointer;
       background-color: transparent;
       border: 5px solid transparent;
@@ -59,8 +59,8 @@
       }
 
       @include onDesktop {
-        width: 100px;
-        height: 40px;
+        width: 82px;
+        height: 34px;
       }
     }
   }
@@ -232,6 +232,9 @@
         }
 
         @include onDesktop {
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 150%;
           width: 200px;
           height: 48px;
           margin: 0;
