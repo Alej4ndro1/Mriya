@@ -1,21 +1,21 @@
-import React, {useState, useEffect} from 'react';
-// import logo from './logo.svg';
+{/* eslint-disable @typescript-eslint/no-var-requires */}
+import React from 'react';
 import './App.scss';
-import './main.scss'
-import { Header } from './components/header/Header';
+import './main.scss';
+import { Header } from './components/Header/Header';
+import { MakeItHappen } from './components/MakeItHappen/MakeItHappen';
+import { Ticker } from './components/Ticker/Ticker';
+import { Footer } from './components/Footer';
+
 
 function App() {
-  // const [data, setData] = useState(null);
-
-  // useEffect(() => {
-  //   fetch('http://localhost:3001/api')
-  //   .then((response) => response.json())
-  //   .then((response) => setData(response.message))
-  // }, [])
-
+  const star = require('./images/icons/stars.png');
   return (
-    <div className="App">
+    <div className="page">
       <Header />
+      <MakeItHappen />
+      <Ticker imageSrc={star} word="DREAM" />
+      <Footer />
     </div>
   );
 }
