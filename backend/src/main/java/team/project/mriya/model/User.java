@@ -14,20 +14,20 @@ import lombok.Data;
 @Data
 public class User {
     @Id
-    Long id;
+    private Long id;
     @OneToOne
     @JoinColumn(name = "role_id")
-    Role role;
-    String email;
-    String password;
-    String pib;
-    LocalDate birthday;
-    String phone;
+    private Role role;
+    private String email;
+    private String password;
+    private String pib;
+    private LocalDate birthday;
+    private String phone;
     @Column(name = "d_reg")
-    LocalDate dateRegistration;
+    private LocalDate dateRegistration;
     @Column(name = "d_close")
-    LocalDate dateClose;
+    private LocalDate dateClose;
     @OneToOne
     @JoinColumn(name = "city_id")
-    City city;
+    private City city;
 }

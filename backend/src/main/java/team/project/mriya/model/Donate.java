@@ -18,16 +18,16 @@ import lombok.Data;
 @Data
 public class Donate {
     @Id
-    Long id;
+    private Long id;
     @OneToOne
     @JoinColumn(name = "dream_id")
-    Dream dream;
+    private Dream dream;
     @OneToMany
     @JoinTable(name = "donates_users",
         joinColumns = @JoinColumn(name = "donate_id"),
         inverseJoinColumns = @JoinColumn(name = "user_id"))
-    List<User> users;
-    BigDecimal sum;
+    private List<User> users;
+    private BigDecimal sum;
     @Column(name = "d_pay")
-    LocalDate datePay;
+    private LocalDate datePay;
 }

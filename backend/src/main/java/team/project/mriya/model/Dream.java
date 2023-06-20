@@ -21,38 +21,38 @@ import lombok.Getter;
 @Data
 public class Dream {
     @Id
-    Long id;
+    private Long id;
     @OneToOne
     @JoinColumn(name = "user_id")
-    User user;
+    private User user;
     @OneToOne
     @JoinColumn(name = "dream_type_id")
-    DreamType dreamType;
+    private DreamType dreamType;
     @OneToMany
     @JoinTable(name = "dreams_categories",
         joinColumns = @JoinColumn(name = "dream_id"),
         inverseJoinColumns = @JoinColumn(name = "category_id")
     )
-    List<Category> categories;
+    private List<Category> categories;
     @OneToOne
     @JoinColumn(name = "city_id")
-    City city;
-    String name;
-    String description;
-    String filename;
+    private City city;
+    private String name;
+    private String description;
+    private String filename;
     @Column(name = "mame_type")
-    String mameType;
+    private String mameType;
     @Column(name = "image_data")
-    byte[] imageData;
-    Integer age;
-    BigDecimal amount;
-    Long likes;
+    private byte[] imageData;
+    private Integer age;
+    private BigDecimal amount;
+    private Long likes;
     @Enumerated
-    DreamStatus status;
+    private DreamStatus status;
     @Column(name = "d_start")
-    LocalDate dateStart;
+    private LocalDate dateStart;
     @Column(name = "d_end")
-    LocalDate dateEnd;
+    private LocalDate dateEnd;
 
     @Getter
     @AllArgsConstructor

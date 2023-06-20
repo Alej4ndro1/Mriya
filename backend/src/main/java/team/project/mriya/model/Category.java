@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class Category {
     @Id
-    Long id;
-    String name;
-    Long parentId;
+    private Long id;
+    private String name;
+    private Long parentId;
 }

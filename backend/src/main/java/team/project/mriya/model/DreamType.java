@@ -10,6 +10,6 @@ import lombok.Data;
 @Data
 public class DreamType {
     @Id
-    Long id;
-    String name;
+    private Long id;
+    private String name;
 }
