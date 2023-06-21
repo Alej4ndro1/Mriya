@@ -53,15 +53,20 @@
     }
 
     &__come-back-alive {
+      width: 54px;
+      height: 23px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
       background-color: transparent;
       border: 3px solid transparent;
       border-radius: 3px;
       transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
-      &__image {
-        width: 48px;
-        height: 18px;
+      @include onDesktop {
+        width: 92px;
+        height: 45px;
       }
 
       &:hover {
@@ -70,9 +75,14 @@
         border-radius: 3px;
       }
 
-      @include onDesktop {
-        width: 80px;
-        height: 32px;
+      &__image {
+        width: 48px;
+        height: 18px;
+
+        @include onDesktop {
+          width: 80px;
+          height: 32px;
+        }
       }
     }
   }
