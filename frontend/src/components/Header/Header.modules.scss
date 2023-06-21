@@ -2,6 +2,7 @@
   width: 100%;
   height: 56px;
   border-bottom: 1px solid #C2C4CF;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -10,9 +11,11 @@
   margin-bottom: 24px;
 
   @include onDesktop {
+    width: 1440px;
     height: 104px;
-    padding: 0 80px;
+    margin: 0 auto;
     margin-bottom: 25px;
+    padding: 0 80px;
   }
 
   &__container {
@@ -23,41 +26,63 @@
     height: 100%;
 
     @include onDesktop {
+      padding: 0;
       width: auto;
     }
 
     &__logo {
-      margin-right: 25px;
+      width: 53px;
+      height: 21px;
 
       @include onDesktop {
-        margin-right: 80px;
+        width: 147px;
+        height: 58px;
       }
     }
-    
+
+    &__stars {
+      width: 6px;
+      height: 6px;
+      margin-right: 23px;
+
+      @include onDesktop {
+        width: 17px;
+        height: 17px;
+        margin-right: 55px;
+      }
+    }
 
     &__come-back-alive {
-      background-image: url('../../images/return_alive.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-color: transparent;
-      border: none;
-      width: 52px;
-      height: 26px;
+      width: 54px;
+      height: 23px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
       background-color: transparent;
-      border: 5px solid transparent;
+      border: 3px solid transparent;
       border-radius: 3px;
       transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
+      @include onDesktop {
+        width: 92px;
+        height: 45px;
+      }
+
       &:hover {
         background-color: #9C99FF;
-        border: 5px solid #9C99FF;
+        border: 3px solid #9C99FF;
         border-radius: 3px;
       }
 
-      @include onDesktop {
-        width: 85px;
-        height: 40px;
+      &__image {
+        width: 48px;
+        height: 18px;
+
+        @include onDesktop {
+          width: 80px;
+          height: 32px;
+        }
       }
     }
   }
@@ -140,7 +165,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       height: 104px;
       top: 0;
       padding: 0;
@@ -194,8 +219,9 @@
       @include onDesktop {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        gap: 20px;
+        justify-content: space-between;
+        width: auto;
+        margin: 0;
       }
 
       &__sign-up {
@@ -228,6 +254,9 @@
         }
 
         @include onDesktop {
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 150%;
           width: 200px;
           height: 48px;
           margin: 0;
@@ -259,7 +288,15 @@
         }
 
         @include onDesktop {
-          margin-left: 20px;
+          width: auto;
+          height: 48px;
+          margin: 0;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 150%;
+          margin-right: 20px;
+
           order: -1;
         }
       }

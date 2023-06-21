@@ -13,7 +13,6 @@ display: flex;
     padding: 0 80px;
     width: 1440px;
     margin: 0 auto;
-    margin-bottom: 132px;
     height: 914px;
   }
 
@@ -61,7 +60,7 @@ display: flex;
 
     &__cat {
       position: absolute;
-      width: 60px;
+      width: 57px;
       height: 100px;
       left: 76px;
       top: 141px;
@@ -74,7 +73,7 @@ display: flex;
       background-size: contain;
 
       @include onDesktop {
-        width: 194px;
+        width: 190px;
         height: 331px;
         left: 728px;
         top: 451px;
