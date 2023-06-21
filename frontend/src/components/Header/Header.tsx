@@ -1,5 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import logo from '../../images/Mriya.png';
+import stars from '../../images/stars.png';
+import back from '../../images/return_alive.png';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,10 +28,10 @@ export const Header = () => {
   return (
     <div className="header">
       <div className="header__container">
-        <img className="header__container__logo" src="https.svg" alt="logo" />
+        <img className="header__container__logo" src={logo} alt="logo" />
+        <img className="header__container__stars" src={stars} alt="stars" />
         <a className="header__container__come-back-alive" href="https://savelife.in.ua/" target="_blank" rel="noopener noreferrer">
-          <div className="header__container__come-back-alive__text">
-          </div>
+          <img className='header__container__come-back-alive__image' src={back} alt='come-back-alive' />
         </a>
       </div>
 
@@ -44,10 +47,10 @@ export const Header = () => {
         >
 
           <ul className="header__navigation__list">
-            <li className="header__navigation__list__item">About Us</li>
+            <li className="header__navigation__list__item">About us</li>
             <li className="header__navigation__list__item">Dreams</li>
-            <li className="header__navigation__list__item">Ask for Help</li>
-            <li className="header__navigation__list__item">Contact</li>
+            <li className="header__navigation__list__item">Ask for help</li>
+            <li className="header__navigation__list__item">Contacts</li>
           </ul>
 
           <div className="header__navigation__profile-buttons">

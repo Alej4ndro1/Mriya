@@ -36,7 +36,7 @@
 
       @include onDesktop {
         width: 147px;
-        height: 57px;
+        height: 58px;
       }
     }
 
@@ -53,28 +53,26 @@
     }
 
     &__come-back-alive {
-      background-image: url('../../images/return_alive.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-color: transparent;
-      border: none;
-      width: 52px;
-      height: 27px;
       cursor: pointer;
       background-color: transparent;
-      border: 5px solid transparent;
+      border: 3px solid transparent;
       border-radius: 3px;
       transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
+      &__image {
+        width: 48px;
+        height: 18px;
+      }
+
       &:hover {
         background-color: #9C99FF;
-        border: 5px solid #9C99FF;
+        border: 3px solid #9C99FF;
         border-radius: 3px;
       }
 
       @include onDesktop {
-        width: 82px;
-        height: 34px;
+        width: 80px;
+        height: 32px;
       }
     }
   }
