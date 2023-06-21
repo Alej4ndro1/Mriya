@@ -106,6 +106,28 @@
     }
   }
 
+  &__email {
+    cursor: pointer;
+
+    font-family: 'Mukta';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+
+    color: #FAFAFA;
+
+    @include onDesktop {
+      font-family: 'Mukta';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+
+      color: #FAFAFA;
+    }
+  }
+
   &__email-horizontal-align {
     display: flex;
     flex-direction: column;

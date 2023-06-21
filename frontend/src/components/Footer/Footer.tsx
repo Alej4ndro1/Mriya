@@ -37,7 +37,7 @@ export const Footer = () => {
                   <h2>UI/UX Designer</h2>
                 </div>
                 <div className='footer__designer-email'>
-                  <h2>valeria.tsova@gmail.com</h2>
+                  <h2 className='footer__email'>valeria.tsova@gmail.com</h2>
                 </div>
               </div>
               <div className="footer__frontend-container footer__containers--gap">
@@ -45,8 +45,8 @@ export const Footer = () => {
                   <h2>Frontend Developers</h2>
                 </div>
                 <div className='footer__designer-email footer__email-horizontal-align'>
-                  <h2>svetlana.kryukova.job@gmail.com</h2>
-                  <h2>osobchuk1@gmail.com</h2>
+                  <h2 className='footer__email'>svetlana.kryukova.job@gmail.com</h2>
+                  <h2 className='footer__email'>osobchuk1@gmail.com</h2>
                 </div>
               </div>
               <div className="footer__backend-container footer__containers--gap">
@@ -54,7 +54,7 @@ export const Footer = () => {
                   <h2>Backend Developers</h2>
                 </div>
                 <div className='footer__designer-email'>
-                  <h2>valentin.chepiga@gmail.com</h2>
+                  <h2 className='footer__email'>valentin.chepiga@gmail.com</h2>
                 </div>
               </div>
               <div className="footer__qa-container footer__containers--gap">
@@ -62,8 +62,8 @@ export const Footer = () => {
                   <h2>QA Specialists</h2>
                 </div>
                 <div className='footer__designer-email footer__email-horizontal-align'>
-                  <h2>olha.moroziuk.it@gmail.com</h2>
-                  <h2>alexispoliyit@gmail.com</h2>
+                  <h2 className='footer__email'>olha.moroziuk.it@gmail.com</h2>
+                  <h2 className='footer__email'>alexispoliyit@gmail.com</h2>
                 </div>
               </div>
             </div>
