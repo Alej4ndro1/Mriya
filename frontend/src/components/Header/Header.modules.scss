@@ -31,10 +31,24 @@
     }
 
     &__logo {
-      margin-right: 25px;
+      width: 53px;
+      height: 21px;
 
       @include onDesktop {
-        margin-right: 80px;
+        width: 147px;
+        height: 57px;
+      }
+    }
+
+    &__stars {
+      width: 6px;
+      height: 6px;
+      margin-right: 23px;
+
+      @include onDesktop {
+        width: 17px;
+        height: 17px;
+        margin-right: 55px;
       }
     }
 
@@ -45,7 +59,7 @@
       background-color: transparent;
       border: none;
       width: 52px;
-      height: 25px;
+      height: 27px;
       cursor: pointer;
       background-color: transparent;
       border: 5px solid transparent;
