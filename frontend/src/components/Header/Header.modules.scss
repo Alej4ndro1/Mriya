@@ -34,6 +34,10 @@
       width: 53px;
       height: 21px;
 
+      &:hover {
+        cursor: pointer;
+      }
+
       @include onDesktop {
         width: 147px;
         height: 58px;
@@ -198,6 +202,7 @@
 
         &:hover {
           color: #6965F6;
+          cursor: pointer;
         }
 
         @include onDesktop {
