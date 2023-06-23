@@ -9,6 +9,11 @@
       position: relative;
       width: 290px;
       height: 290px;
+
+      @include onDesktop {
+        width: 417px;
+        height: 417px;
+      }
     }
 
   &__favorite {
@@ -25,6 +30,13 @@
     border: none;
     cursor: pointer;
     z-index: 2;
+
+    @include onDesktop {
+      width: 29px;
+      height: 25px;
+      top: 27px;
+      right: 19px;
+    }
   }
 
   &__image {
@@ -33,16 +45,21 @@
     &__photo {
       width: 290px;
       height: 290px;
-      border-radius: 30px;
+      border-radius: 30px 30px 40px 40px;
       z-index: -1;
+
+      @include onDesktop {
+        width: 417px;
+        height: 415px;
+      }
     }
   }
 
   &__content {
     position: relative;
-    top: -127px;
+    top: -130px;
     width: 100%;
-    height: 127px;
+    height: 128px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,11 +70,21 @@
     z-index: 1;
     background-color: $comment;
 
+    @include onDesktop {
+      padding: 24px;
+      height: 189px;
+      top: -189px;
+    }
+
     &__the-one-who-asks {
       display: flex;
       justify-content: space-between;
       width: 100%;
       margin-bottom: 16px;
+
+      @include onDesktop {
+        margin-bottom: 24px;
+      }
 
       &__name {
         font-family: 'Futura', sans-serif;
@@ -65,6 +92,11 @@
         font-size: 18px;
         line-height: 25.2px;
         color: #111111;
+
+        @include onDesktop {
+          font-size: 24px;
+          line-height: 36px;
+        }
       }
 
       &__age {
@@ -73,15 +105,25 @@
         font-size: 15px;
         line-height: 19.5px;
         color: #2F2F35;
+
+        @include onDesktop {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
     }
 
     &__progress {
       width: 256px;
-      height: 50px;
+      height: 7px;
       border-radius: 100px;
       margin-bottom: 8px;
       background-color: #ECEEFF;
+
+      @include onDesktop {
+        width: 368px;
+        height: 16px;
+      }
     }
 
     &__amount {
@@ -90,12 +132,22 @@
       width: 100%;
       margin-bottom: 4px;
 
+      @include onDesktop {
+        font-size: 14px;
+        line-height: 24px;
+      }
+
       &__current {
         font-family: 'Mukta', sans-serif;
         font-weight: 300;
         font-size: 12px;
         line-height: 16.8px;
         color: #878AA6;
+
+        @include onDesktop {
+          font-size: 14px;
+          line-height: 24px;
+        }
       }
     }
 
@@ -110,6 +162,11 @@
         font-size: 15px;
         line-height: 19.5px;
         color: #111111;
+
+        @include onDesktop {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
     }
   }
