@@ -1,4 +1,6 @@
 import React from 'react';
+import { DonateButtons } from '../DonateButtons/DonateButtons';
+
 
 export const MakeItHappen = () => {
   return (
@@ -64,10 +66,7 @@ export const MakeItHappen = () => {
           </div>
         </div>
 
-        <div className="make-it-happen__buttons">
-          <button className="make-it-happen__buttons__donate">Donate</button>
-          <button className="make-it-happen__buttons__help">Help non-financially</button>
-        </div>
+        <DonateButtons />
       </div>
     </div>
   );
