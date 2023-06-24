@@ -1,0 +1,188 @@
+@import '../../utils/mixins';
+
+.bonuses {
+  position: relative;
+  background: #FAFAFA;
+
+  &__container {
+    width: 320px;
+    margin: 0 auto;
+    padding: 48px 16px;
+
+    @include onDesktop {
+      width: 1440px;
+      margin: 0 auto;
+      padding: 128px 80px 144px 80px;
+    }
+  }
+
+  &__desktop-wrapper {
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8px;
+
+    font-family: 'Futura-medium', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+
+    color: #111111;
+
+    @include onDesktop {
+      margin-bottom: 16px;
+
+      font-family: 'Futura-medium', sans-serif;
+      font-size: 56px;
+      font-weight: 500;
+      line-height: 67px;
+    }
+  }
+
+  &__title::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 13px;
+    left: 0px;
+    z-index: -1;
+    width: 24px;
+    height: 24px;
+
+    background-color: $yellow;
+    border-radius: 50% 0 50% 50%;
+
+    @include onDesktop {
+      width: 47px;
+      height: 47px;
+      bottom: 33px;
+      left: -3px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 24px;
+
+    font-family: 'Mukta', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+
+    color: #2F2F35;
+
+    @include onDesktop {
+      margin-bottom: 48px;
+      width: 40%;
+      line-height: 24px;
+    }
+  }
+
+  &__card-wrapper {
+    display: flex;
+
+    @include onDesktop {
+      justify-content: space-between;
+    }
+  }
+
+  &__card-first {
+    margin-bottom: 8px;
+    padding: 16px 16px 22px 24px;
+    background-color: #ECEEFF;
+    border-radius: 23px 23px 23px 0;
+
+    @include onDesktop {
+      width: 632px;
+      padding: 24px 24px 24px 40px;
+    }
+  }
+
+  &__card-first-title {
+    margin-bottom: 8px;
+
+    font-family: 'Futura-medium', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+
+    @include onDesktop {
+      font-family: 'Futura-medium', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 38px;
+    }
+  }
+
+  &__card-first-paragraph {
+    font-family: 'Mukta' sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 17px;
+
+    color: #878AA6;
+
+    @include onDesktop {
+      font-family: 'Mukta', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 21px;
+    }
+  }
+
+  &__card-second {
+    padding: 16px 16px 22px 24px;
+    background-color: #ECEEFF;
+    border-radius: 0 23px 23px 23px;
+  }
+
+  &__card-second-title {
+    margin-bottom: 8px;
+
+    font-family: 'Futura-medium', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+
+    @include onDesktop {
+      font-family: 'Futura-medium', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 38px;
+    }
+  }
+
+  &__card-second-paragraph {
+    font-family: 'Mukta' sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 17px;
+
+    color: #878AA6;
+
+    @include onDesktop {
+      font-family: 'Mukta', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 21px;
+    }
+  }
+
+  &__bonus-image {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__bonus-image-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
