@@ -16,7 +16,7 @@ function App() {
       <MakeItHappen />
       <Ticker imageSrc={star} word="DREAM" />
       <JustJoinTheProcess />
-      <Ticker imageSrc={hand} word="HELP" />
+      <Ticker imageSrc={hand} word="HELP" /> 
       <Footer />
     </div>
   );
