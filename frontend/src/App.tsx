@@ -8,6 +8,7 @@ import { Footer } from './components/Footer';
 import star from './images/icons/stars.png';
 import { JustJoinTheProcess } from './components/JustJoinTheProcess/JustJoinTheProcess';
 import hand from './images/icons/hand-icon.png';
+import { DreamHolder } from './components/DreamHolder/';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <MakeItHappen />
       <Ticker imageSrc={star} word="DREAM" />
       <JustJoinTheProcess />
+      <Ticker imageSrc={hand} word="HELP" />
+      <DreamHolder />
       <Ticker imageSrc={hand} word="HELP" /> 
       <Footer />
     </div>

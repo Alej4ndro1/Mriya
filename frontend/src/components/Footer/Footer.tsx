@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.modules.scss';
 import Logo from '../../images/icons/logo.svg';
 import Logo_desktop from '../../images/icons/logo-desktop.svg';
 import facebook from '../../images/contacts/facebook.png';
