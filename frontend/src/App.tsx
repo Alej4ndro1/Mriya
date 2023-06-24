@@ -19,6 +19,7 @@ function App() {
       <JustJoinTheProcess />
       <Ticker imageSrc={hand} word="HELP" />
       <DreamHolder />
+      <Ticker imageSrc={hand} word="HELP" /> 
       <Footer />
     </div>
   );
