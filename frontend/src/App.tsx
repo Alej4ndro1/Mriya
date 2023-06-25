@@ -10,6 +10,7 @@ import { JustJoinTheProcess } from './components/JustJoinTheProcess/JustJoinTheP
 import hand from './images/icons/hand-icon.png';
 import { DreamHolder } from './components/DreamHolder/';
 import { Bonuses } from './components/Bonuses';
+import { QRcode } from './components/QRcode';
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
       <Ticker imageSrc={hand} word="HELP" />
       <DreamHolder />
       <Ticker imageSrc={hand} word="HELP" />
-      <Bonuses /> 
+      <Bonuses />
+      <Ticker imageSrc={star} word="DREAM" />
+      <QRcode />
       <Footer />
     </div>
   );
