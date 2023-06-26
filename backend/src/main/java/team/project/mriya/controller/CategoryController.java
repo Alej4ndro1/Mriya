@@ -2,6 +2,8 @@ package team.project.mriya.controller;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import java.util.List;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +13,6 @@ import team.project.mriya.dto.CategoryResponseDto;
 import team.project.mriya.dto.mapper.ResponseMapper;
 import team.project.mriya.model.Category;
 import team.project.mriya.service.CategoryService;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @AllArgsConstructor
@@ -22,7 +22,8 @@ public class CategoryController {
     private ResponseMapper<Category, CategoryResponseDto> mapper;
 
     @GetMapping("/")
-    @ApiOperation(value = "Return all categories", notes = "List continue all categories parent and child")
+    @ApiOperation(value = "Return all categories",
+            notes = "List continue all categories parent and child")
     public List<CategoryResponseDto> getAll() {
         return categoryService.getAll().stream()
                 .map(c -> mapper.toDto(c))
@@ -30,7 +31,8 @@ public class CategoryController {
     }
 
     @GetMapping("/parents")
-    @ApiOperation(value = "Return only parent categories", notes = "List continue all parent categories")
+    @ApiOperation(value = "Return only parent categories",
+            notes = "List continue all parent categories")
     public List<CategoryResponseDto> getParents() {
         return categoryService.getAllParent().stream()
                 .map(c -> mapper.toDto(c))

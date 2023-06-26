@@ -1,8 +1,8 @@
 package team.project.mriya.dto;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 import java.time.LocalDate;
+import lombok.Data;
 
 @Data
 public class UserRequestDto {

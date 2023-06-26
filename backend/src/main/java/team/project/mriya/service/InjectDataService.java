@@ -14,20 +14,21 @@ import team.project.mriya.repository.RoleRepository;
 @Service
 @AllArgsConstructor
 public class InjectDataService {
+    private static String[] cities = new String[]{"Kyiv", "Lviv", "Dnipro", "Kharkiv", "Odesa",
+            "Donetsk", "Zaporizhzhia", "Mykolaiv", "Sevastopol", "Luhansk", "Vinnytsia",
+            "Chernihiv", "Kherson", "Poltava", "Khmelnytskyi", "Cherkasy", "Chernivtsi",
+            "Zhytomyr", "Lutsk", "Sumy", "Uzhgorod", "Ternopil", "Rivne", "Kropyvnytskyi",
+            "Ivano-Frankivsk"};
+    private static String[] dreamHolders = new String[]{"Children", "Elderly people",
+            "Families of Soldiers", "Animals", "People of disability", "Affected by war"};
+    private static String[] typeOfHelp = new String[]{"Transportation help", "Shelter needed",
+            "Humanitarian aid", "Ordinary dreams", "House rebuilding", "Medical help", "Nursing",
+            "Other"};
+
     private CategoryRepository categoryRepository;
     private CityRepository cityRepository;
     private DreamTypeRepository dreamTypeRepository;
     private RoleRepository roleRepository;
-
-    private static String[] cities = new String[]{"Kyiv", "Lviv", "Dnipro", "Kharkiv", "Odesa", "Donetsk",
-            "Zaporizhzhia", "Mykolaiv", "Sevastopol", "Luhansk", "Vinnytsia", "Chernihiv", "Kherson",
-            "Poltava", "Khmelnytskyi", "Cherkasy", "Chernivtsi", "Zhytomyr", "Lutsk", "Sumy", "Uzhgorod",
-            "Ternopil", "Rivne", "Kropyvnytskyi", "Ivano-Frankivsk"};
-    private static String[] dreamHolders = new String[]{"Children", "Elderly people", "Families of Soldiers",
-            "Animals", "People of disability", "Affected by war"};
-    private static String[] typeOfHelp = new String[]{"Transportation help", "Shelter needed", "Humanitarian aid",
-            "Ordinary dreams", "House rebuilding", "Medical help", "Nursing", "Other"};
-
 
     private Long createParent(String name) {
         Category category = new Category();

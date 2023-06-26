@@ -1,14 +1,16 @@
 package team.project.mriya.service;
 
+import java.util.List;
+import java.util.Optional;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import team.project.mriya.model.Donate;
 import team.project.mriya.repository.DonateRepository;
-import java.util.List;
-import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class DonateService {
-    DonateRepository donateRepository;
+    private DonateRepository donateRepository;
 
     public Donate add(Donate donate) {
         return donateRepository.save(donate);

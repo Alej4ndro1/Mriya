@@ -1,8 +1,8 @@
 package team.project.mriya.controller;
 
+import io.swagger.annotations.ApiOperation;
 import java.util.List;
 import java.util.stream.Collectors;
-import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,5 +25,4 @@ public class DreamTypeController {
                 .map(d -> mapper.toDto(d))
                 .collect(Collectors.toList());
     }
-
 }

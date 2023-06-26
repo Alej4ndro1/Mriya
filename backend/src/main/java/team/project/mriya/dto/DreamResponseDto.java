@@ -1,10 +1,10 @@
 package team.project.mriya.dto;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import lombok.Data;
 
 @Data
 public class DreamResponseDto {
@@ -22,10 +22,10 @@ public class DreamResponseDto {
     private String name;
     @ApiModelProperty(notes = "Description of dream", example = "My dream for my dog...")
     private String description;
-// todo:
-//    private String filename;
-//    private String mameType;
-//    private byte[] imageData;
+    // todo:
+    //    private String filename;
+    //    private String mameType;
+    //    private byte[] imageData;
     @ApiModelProperty(notes = "Age person or animal", example = "12")
     private Integer age;
     @ApiModelProperty(notes = "Total amount for dream", example = "150.00")

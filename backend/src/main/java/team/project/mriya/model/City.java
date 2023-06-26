@@ -14,7 +14,8 @@ import lombok.Data;
 public class City {
     @Id
     @GeneratedValue(generator = "cities_id_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "cities_id_seq", sequenceName = "cities_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "cities_id_seq", sequenceName = "cities_id_seq",
+            allocationSize = 1)
     private Long id;
     private String name;
 }

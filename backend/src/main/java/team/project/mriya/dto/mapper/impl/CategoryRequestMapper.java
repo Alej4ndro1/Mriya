@@ -11,7 +11,7 @@ public class CategoryRequestMapper implements RequestMapper<Category, CategoryRe
     public Category toModel(CategoryRequestDto dto) {
         Category category = new Category();
         category.setName(dto.getName());
-        if(dto.getParentId() != null) {
+        if (dto.getParentId() != null) {
             category.setParentId(dto.getParentId());
         }
         return category;
