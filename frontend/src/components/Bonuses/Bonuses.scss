@@ -17,8 +17,10 @@
   }
 
   &__desktop-wrapper {
+    position: relative;
     @include onDesktop {
       display: flex;
+      // position: relative;
     }
   }
 
@@ -138,6 +140,11 @@
     padding: 16px 16px 22px 24px;
     background-color: #ECEEFF;
     border-radius: 0 23px 23px 23px;
+    margin-bottom: 12px;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
   }
 
   &__card-second-title {
