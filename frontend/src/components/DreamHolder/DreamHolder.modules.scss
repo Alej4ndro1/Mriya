@@ -1,0 +1,101 @@
+@import '../../utils/mixins';
+
+.dreamHolder {
+  background: #FAFAFA;
+
+  &__container {
+    width: 320px;
+    margin: 0 auto;
+    padding: 48px 16px;
+
+    @include onDesktop {
+      width: 1440px;
+      margin: 0 auto;
+      padding: 128px 80px 144px 80px;
+    }
+  }
+
+
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8px;
+
+    font-family: 'Futura-medium', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+
+    color: #111111;
+
+    @include onDesktop {
+      margin-bottom: 16px;
+
+      font-family: 'Futura-medium', sans-serif;
+      font-size: 56px;
+      font-weight: 500;
+      line-height: 67px;
+    }
+  }
+
+  &__title-first::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 17px;
+    left: -3px;
+    z-index: -1;
+    width: 24px;
+    height: 24px;
+
+    background-color: $yellow;
+    border-radius: 50% 0 50% 50%;
+
+    @include onDesktop {
+      width: 47px;
+      height: 47px;
+      bottom: 33px;
+      left: -3px;
+    }
+  }
+
+  &__title-second::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 145px;
+    bottom: 13px;
+    z-index: -1;
+    width: 24px;
+    height: 24px;
+
+    background: $yellow;
+
+    border-radius: 50% 50% 50% 0;
+
+    @include onDesktop {
+      width: 47px;
+      height: 47px;
+      left: 302px;
+      bottom: 30px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 24px;
+
+    font-family: 'Mukta', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+
+    color: #2F2F35;
+
+    @include onDesktop {
+      margin-bottom: 48px;
+      width: 40%;
+      line-height: 24px;
+    }
+  }
+}
