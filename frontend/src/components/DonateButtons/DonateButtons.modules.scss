@@ -1,16 +1,17 @@
 .make-it-happen__buttons {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 400px;
+  height: 104px;
+  top: 24px;
   gap: 10px;
   margin-bottom: 48px;
 
   @include onDesktop {
     flex-direction: row;
-    top: 302px;
     gap: 20px;
+    order: -1;
   }
 
   &__donate {
