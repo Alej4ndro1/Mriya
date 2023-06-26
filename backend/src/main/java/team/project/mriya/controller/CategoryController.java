@@ -29,7 +29,7 @@ public class CategoryController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/parent")
+    @GetMapping("/parents")
     @ApiOperation(value = "Return only parent categories", notes = "List continue all parent categories")
     public List<CategoryResponseDto> getParents() {
         return categoryService.getAllParent().stream()
