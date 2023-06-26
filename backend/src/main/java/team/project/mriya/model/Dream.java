@@ -6,11 +6,16 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,20 +26,22 @@ import lombok.Getter;
 @Data
 public class Dream {
     @Id
+    @GeneratedValue(generator = "dreams_id_seq", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "dreams_id_seq", sequenceName = "dreams_id_seq", allocationSize = 1)
     private Long id;
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dream_type_id")
     private DreamType dreamType;
-    @OneToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "dreams_categories",
         joinColumns = @JoinColumn(name = "dream_id"),
         inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private List<Category> categories;
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "city_id")
     private City city;
     private String name;
@@ -53,6 +60,8 @@ public class Dream {
     private LocalDate dateStart;
     @Column(name = "d_end")
     private LocalDate dateEnd;
+    @OneToMany
+    private List<Donate> donates;
 
     @Getter
     @AllArgsConstructor
