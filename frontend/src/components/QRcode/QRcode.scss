@@ -1,0 +1,109 @@
+@import '../../utils/mixins';
+
+.QRcode {
+  position: relative;
+  background: #FAFAFA;
+
+  &__container {
+    width: 320px;
+    margin: 0 auto;
+    padding: 48px 16px 0;
+
+    @include onDesktop {
+      width: 1440px;
+      margin: 0 auto;
+      padding: 128px 188px 160px 80px;
+    }
+  }
+
+  &__desktop-wrapper {
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8px;
+
+    font-family: 'Futura-medium', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+
+    color: #111111;
+
+    @include onDesktop {
+      margin-bottom: 16px;
+
+      font-family: 'Futura-medium', sans-serif;
+      font-size: 56px;
+      font-weight: 500;
+      line-height: 67px;
+    }
+  }
+
+  &__title::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -7px;
+    z-index: -1;
+    width: 24px;
+    height: 24px;
+
+    background-color: $yellow;
+    border-radius: 0 50% 50% 50%;
+
+    @include onDesktop {
+      width: 47px;
+      height: 47px;
+      bottom: 33px;
+      left: -3px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 32px;
+
+    font-family: 'Mukta', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+
+    color: #2F2F35;
+
+    @include onDesktop {
+      margin-bottom: 48px;
+      width: 65%;
+      line-height: 24px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 96px;
+
+    @include onDesktop {
+      margin-right: 124px;
+    }
+  }
+
+  &__image-mobile {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__image-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
