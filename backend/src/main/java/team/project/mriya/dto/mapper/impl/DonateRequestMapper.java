@@ -20,8 +20,6 @@ public class DonateRequestMapper implements RequestMapper<Donate, DonateRequestD
         donate.setDatePay(dto.getDatePay());
         donate.setSum(dto.getSum());
         // todo: обдумати роботу з Optional
-        donate.setDream(dreamService.get(dto.getDreamId()).get());
-        // todo: обдумати роботу з Optional
         donate.setUser(userService.get(dto.getUserId()).get());
         return donate;
     }

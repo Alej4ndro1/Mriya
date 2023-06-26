@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import team.project.mriya.dto.DreamResponseDto;
 import team.project.mriya.dto.mapper.ResponseMapper;
 import team.project.mriya.model.Category;
+import team.project.mriya.model.Donate;
 import team.project.mriya.model.Dream;
 
 @Component
@@ -27,6 +28,9 @@ public class DreamResponseMapper implements ResponseMapper<Dream, DreamResponseD
         dto.setStatusName(entity.getStatus().getName());
         dto.setDateStart(entity.getDateStart());
         dto.setDateEnd(entity.getDateEnd());
+        dto.setDonatesIds(entity.getDonates().stream()
+                .map(Donate::getId)
+                .collect(Collectors.toList()));
         return dto;
     }
 }

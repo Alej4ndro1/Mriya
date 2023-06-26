@@ -8,6 +8,7 @@ import team.project.mriya.dto.mapper.RequestMapper;
 import team.project.mriya.model.Dream;
 import team.project.mriya.service.CategoryService;
 import team.project.mriya.service.CityService;
+import team.project.mriya.service.DonateService;
 import team.project.mriya.service.DreamTypeService;
 import team.project.mriya.service.UserService;
 
@@ -18,6 +19,7 @@ public class DreamRequestMapper implements RequestMapper<Dream, DreamRequestDto>
     private DreamTypeService dreamTypeService;
     private CategoryService categoryService;
     private CityService cityService;
+    private DonateService donateService;
 
     @Override
     public Dream toModel(DreamRequestDto dto) {
@@ -36,6 +38,9 @@ public class DreamRequestMapper implements RequestMapper<Dream, DreamRequestDto>
         dream.setStatus(Dream.DreamStatus.valueOf(dto.getStatusName().toUpperCase()));
         dream.setDateStart(dto.getDateStart());
         dream.setDateEnd(dto.getDateEnd());
+        dream.setDonates(dto.getDonatesIds().stream()
+                .map(id -> donateService.get(id).get())
+                .collect(Collectors.toList()));
         return dream;
     }
 }

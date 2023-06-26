@@ -13,7 +13,6 @@ public class DonateResponseMapper implements ResponseMapper<Donate, DonateRespon
         dto.setId(entity.getId());
         dto.setSum(entity.getSum());
         dto.setDatePay(entity.getDatePay());
-        dto.setDreamId(entity.getDream().getId());
         dto.setUserId(entity.getUser().getId());
         return dto;
     }

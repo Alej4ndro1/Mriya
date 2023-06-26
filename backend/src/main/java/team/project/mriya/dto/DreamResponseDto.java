@@ -38,4 +38,6 @@ public class DreamResponseDto {
     private LocalDate dateStart;
     @ApiModelProperty(notes = "Collection end date", example = "30.06.2023")
     private LocalDate dateEnd;
+    @ApiModelProperty(notes = "List id of donates", example = "[1, 2, 4, 5]")
+    private List<Long> donatesIds;
 }
