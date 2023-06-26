@@ -84,9 +84,9 @@ public class InjectDataService {
     }
 
     public void injectRoles() {
-        createRole("user");
-        createRole("admin");
-        createRole("moderator");
-        createRole("guest");
+        createRole("USER");
+        createRole("ADMIN");
+        createRole("MODERATOR");
+        createRole("GUEST");
     }
 }
