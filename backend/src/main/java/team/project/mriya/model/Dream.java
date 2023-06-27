@@ -47,8 +47,8 @@ public class Dream {
     private String name;
     private String description;
     private String filename;
-    @Column(name = "mame_type")
-    private String mameType;
+    @Column(name = "mime_type")
+    private String mimeType;
     @Column(name = "image_data")
     private byte[] imageData;
     private Integer age;

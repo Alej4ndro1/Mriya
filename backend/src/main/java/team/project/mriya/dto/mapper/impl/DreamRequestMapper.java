@@ -32,6 +32,11 @@ public class DreamRequestMapper implements RequestMapper<Dream, DreamRequestDto>
         dream.setCity(cityService.get(dto.getCityId()).get());
         dream.setName(dto.getName());
         dream.setDescription(dto.getDescription());
+
+        dream.setFilename(dto.getFilename());
+        dream.setMimeType(dto.getMimeType());
+        dream.setImageData(dto.getImageData());
+
         dream.setAge(dto.getAge());
         dream.setAmount(dto.getAmount());
         dream.setLikes(dto.getLikes());

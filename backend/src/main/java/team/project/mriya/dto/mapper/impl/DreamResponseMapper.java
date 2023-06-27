@@ -22,6 +22,11 @@ public class DreamResponseMapper implements ResponseMapper<Dream, DreamResponseD
         dto.setCityId(entity.getCity().getId());
         dto.setName(entity.getName());
         dto.setDescription(entity.getDescription());
+
+        dto.setFilename(entity.getFilename());
+        dto.setMimeType(entity.getMimeType());
+        dto.setImageData(entity.getImageData());
+
         dto.setAge(entity.getAge());
         dto.setAmount(entity.getAmount());
         dto.setLikes(entity.getLikes());
