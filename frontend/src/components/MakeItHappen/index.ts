@@ -1,1 +1,1 @@
-export * from './MakeItHappen'
+export * from './MakeItHappen';
