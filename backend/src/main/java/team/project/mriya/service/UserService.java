@@ -1,5 +1,6 @@
 package team.project.mriya.service;
 
+import java.time.LocalDate;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,5 +22,11 @@ public class UserService {
 
     public Optional<User> get(Long id) {
         return userRepository.findById(id);
+    }
+
+    public void close(Long id) {
+        User user = userRepository.findById(id).get();
+        user.setDateClose(LocalDate.now());
+        userRepository.save(user);
     }
 }
