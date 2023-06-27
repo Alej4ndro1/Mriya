@@ -13,7 +13,7 @@ import team.project.mriya.service.CityService;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/cities")
+@RequestMapping("/api/city")
 public class CityController {
     private CityService cityService;
     private CityResponseMapper cityResponseMapper;

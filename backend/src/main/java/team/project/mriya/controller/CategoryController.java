@@ -16,7 +16,7 @@ import team.project.mriya.service.CategoryService;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/categories")
+@RequestMapping("/api/category")
 public class CategoryController {
     private CategoryService categoryService;
     private ResponseMapper<Category, CategoryResponseDto> mapper;

@@ -13,7 +13,7 @@ import team.project.mriya.service.DreamTypeService;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/dream-types")
+@RequestMapping("/api/dream-type")
 public class DreamTypeController {
     private DreamTypeService dreamTypeService;
     private DreamTypeResponseMapper mapper;
