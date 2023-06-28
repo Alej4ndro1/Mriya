@@ -20,15 +20,7 @@
     margin-bottom: 4px;
 
     @include onDesktop {
-      display: none;
-    }
-  }
-
-  &__logo-desktop {
-    display: none;
-
-    @include onDesktop {
-      display: block;
+      width: 307px;
     }
   }
 
@@ -157,7 +149,8 @@
   }
 
   &__support-topics {
-    display: inline;
+    display: inline-block;
+    color: #FAFAFA;
 
     @include onDesktop {
       display: inline;
