@@ -11,6 +11,7 @@ import { ContactsPage } from './pages/ContactsPage';
 import { AskForHelpPage } from './pages/AskForHelpPage';
 import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { MainPage } from './pages/MainPage';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<DetailedPage />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/home" element={<Navigate to="/" replace />} />
 
         <Route path="/dreams" element={<DreamsPage />} />
