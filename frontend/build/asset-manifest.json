@@ -1,5 +1,6 @@
 {
   "files": {
+
     "main.css": "/Mriya/static/css/main.c37c9f6b.css",
     "main.js": "/Mriya/static/js/main.a686d2ca.js",
     "static/media/Mukta.ttf": "/Mriya/static/media/Mukta.462ca59f67e267d58182.ttf",
@@ -23,9 +24,9 @@
     "static/media/return_alive.png": "/Mriya/static/media/return_alive.04cc74b292149b64a777.png",
     "static/media/bonuses50-desktop.svg": "/Mriya/static/media/bonuses50-desktop.bf43f68dea1f5b220d8d0596b6d37592.svg",
     "static/media/bonuses25-desktop.svg": "/Mriya/static/media/bonuses25-desktop.97010955ba89883ad39e22585a6d8dc5.svg",
-    "static/media/logo.svg": "/Mriya/static/media/logo.67eeee96d6da4a3176dc784b414d746a.svg",
-    "static/media/logo-desktop.svg": "/Mriya/static/media/logo-desktop.2ddc9db3fe0c188abd3903a3cbf3d8ba.svg",
+    "static/media/Logo.svg": "/Mriya/static/media/Logo.a8e804473e95d6d0ac017f5328f4683f.svg",
     "index.html": "/Mriya/index.html",
+
     "main.c37c9f6b.css.map": "/Mriya/static/css/main.c37c9f6b.css.map",
     "main.a686d2ca.js.map": "/Mriya/static/js/main.a686d2ca.js.map"
   },
