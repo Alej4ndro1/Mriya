@@ -1,0 +1,33 @@
+.dreamCatalog {
+  padding: 24px 16px 80px;
+
+  &__title {
+    font-family: 'Futura-medium', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+  &__title::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 102px;
+    left: 120px;
+    z-index: -1;
+    width: 16px;
+    height: 16px;
+
+    background-color: $yellow;
+    border-radius: 50% 50% 0 50%;
+
+    @include onDesktop {
+      width: 47px;
+      height: 47px;
+      bottom: 33px;
+      left: -3px;
+    }
+  }
+}
