@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Pagination from '../components/Pagination/Pagination';
+import { DreamCatalog } from '../components/DreamCatalog';
 
 export const DreamsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -11,6 +12,7 @@ export const DreamsPage = () => {
 
   return (
     <div>
+      <DreamCatalog />
       <Pagination totalPages={10} onPageChange={handlePageChange} />
     </div>
   );
