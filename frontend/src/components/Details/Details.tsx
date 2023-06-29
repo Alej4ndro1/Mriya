@@ -1,39 +1,54 @@
+import { Link } from 'react-router-dom';
 import { DonateButtons } from '../DonateButtons/DonateButtons';
 import React from 'react';
+import Slider from 'react-slick';
 
-export const DetailedPage = () => {
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+const sliderSettings = {
+  dots: false,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
+
+export const Details = () => {
   return (
     <div className="container">
       <div className="detailed-page">
 
         <div className="detailed-page__wrapper">
           <div className="detailed-page__bread-crumps">
-            <button className="detailed-page__bread-crumps__home-button">Home</button>
-            <div className="detailed-page__bread-crups__next"></div>
-            <button className="detailed-page__bread-crumps__dreams-button">Dreams</button>
-            <div className="detailed-page__bread-crups__next"></div>
-            <button className="detailed-page__bread-crumps__dream-name">'s Dream</button>
+            <button className="detailed-page__bread-crumps__home-button"></button>
+            <div className="detailed-page__bread-crumps__next"></div>
+            <Link to="/dreams">
+              <button className="detailed-page__bread-crumps__dreams-button"></button>
+            </Link>
+            <div className="detailed-page__bread-crumps__next"></div>
+            <button className="detailed-page__bread-crumps__dream-name"></button>
           </div>
 
-          <h3 className='deailed-page__name'>'s Dream</h3>
-          <div className="detailed-page__yellow-el"></div>
+          <h3 className='detailed-page__name'>'s Dream</h3>
 
           <button className="detailed-page__share-button"></button>
         </div>
 
-        <div className="detailed-page__gallery">
-          <image className="detailed-page__gallery__image-1"></image>
-          <image className="detailed-page__gallery__image-2"></image>
-          <image className="detailed-page__gallery__image-3"></image>
-          <image className="detailed-page__gallery__image-4"></image>
-        </div>
+        <Slider className="detailed-page__gallery" {...sliderSettings}>
+          <img className="detailed-page__gallery__image" src="" alt="Image 1" />
+          <img className="detailed-page__gallery__image" src="" alt="Image 2" />
+          <img className="detailed-page__gallery__image" src="" alt="Image 3" />
+          <img className="detailed-page__gallery__image" src="" alt="Image 4" />
+        </Slider>
+
 
         <div className="detailed-page__favourites">
         </div>
 
         <div className="detailed-page__category">
           <div className="detailed-page__category__title">Place</div>
-          <div className="detailed-page__category__text">Category</div>
+          <div className="detailed-page__category__title">Category</div>
           <div className="detailed-page__category__title">Kind of help</div>
         </div>
 

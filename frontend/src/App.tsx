@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import './main.scss';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer';
-import { MainPage } from './pages/MainPage';
+// import { MainPage } from './pages/MainPage';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { DreamsPage } from './pages/DreamsPage';
 import { DetailedPage } from './pages/DetailedPage';
@@ -18,7 +18,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<MainPage/>} />
+        <Route path="/" element={<DetailedPage />} />
         <Route path="/home" element={<Navigate to="/" replace />} />
 
         <Route path="/dreams" element={<DreamsPage />} />
