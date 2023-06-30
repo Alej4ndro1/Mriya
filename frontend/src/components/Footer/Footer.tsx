@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../../images/icons/logo.svg';
-import Logo_desktop from '../../images/icons/logo-desktop.svg';
+import Logo from '../../images/homePage/Logo.svg';
+import Logo_desktop from '../../images/homePage/Logo.svg';
 import facebook from '../../images/contacts/facebook.png';
 import telegram from '../../images/contacts/telegram.png';
 import instagram from '../../images/contacts/instagram.png';
@@ -15,11 +15,8 @@ export const Footer = () => {
       <div className="footer__container">
         <div className='footer__desktop-wrapper'>
           <div>
-            <a href="" className="footer__logo">
-              <img src={Logo} alt="logo" />
-            </a>
-            <a href="" className="footer__logo-desktop">
-              <img src={Logo_desktop} alt="logo" />
+            <a href="" >
+              <img src={Logo} alt="logo" className="footer__logo" />
             </a>
             <h3 className='footer__slogan'>
               Let the dreams come true
@@ -71,9 +68,15 @@ export const Footer = () => {
 
         <div className='footer__desktop-info-line'>
           <div className="footer__support">
-            <h2 className='footer__support-topics'>Terms & Policies</h2>
-            <h2 className='footer__support-topics'>FAQ</h2>
-            <h2 className='footer__support-topics'>Support</h2>
+            <a href="" className='footer__support-topics'>
+              <h2>Terms & Policies</h2>
+            </a>
+            <a href="" className='footer__support-topics'>
+              <h2>FAQ</h2>
+            </a>
+            <a href="" className='footer__support-topics'>
+              <h2>Support</h2>
+            </a>
           </div>
           <div className="footer__social">
             <a href="" className='footer__social-icons'>

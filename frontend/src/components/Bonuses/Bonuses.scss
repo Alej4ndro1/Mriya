@@ -12,7 +12,7 @@
     @include onDesktop {
       width: 1440px;
       margin: 0 auto;
-      padding: 128px 80px 144px 80px;
+      padding: 128px 80px 128px 80px;
     }
   }
 
@@ -20,7 +20,14 @@
     position: relative;
     @include onDesktop {
       display: flex;
-      // position: relative;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__text-block {
+    @include onDesktop {
+      margin-top: -60px;
     }
   }
 
@@ -78,8 +85,16 @@
     color: #2F2F35;
 
     @include onDesktop {
+      display: none;
+    }
+  }
+  
+  &__paragraph-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
       margin-bottom: 48px;
-      width: 40%;
       line-height: 24px;
     }
   }
