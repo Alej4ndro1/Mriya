@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Mriya/static/css/main.552b2a3a.css",
-    "main.js": "/Mriya/static/js/main.93b8581a.js",
+    "main.css": "/Mriya/static/css/main.d7ce0726.css",
+    "main.js": "/Mriya/static/js/main.35e0eaa1.js",
     "static/media/Mukta.ttf": "/Mriya/static/media/Mukta.462ca59f67e267d58182.ttf",
     "static/media/Mukta-Medium.ttf": "/Mriya/static/media/Mukta-Medium.fe9f9db60771d41ab393.ttf",
     "static/media/Mukta-Bold.ttf": "/Mriya/static/media/Mukta-Bold.c2c824523f139bea1451.ttf",
@@ -24,13 +24,19 @@
     "static/media/bonuses50-desktop.svg": "/Mriya/static/media/bonuses50-desktop.bf43f68dea1f5b220d8d0596b6d37592.svg",
     "static/media/bonuses25-desktop.svg": "/Mriya/static/media/bonuses25-desktop.97010955ba89883ad39e22585a6d8dc5.svg",
     "static/media/Logo.svg": "/Mriya/static/media/Logo.a8e804473e95d6d0ac017f5328f4683f.svg",
+    "static/media/slick.svg": "/Mriya/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Mriya/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Mriya/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Mriya/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/grey-heart.svg": "/Mriya/static/media/grey-heart.8ced77b383c79e342c5f.svg",
     "static/media/Vector.svg": "/Mriya/static/media/Vector.7076d5abd7388b69b40b.svg",
+    "static/media/arrow-black.svg": "/Mriya/static/media/arrow-black.1f085353c4d63fca4ad4.svg",
     "index.html": "/Mriya/index.html",
-    "main.552b2a3a.css.map": "/Mriya/static/css/main.552b2a3a.css.map",
-    "main.93b8581a.js.map": "/Mriya/static/js/main.93b8581a.js.map"
+    "main.d7ce0726.css.map": "/Mriya/static/css/main.d7ce0726.css.map",
+    "main.35e0eaa1.js.map": "/Mriya/static/js/main.35e0eaa1.js.map"
   },
   "entrypoints": [
-    "static/css/main.552b2a3a.css",
-    "static/js/main.93b8581a.js"
+    "static/css/main.d7ce0726.css",
+    "static/js/main.35e0eaa1.js"
   ]
 }
