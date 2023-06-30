@@ -3,7 +3,7 @@ import './App.scss';
 import './main.scss';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer';
-// import { MainPage } from './pages/MainPage';
+import { MainPage } from './pages/MainPage';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { DreamsPage } from './pages/DreamsPage';
 import { DetailedPage } from './pages/DetailedPage';
@@ -11,7 +11,6 @@ import { ContactsPage } from './pages/ContactsPage';
 import { AskForHelpPage } from './pages/AskForHelpPage';
 import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { MainPage } from './pages/MainPage';
 
 function App() {
   return (
