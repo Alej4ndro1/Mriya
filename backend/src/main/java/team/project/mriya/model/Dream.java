@@ -37,8 +37,8 @@ public class Dream {
     private DreamType dreamType;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "dreams_categories",
-        joinColumns = @JoinColumn(name = "dream_id"),
-        inverseJoinColumns = @JoinColumn(name = "category_id")
+            joinColumns = @JoinColumn(name = "dream_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private List<Category> categories;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -47,8 +47,8 @@ public class Dream {
     private String name;
     private String description;
     private String filename;
-    @Column(name = "mame_type")
-    private String mameType;
+    @Column(name = "mime_type")
+    private String mimeType;
     @Column(name = "image_data")
     private byte[] imageData;
     private Integer age;
@@ -69,6 +69,6 @@ public class Dream {
         DONE("Done"),
         PROCESS("Process");
 
-        String name;
+        private String name;
     }
 }

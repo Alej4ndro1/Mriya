@@ -20,7 +20,7 @@ public class DreamTypeService {
         return dreamTypeRepository.save(dreamType);
     }
 
-    public Optional<DreamType> get(Long id){
+    public Optional<DreamType> get(Long id) {
         return dreamTypeRepository.findById(id);
     }
 
