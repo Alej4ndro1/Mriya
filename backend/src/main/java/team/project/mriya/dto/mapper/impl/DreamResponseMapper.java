@@ -1,5 +1,6 @@
 package team.project.mriya.dto.mapper.impl;
 
+import java.math.BigDecimal;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 import team.project.mriya.dto.DreamResponseDto;
@@ -36,6 +37,7 @@ public class DreamResponseMapper implements ResponseMapper<Dream, DreamResponseD
         dto.setDonatesIds(entity.getDonates().stream()
                 .map(Donate::getId)
                 .collect(Collectors.toList()));
+        dto.setSumOfDonates(BigDecimal.ZERO);
         return dto;
     }
 }

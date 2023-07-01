@@ -1,5 +1,7 @@
 package team.project.mriya.service;
 
+import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
@@ -22,5 +24,16 @@ public class DonateService {
 
     public List<Donate> getAll() {
         return donateRepository.findAll();
+    }
+
+    public BigDecimal getSumDonatesForDream(List<Long> listIds) {
+        HashSet<Long> setIds = new HashSet<>(listIds);
+        if (setIds.size() == 0) {
+            return BigDecimal.ZERO;
+        }
+        return donateRepository.findAllByIdIn(setIds)
+                .stream()
+                .map(Donate::getSum)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 }

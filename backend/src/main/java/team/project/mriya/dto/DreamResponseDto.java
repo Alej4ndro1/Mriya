@@ -44,4 +44,6 @@ public class DreamResponseDto {
     private LocalDate dateEnd;
     @ApiModelProperty(notes = "List id of donates", example = "[1, 2, 4, 5]")
     private List<Long> donatesIds;
+    @ApiModelProperty(notes = "Sum of donates", example = "125.35")
+    private BigDecimal sumOfDonates;
 }
