@@ -43,9 +43,11 @@ public class DreamRequestMapper implements RequestMapper<Dream, DreamRequestDto>
         dream.setStatus(Dream.DreamStatus.valueOf(dto.getStatusName().toUpperCase()));
         dream.setDateStart(dto.getDateStart());
         dream.setDateEnd(dto.getDateEnd());
-        dream.setDonates(dto.getDonatesIds().stream()
-                .map(id -> donateService.get(id).get())
-                .collect(Collectors.toList()));
+        if (dto.getDonatesIds() != null && dto.getDonatesIds().size() > 0) {
+            dream.setDonates(dto.getDonatesIds().stream()
+                    .map(id -> donateService.get(id).get())
+                    .collect(Collectors.toList()));
+        }
         return dream;
     }
 }

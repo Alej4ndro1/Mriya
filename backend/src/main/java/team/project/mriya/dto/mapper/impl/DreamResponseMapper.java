@@ -34,9 +34,11 @@ public class DreamResponseMapper implements ResponseMapper<Dream, DreamResponseD
         dto.setStatusName(entity.getStatus().getName());
         dto.setDateStart(entity.getDateStart());
         dto.setDateEnd(entity.getDateEnd());
-        dto.setDonatesIds(entity.getDonates().stream()
-                .map(Donate::getId)
-                .collect(Collectors.toList()));
+        if (entity.getDonates() != null && entity.getDonates().size() > 0) {
+            dto.setDonatesIds(entity.getDonates().stream()
+                    .map(Donate::getId)
+                    .collect(Collectors.toList()));
+        }
         dto.setSumOfDonates(BigDecimal.ZERO);
         return dto;
     }

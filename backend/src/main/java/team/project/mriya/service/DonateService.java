@@ -27,10 +27,10 @@ public class DonateService {
     }
 
     public BigDecimal getSumDonatesForDream(List<Long> listIds) {
-        HashSet<Long> setIds = new HashSet<>(listIds);
-        if (setIds.size() == 0) {
+        if (listIds == null || listIds.size() == 0) {
             return BigDecimal.ZERO;
         }
+        HashSet<Long> setIds = new HashSet<>(listIds);
         return donateRepository.findAllByIdIn(setIds)
                 .stream()
                 .map(Donate::getSum)

@@ -1,5 +1,7 @@
 package team.project.mriya.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
@@ -28,22 +30,31 @@ public class DreamController {
     private DonateService donateService;
 
     @PostMapping("/add")
-    public DreamResponseDto addDream(@RequestBody DreamRequestDto dreamRequestDto) {
+    @ApiOperation(value = "Add new dream to project",
+            notes = "Add new dream to DB and return dream object with id")
+    public DreamResponseDto addDream(
+            @RequestBody @ApiParam(name = "dreamRequestDto", value = "Dream object")
+            DreamRequestDto dreamRequestDto) {
         Dream dream = dreamService.add(dreamRequestMapper.toModel(dreamRequestDto));
         return dreamResponseMapper.toDto(dream);
     }
 
     @GetMapping("/all")
+    @ApiOperation(value = "Return all dreams", notes = "Return all dreams from DB")
     public List<DreamResponseDto> getAll() {
         return dreamService.getAll().stream()
                 .map(d -> dreamResponseMapper.toDto(d))
-                .peek(d -> d.setSumOfDonates(donateService.getSumDonatesForDream(d.getDonatesIds())))
+                .peek(d -> d.setSumOfDonates(
+                        donateService.getSumDonatesForDream(d.getDonatesIds())))
                 .collect(Collectors.toList());
     }
 
     @GetMapping
-    public DreamResponseDto getDream(@RequestParam(name = "id") Long id) {
-        DreamResponseDto dreamResponseDto = dreamResponseMapper.toDto(dreamService.get(id).get());
+    @ApiOperation(value = "Return dream by id", notes = "Return dream from DB by id")
+    public DreamResponseDto getDream(@RequestParam(name = "id")
+                                     @ApiParam(name = "id", value = "Dream id") Long id) {
+        DreamResponseDto dreamResponseDto =
+                dreamResponseMapper.toDto(dreamService.get(id).get());
         if (dreamResponseDto == null) {
             return null;
         }
@@ -54,9 +65,11 @@ public class DreamController {
     }
 
     @GetMapping("/random")
+    @ApiOperation(value = "Return random dream", notes = "Return random dream from DB")
     public DreamResponseDto getDream() {
         // todo:
         //      переробити щоб обирати лише не завершені донати
+        //      рбрати з List по id
         long id = (long) (dreamService.getAll().size() * Math.random());
         if (id == 0) {
             return null;
@@ -69,8 +82,12 @@ public class DreamController {
     }
 
     @PutMapping
-    public DreamResponseDto update(@RequestBody DreamRequestDto dreamRequestDto,
-                                   @RequestParam (name = "id") Long id) {
+    @ApiOperation(value = "Update current dream",
+            notes = "Update current dream and return it with id")
+    public DreamResponseDto update(
+                @RequestBody @ApiParam(name = "dreamRequestDto", value = "Dream object")
+                DreamRequestDto dreamRequestDto,
+                @RequestParam (name = "id") @ApiParam(name = "id", value = "Dream id") Long id) {
         Dream dream = dreamRequestMapper.toModel(dreamRequestDto);
         dream.setId(id);
         DreamResponseDto dreamResponseDto = dreamResponseMapper.toDto(dreamService.update(dream));
