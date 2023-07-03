@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import './main.scss';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer';
 import { MainPage } from './pages/MainPage';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { DreamsPage } from './pages/DreamsPage';
 import { DetailedPage } from './pages/DetailedPage';
 import { ContactsPage } from './pages/ContactsPage';
@@ -13,6 +13,7 @@ import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
+  
   return (
     <div className="page">
       <Header />

@@ -1,0 +1,112 @@
+// body {
+//   opacity: 0.5;
+// }
+.successful-card {
+  width: 288px;
+  height: 224px;
+  background-color: #FAFAFA;
+  border-radius: 20px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+
+  @include onDesktop {
+    width: 632px;
+    height: 332px;
+    top: 347px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 48px 76px;
+  }
+
+  &__header {
+    position: relative;
+    font-family: "Futura-medium", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25.2px;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 16px;
+
+    @include onDesktop {
+      width: 480px;
+      font-size: 32px;
+      line-height: 38.4px;
+      margin-bottom: 24px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50% 50% 0 50%;
+      background-color: #FFD600;
+      margin-bottom: 5px;
+      left: 15px;
+      top: 0px;
+      z-index: -1;
+
+      @include onDesktop {
+        width: 47px;
+        height: 47px;
+        left: 48px;
+        top: -10px;
+      }
+    }
+  }
+
+  &__text {
+    font-family: "Mukta", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 19.5px;
+    text-align: center;
+    color: #2F2F35;
+    margin-bottom: 24px;
+
+    @include onDesktop {
+      width: 200px;
+      height: 48px;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    width: 136px;
+    height: 48px;
+    background-color: #6965F6;
+    border-radius: 100px;
+    font-family: "Futura-medium", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25.5px;
+    text-align: center;
+    color: $comment;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+
+    @include onDesktop {
+      width: 200px;
+      height: 48px;
+      font-size: 17px;
+      line-height: 25.5px;
+    }
+
+    &:hover {
+      background-color: #9C99FF;
+    }
+  }
+}
