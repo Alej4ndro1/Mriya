@@ -175,6 +175,7 @@ export const DonationProcess: React.FC<DonationProcessProps> = ({setShowPaymentP
     <div className="donation-process">
       <div className="donation-process__navigation">
         <div className="donation-process__navigation__back" onClick={handleOkayClick}></div>
+
         <h3 className="donation-process__navigation__title">Donation process</h3>
       </div>
 
@@ -189,13 +190,9 @@ export const DonationProcess: React.FC<DonationProcessProps> = ({setShowPaymentP
                 }`}
                 key={index}
                 onClick={() => handleSliderOptionChange(option)}
-                style={{
-                  backgroundColor: selectedOption === option.toString() ? '#6965F6' : '',
-                }}
               >
                 &#8372; {option}
               </div>
-            
             ))}
           </Slider>
         ) : (

@@ -20,6 +20,8 @@ const sliderSettings = {
 
 export const Details = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isClicked, setIsClicked] = useState(false);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -75,8 +77,11 @@ export const Details = () => {
           </div>)}
 
 
-          <div className="detailed-page__favourites">
-          </div>
+          <button
+            className={`detailed-page__favourites ${isClicked ? 'clicked' : ''}`}
+            onClick={() => setIsClicked(!isClicked)}
+          >
+          </button>
           {mobileVers && (
             <div className="detailed-page__category">
               <div className="detailed-page__category__title">Place</div>

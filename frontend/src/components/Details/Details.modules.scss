@@ -34,6 +34,11 @@
       background-color: transparent;
       border: none;
 
+      &:hover {
+        background-color: #D6DFFF;
+        background-image: url('../../images/icons/black-home.svg');
+      }
+
       @include onDesktop {
         display: inline-block;
         position: relative;
@@ -130,6 +135,11 @@
     box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 
+    &:hover {
+      background-image: url('../../images/icons/black-share.svg');
+      background-color: #D6DFFF;
+    }
+
     @include onDesktop {
       width: 32px;
       height: 32px;
@@ -148,6 +158,8 @@
     top: -245px;
     left: 17px;
     z-index: 1;
+    border: none;
+    background-color: transparent;
 
     @include onDesktop {
       top: 515px;
@@ -324,4 +336,27 @@
     height: 1200px;
     margin-bottom: 150px;
   }
+}
+.clicked {
+  position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 19px;
+    background-image: url('../../images/icons/yellow-heart.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    top: -245px;
+    left: 17px;
+    z-index: 1;
+    border: none;
+
+    @include onDesktop {
+      top: 515px;
+      left: 721px;
+      width: 32px;
+    height: 32px;
+    background-image: url('../../images/icons/yellow-heart.svg');
+    }
 }
