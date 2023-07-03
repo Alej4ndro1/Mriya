@@ -1,13 +1,10 @@
-// body {
-//   opacity: 0.5;
-// }
 .successful-card {
   width: 288px;
   height: 224px;
   background-color: #FAFAFA;
   border-radius: 20px;
   position: absolute;
-  top: 200px;
+  top: -780px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -19,7 +16,7 @@
   @include onDesktop {
     width: 632px;
     height: 332px;
-    top: 347px;
+    top: -875px;
     left: 50%;
     transform: translateX(-50%);
     padding: 48px 76px;

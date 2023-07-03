@@ -1,7 +1,7 @@
 .donation-process {
     display: flex;
     position: absolute;
-    top:72px;
+    top:-890px;
     left: 50%;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,7 @@
 
     @include onDesktop {
       width: 848px;
-      top: 233px;
+      top: -990px;
       left: 50%;
       transform: translateX(-50%);
       padding: 48px 108px 64px;
@@ -151,7 +151,6 @@
           line-height: 21px;
           transition: background-color 0.3s ease-in-out;
 
-          
         @include onDesktop {
           width: 92px !important;
           height: 48px !important;
@@ -163,6 +162,7 @@
           &:hover {
             cursor: pointer;
             background-color: #6965F6;
+            color: #FAFAFA;
           }
         }
       }
@@ -325,4 +325,3 @@
     }
   }
 }
-

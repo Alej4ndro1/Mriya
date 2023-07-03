@@ -6,6 +6,10 @@ import { PaymentCard } from '../PaymentCard/PaymentCard';
 import { SuccessfulCard } from '../SuccessfulCard/SuccessfulCard';
 import { Link } from 'react-router-dom';
 
+type DonationProcessProps = {
+  setShowPaymentProcess: (showPaymentProcess: boolean) => void;
+};
+
 const donationAmountSliderSettings = {
   dots: false,
   infinite: false,
@@ -19,7 +23,7 @@ const donationAmountSliderSettings = {
   centerPadding: '15px',
 };
 
-export const DonationProcess: React.FC = () => {
+export const DonationProcess: React.FC<DonationProcessProps> = ({setShowPaymentProcess }) => {
   const donationOptions = [50, 100, 200, 500, 1000, 2000];
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [donationAmount, setDonationAmount] = useState<string>('');
@@ -33,9 +37,10 @@ export const DonationProcess: React.FC = () => {
   const [isSliderVisible, setIsSliderVisible] = useState<boolean>(false);
 
   const handleOkayClick = () => {
-    return setShowSuccessfulCard(false);
+    setDonationCompleted(false);
+    setShowSuccessfulCard(false);
+    setShowPaymentProcess(false);
   };
-
   useEffect(() => {
     const handleWindowResize = () => {
       const width = window.innerWidth;
@@ -146,7 +151,6 @@ export const DonationProcess: React.FC = () => {
   const isPayWithCardSelected = selectedOption === 'option3';
   const isDonateButtonDisabled =
     donationAmount === '' ||
-    !isPaymentValid ||
     (selectedOption !== 'option1' && selectedOption !== 'option2' && selectedOption !== 'option3') ||
     (selectedOption === 'option3' &&
       (!cardNumber || !cardName || !expirationDate || !securityCode));
@@ -155,6 +159,7 @@ export const DonationProcess: React.FC = () => {
     if (!isDonateButtonDisabled) {
       setDonationCompleted(true);
       setShowSuccessfulCard(true);
+      
     }
   };
 
@@ -169,9 +174,7 @@ export const DonationProcess: React.FC = () => {
   return (
     <div className="donation-process">
       <div className="donation-process__navigation">
-        <Link to="dreams/:id">
-          <div className="donation-process__navigation__back"></div>
-        </Link>
+        <div className="donation-process__navigation__back" onClick={handleOkayClick}></div>
         <h3 className="donation-process__navigation__title">Donation process</h3>
       </div>
 
@@ -186,9 +189,13 @@ export const DonationProcess: React.FC = () => {
                 }`}
                 key={index}
                 onClick={() => handleSliderOptionChange(option)}
+                style={{
+                  backgroundColor: selectedOption === option.toString() ? '#6965F6' : '',
+                }}
               >
                 &#8372; {option}
               </div>
+            
             ))}
           </Slider>
         ) : (
