@@ -79,6 +79,8 @@
       cursor: pointer;
       background-color: transparent;
       border: none;
+      position: relative;
+      left: -30px;
 
       @include onDesktop {
         display: inline-block;
@@ -87,6 +89,7 @@
         background-position: center;
         background-size: 12px 20px;
         transform: rotate(180deg);
+        left: 0px;
       }
     }
     &__dream-name {
