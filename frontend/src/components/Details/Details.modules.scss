@@ -1,0 +1,310 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.detailed-page {
+  width: 320px;
+  height: 875px;
+  padding: 25px 16px 80px 16px;
+  overflow: hidden;
+
+  @include onDesktop {
+    width: 1440px;
+    height: 100%;
+    padding:  0 80px 160px 80px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 32px;
+    align-items: center;
+
+    @include onDesktop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__bread-crumps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+    gap: 8px;
+
+    &__home-button {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+
+      @include onDesktop {
+        display: inline-block;
+        position: relative;
+        background-image: url('../../images/icons/home.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 19px 20px;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+
+        &::after {
+          content: "Dreams";
+          position: relative;
+          display: inline-block;
+          left: 80px;
+          font-family: "Mukta", sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #C2C4CF;
+        }
+      }
+    }
+
+    &__dreams-button {
+      width: 24px;
+      height: 24px;
+      display: inline;
+      background-image: url('../../images/icons/arrow-black.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+
+      @include onDesktop {
+        display: inline-block;
+        background-image: url('../../images/icons/prev.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12px 20px;
+        transform: rotate(180deg);
+      }
+    }
+    &__dream-name {
+      display: none;
+
+      @include onDesktop {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        font-family: "Mukta", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #2F2F35;
+        left: 90px;
+        align-items: center;
+
+        &::before {
+          content: "";
+          position: relative;
+          display: inline-block;
+          background-image: url('../../images/icons/prev.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transform: rotate(180deg);
+          left: -25px;
+          width: 12px;
+          height: 20px;
+        }
+      }
+    }
+  }
+  &__share-button {
+    width: 32px;
+    height: 32px;
+    background-image: url('../../images/icons/share.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &__favourites {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 19px;
+    background-image: url('../../images/icons/heart.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    top: -245px;
+    left: 17px;
+    z-index: 1;
+
+    @include onDesktop {
+      top: 515px;
+      left: 721px;
+      width: 32px;
+    height: 32px;
+    background-image: url('../../images/icons/grey-heart.svg');
+    }
+  }
+&__gallery {
+  height: 256px;
+
+  @include onDesktop {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__image {
+    width: 256px !important;
+    height: 256px;
+    display: inline-block;
+    border-radius: 24px;
+    background-color: #ECEEFF;
+
+    @include onDesktop {
+      width: 416px !important;
+      height: 416px !important;
+    }
+  }
+
+  .slick-track {
+    display: flex;
+    width: 1339px;
+    overflow: hidden;
+  }
+  .slick-slide {
+    width: 100%;
+    margin-right: 6px;
+  }
+  .slick-list {
+    padding: 0 !important;
+  }
+    &__image {
+      width: 256px;
+      height: 256px;
+    display: inline-block;
+      border-radius: 24px;
+      background-color: #ECEEFF;
+    }
+  }
+  &__name {
+    font-family: "Futura-medium", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25.2px;
+    text-align: center;
+    color: #111111;
+
+    @include onDesktop {
+      font-size: 56px;
+      line-height: 67.2px;
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50% 50% 0 50%;
+      background-color: $yellow;
+      margin-bottom: 5px;
+
+      @include onDesktop {
+        width: 47px;
+        height: 47px;
+      }
+    }
+  }
+  &__category {
+    display: flex;
+    justify-content: space-between;
+    color: #6965F6;
+    margin-bottom: 24px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+      width: 295px;
+    }
+
+    &__title {
+      background-color: #ECEEFF;
+      width: fit-content;
+      font-family: "Mukta", sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 19.5px;
+      padding: 4px 16px;
+      border-radius: 100px;
+      cursor: pointer;
+    }
+  }
+  &__title {
+    font-family: "Futura-medium", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25.2px;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 16px;
+
+    @include onDesktop {
+      width: 768px;
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 24px;
+      text-align: start;
+    }
+  }
+  &__description {
+    position: relative;
+    font-family: "Mukta", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 19.5px;
+    color: #2F2F35;
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      width: 768px;
+      height: 224px;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__cover {
+    width: 848px;
+    height: 416px;
+    border-radius: 40px;
+    padding: 31px 40px 40px 40px;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+    @include onDesktop {
+      top: 141px;
+      position: relative;
+    }
+  }
+  &__desktop--buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

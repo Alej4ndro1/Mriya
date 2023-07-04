@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import './main.scss';
 import { Header } from './components/Header/Header';
@@ -18,7 +18,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<MainPage/>} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/home" element={<Navigate to="/" replace />} />
 
         <Route path="/dreams" element={<DreamsPage />} />
