@@ -62,7 +62,7 @@ export const Header = () => {
         >
           <ul className="header__navigation__list">
             <Link to="/about-us">
-              <li className="header__navigation__list__item">About us</li>
+              <li className="header__navigation__list__item">Home</li>
             </Link>
 
             <Link to="/dreams">
@@ -70,7 +70,7 @@ export const Header = () => {
             </Link>
 
             <Link to="/ask-for-help">
-              <li className="header__navigation__list__item">Ask for help</li>
+              <li className="header__navigation__list__item">Post dream</li>
             </Link>
 
             <Link to="/contacts">

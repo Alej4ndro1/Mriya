@@ -1,12 +1,12 @@
+
 .make-it-happen__buttons {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 104px;
   top: 24px;
   gap: 10px;
-  // margin-bottom: 48px;
+  margin-bottom: 48px;
 
   @include onDesktop {
     flex-direction: row;
@@ -27,7 +27,7 @@
     border-radius: 100px;
     border: none;
 
-    font-family: 'Futura', sans-serif;
+    font-family: 'Futura-medium', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -42,6 +42,8 @@
 
     @include onDesktop {
       width: 200px;
+      font-size: 17px;
+      line-height: 25px;
     }
   }
 
@@ -58,7 +60,7 @@
     border-radius: 100px;
     border: 3px solid #6965F6;
 
-    font-family: 'Futura', sans-serif;
+    font-family: 'Futura-medium', sans-serif;
     font-style: bold;
     font-weight: 500;
     font-size: 14px;
@@ -74,6 +76,8 @@
 
     @include onDesktop {
       width: 200px;
+      font-size: 17px;
+      line-height: 25px;
     }
   }
 }

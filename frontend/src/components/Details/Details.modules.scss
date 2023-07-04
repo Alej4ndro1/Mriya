@@ -1,19 +1,13 @@
-.container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 80px;
-}
-
 .detailed-page {
   width: 320px;
   height: 875px;
-  padding: 25px 16px 80px 16px;
+  padding: 25px 16px 0 16px;
   overflow: hidden;
 
   @include onDesktop {
     width: 1440px;
-    height: 100%;
-    padding:  0 80px 160px 80px;
+    height: 1067px;
+    padding:  0 80px;
   }
 
   &__wrapper {
@@ -40,6 +34,11 @@
       background-color: transparent;
       border: none;
 
+      &:hover {
+        background-color: #D6DFFF;
+        background-image: url('../../images/icons/black-home.svg');
+      }
+
       @include onDesktop {
         display: inline-block;
         position: relative;
@@ -49,6 +48,10 @@
         background-size: 19px 20px;
         width: 32px;
         height: 32px;
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.1);
         cursor: pointer;
 
         &::after {
@@ -76,6 +79,8 @@
       cursor: pointer;
       background-color: transparent;
       border: none;
+      position: relative;
+      left: -30px;
 
       @include onDesktop {
         display: inline-block;
@@ -84,6 +89,7 @@
         background-position: center;
         background-size: 12px 20px;
         transform: rotate(180deg);
+        left: 0px;
       }
     }
     &__dream-name {
@@ -132,6 +138,11 @@
     box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 
+    &:hover {
+      background-image: url('../../images/icons/black-share.svg');
+      background-color: #D6DFFF;
+    }
+
     @include onDesktop {
       width: 32px;
       height: 32px;
@@ -150,6 +161,8 @@
     top: -245px;
     left: 17px;
     z-index: 1;
+    border: none;
+    background-color: transparent;
 
     @include onDesktop {
       top: 515px;
@@ -185,12 +198,14 @@
 
   .slick-track {
     display: flex;
-    width: 1339px;
+    width: 1256px!important;
     overflow: hidden;
+    transform: translateX(-50px);
   }
   .slick-slide {
-    width: 100%;
+    width: 256px !important;
     margin-right: 6px;
+    transform: translateX(190px);
   }
   .slick-list {
     padding: 0 !important;
@@ -307,4 +322,44 @@
     justify-content: space-between;
     width: 100%;
   }
+}
+.detailed__container{
+  &--2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @include onDesktop {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 1200px;
+    margin-bottom: 150px;
+  }
+}
+.clicked {
+  position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 19px;
+    background-image: url('../../images/icons/yellow-heart.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    top: -245px;
+    left: 17px;
+    z-index: 1;
+    border: none;
+
+    @include onDesktop {
+      top: 515px;
+      left: 721px;
+      width: 32px;
+    height: 32px;
+    background-image: url('../../images/icons/yellow-heart.svg');
+    }
 }

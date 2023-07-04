@@ -1,8 +1,11 @@
 import { Details } from '../components/Details/Details';
 import React from 'react';
 
+
 export const DetailedPage = () => {
   return (
-    <Details />
+    <div className='detailedPage'>
+      <Details />
+    </div>
   );
 };
