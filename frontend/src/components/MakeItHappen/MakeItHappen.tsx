@@ -12,11 +12,14 @@ export const MakeItHappen = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const handleShowDonationProcess = () => {
+    return;
+  };
 
   return (
     <div className="container">

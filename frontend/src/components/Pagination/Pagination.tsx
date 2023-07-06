@@ -7,10 +7,11 @@ interface PaginationProps {
 
 const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
-    const page = Number(queryParams.get('page')) || 1;
+    const page = Number(queryParams.get('page') || localStorage.getItem('currentPage')) || 1;
     setCurrentPage(page);
   }, []);
 
@@ -19,10 +20,9 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
     queryParams.set('page', String(currentPage));
     const newUrl = `${window.location.href.split('?')[0]}?${queryParams.toString()}`;
     window.history.replaceState({}, '', newUrl);
+    localStorage.setItem('currentPage', String(currentPage));
   }, [currentPage]);
-  
-  
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -32,6 +32,31 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
 
     return () => {
       window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handlePopstate = () => {
+      const queryParams = new URLSearchParams(window.location.search);
+      const page = Number(queryParams.get('page')) || 1;
+      setCurrentPage(page);
+    };
+    
+    const handlePathnameChange = () => {
+      const queryParams = new URLSearchParams(window.location.search);
+      queryParams.set('page', String(1));
+      const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
+      window.history.replaceState({}, '', newUrl);
+      setCurrentPage(1);
+      onPageChange(1);
+    };
+
+    window.addEventListener('popstate', handlePopstate);
+    window.addEventListener('hashchange', handlePathnameChange);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopstate);
+      window.removeEventListener('hashchange', handlePathnameChange);
     };
   }, []);
 

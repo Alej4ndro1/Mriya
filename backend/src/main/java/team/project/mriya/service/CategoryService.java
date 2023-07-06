@@ -1,11 +1,11 @@
 package team.project.mriya.service;
 
+import java.util.List;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import team.project.mriya.model.Category;
 import team.project.mriya.repository.CategoryRepository;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

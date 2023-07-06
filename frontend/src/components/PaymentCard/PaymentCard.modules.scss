@@ -1,0 +1,70 @@
+.payment-card {
+  width:288px;
+  height:340px;
+  border-radius:24px;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  border: 1px solid #DADAE1;
+  margin-bottom: 32px;
+  
+  @include onDesktop {
+    width: 632px;
+    height: 216px;
+    padding: 16px 24px;
+    border-radius: 24px;
+    flex-wrap: wrap;
+  }
+
+  &__input {
+    width: 256px;
+    height: 44px;
+    border-radius: 100px;
+    border: 1px solid #DADAE1;
+    padding: 12px 24px;
+    margin: 8px 0;
+
+    &__card-number {
+      @include onDesktop {
+        order: 1;
+      }
+    }
+  
+    &__card-name {
+      @include onDesktop {
+        order: 3;
+      }
+    }
+  
+    &__card-date {
+      @include onDesktop {
+        order: 2;
+      }
+    }
+  
+    &__card-code {
+      @include onDesktop {
+        order: 4;
+      }
+    }
+
+    &::placeholder {
+      font-family: 'Mukta', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 19.5px;
+      text-align: start;
+    }
+  }
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19.5px;
+}

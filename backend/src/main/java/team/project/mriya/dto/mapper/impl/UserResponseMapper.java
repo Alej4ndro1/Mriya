@@ -11,13 +11,14 @@ public class UserResponseMapper implements ResponseMapper<User, UserResponseDto>
     public UserResponseDto toDto(User entity) {
         UserResponseDto dto = new UserResponseDto();
         dto.setId(entity.getId());
-        dto.setBirthday(entity.getBirthday());
+        dto.setRoleId(entity.getRole().getId());
         dto.setEmail(entity.getEmail());
         dto.setPib(entity.getPib());
+        dto.setBirthday(entity.getBirthday());
         dto.setPhone(entity.getPhone());
-        dto.setCityId(entity.getCity().getId());
         dto.setDateRegistration(entity.getDateRegistration());
         dto.setDateClose(entity.getDateClose());
+        dto.setCityId(entity.getCity().getId());
         return dto;
     }
 }

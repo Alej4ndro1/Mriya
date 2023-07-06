@@ -19,7 +19,7 @@ import lombok.Data;
 public class Donate {
     @Id
     @GeneratedValue(generator = "donates_id_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "donates_id_seq", sequenceName = "donate_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "donates_id_seq", sequenceName = "donates_id_seq", allocationSize = 1)
     private Long id;
     @ManyToOne
     @JoinColumn(name = "user_id")

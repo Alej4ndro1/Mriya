@@ -6,6 +6,9 @@ import bonuses50desktop from '../../images/homePage/bonuses50-desktop.svg';
 import { DonateButtons } from '../DonateButtons/';
 
 export const Bonuses = () => {
+  const handleShowDonationProcess = () => {
+    return;
+  };
 
   return (
     <div className="bonuses">

@@ -191,7 +191,7 @@
       }
 
       &__item {
-        font-family: 'Futura', sans-serif;
+        font-family: 'Futura-medium', sans-serif;
         font-style: bold;
         font-weight: 500;
         font-size: 17px;
@@ -242,7 +242,7 @@
         box-shadow: 0px 2px 4px rgba(17, 17, 17, 0.05);
         border-radius: 100px;
         border: none;
-        font-family: 'Futura', sans-serif;
+        font-family: 'Futura-medium', sans-serif;
         font-weight: 500;
         font-size: 14px;
         line-height: 150%;
@@ -271,10 +271,10 @@
       &__log-in {
         width: 288px;
         padding: 10px 10px 12px;
-        font-family: 'Futura', sans-serif;
+        font-family: 'Futura-medium', sans-serif;
         font-weight: 500;
         font-size: 14px;
-        line-height: 150%;
+        line-height: 21px;
         
         display: flex;
         text-align: center;
@@ -299,7 +299,7 @@
           text-decoration: none;
           font-weight: 500;
           font-size: 17px;
-          line-height: 150%;
+          line-height: 25.5px;
           margin-right: 20px;
 
           order: -1;
