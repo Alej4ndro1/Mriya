@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 import './main.scss';
 import { Header } from './components/Header/Header';
@@ -11,9 +11,13 @@ import { ContactsPage } from './pages/ContactsPage';
 import { AskForHelpPage } from './pages/AskForHelpPage';
 import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { getPhones } from './api/dreams';
 
 function App() {
-  
+  useEffect(() => {
+    getPhones();
+  }, []);
+
   return (
     <div className="page">
       <Header />
