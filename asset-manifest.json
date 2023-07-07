@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Mriya/static/css/main.7dca4a88.css",
-    "main.js": "/Mriya/static/js/main.a533e844.js",
+    "main.js": "/Mriya/static/js/main.3534149f.js",
     "static/media/Mukta.ttf": "/Mriya/static/media/Mukta.462ca59f67e267d58182.ttf",
     "static/media/Mukta-Medium.ttf": "/Mriya/static/media/Mukta-Medium.fe9f9db60771d41ab393.ttf",
     "static/media/Mukta-Bold.ttf": "/Mriya/static/media/Mukta-Bold.c2c824523f139bea1451.ttf",
@@ -40,10 +40,10 @@
     "index.html": "/Mriya/index.html",
     "static/media/yellow-heart.svg": "/Mriya/static/media/yellow-heart.7bdd20a37f364019f0a6.svg",
     "main.7dca4a88.css.map": "/Mriya/static/css/main.7dca4a88.css.map",
-    "main.a533e844.js.map": "/Mriya/static/js/main.a533e844.js.map"
+    "main.3534149f.js.map": "/Mriya/static/js/main.3534149f.js.map"
   },
   "entrypoints": [
     "static/css/main.7dca4a88.css",
-    "static/js/main.a533e844.js"
+    "static/js/main.3534149f.js"
   ]
 }
