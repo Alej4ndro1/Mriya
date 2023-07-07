@@ -15,5 +15,6 @@ export interface Dream {
   mimeType: "image/jpeg",
   name: "My dog",
   statusName: "string",
+  sumOfDonates: 125.35,
   userId: 1
 }

@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:6868';
+export const BASE_URL = 'http://35.204.183.215:80';
 
 function wait(delay: number) {
   return new Promise(resolve => {

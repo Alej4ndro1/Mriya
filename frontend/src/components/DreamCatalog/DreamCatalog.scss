@@ -2,6 +2,8 @@
   padding: 24px 16px 80px;
 
   &__title {
+    margin-bottom: 24px;
+
     font-family: 'Futura-medium', sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -37,6 +39,18 @@
       height: 47px;
       top: 135px;
       left: 597px;
+    }
+  }
+
+  &__cards {
+
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+      gap: 40px 16px;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
     }
   }
 }

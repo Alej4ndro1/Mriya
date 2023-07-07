@@ -11,11 +11,11 @@ import { ContactsPage } from './pages/ContactsPage';
 import { AskForHelpPage } from './pages/AskForHelpPage';
 import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { getPhones } from './api/dreams';
+import { getDreams } from './api/dreams';
 
 function App() {
   useEffect(() => {
-    getPhones();
+    getDreams();
   }, []);
 
   return (
