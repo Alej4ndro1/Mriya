@@ -1,15 +1,12 @@
 package team.project.mriya.controller;
 
-import java.util.List;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import team.project.mriya.model.Category;
-import team.project.mriya.model.City;
-import team.project.mriya.model.DreamType;
-import team.project.mriya.model.Role;
 import team.project.mriya.repository.RoleRepository;
 import team.project.mriya.service.CategoryService;
 import team.project.mriya.service.CityService;
@@ -26,24 +23,16 @@ public class InjectData {
     private CategoryService categoryService;
     private RoleRepository roleRepository;
 
-    @GetMapping("/status-of-dictionaries")
-    public String hello() {
-        List<City> cities = cityService.getAll();
-        List<DreamType> dreamTypes = dreamTypeService.getAll();
-        List<Category> categories = categoryService.getAll();
-        List<Role> roles = roleRepository.findAll();
-
-        return cities.toString() + " <br> "
-                + dreamTypes.toString() + " <br> "
-                + categories.toString() + " <br> "
-                + roles.toString();
-    }
-
-    @PostMapping("/dictionaries")
-    public void insertDictionaries() {
+    @PostMapping("/inject")
+    @ApiOperation(value = "Inject data to project",
+            notes = "Inject test data to DB, need enter count dream card")
+    public void insertDictionaries(@RequestParam(name = "count")
+                                   @ApiParam(name = "count", value = "Count dreams") int count) {
         injectDataService.injectCategories();
         injectDataService.injectCities();
         injectDataService.injectDreamTypes();
         injectDataService.injectRoles();
+        injectDataService.injectUsers();
+        injectDataService.injectDreams(count);
     }
 }
