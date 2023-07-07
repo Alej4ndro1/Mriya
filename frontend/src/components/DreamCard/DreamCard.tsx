@@ -1,6 +1,13 @@
 import React from 'react';
+import { Dream } from '../../types/Dreams';
 
-export const DreamCard = () => {
+type DreamType = {
+  dream: Dream
+};
+
+export const DreamCard: React.FC<DreamType> = ({ dream }) => {
+  const { name, age, amount, sumOfDonates } = dream;
+
   return (
     <div className="dream-card">
       <div className="dream-card__wrapper">
@@ -12,8 +19,8 @@ export const DreamCard = () => {
 
         <div className="dream-card__content">
           <div className="dream-card__content__the-one-who-asks">
-            <h3 className='dream-card__content__the-one-who-asks__name'>The one who asks</h3>
-            <p className='dream-card__content__the-one-who-asks__age'>age</p>
+            <h3 className='dream-card__content__the-one-who-asks__name'>{name}</h3>
+            <p className='dream-card__content__the-one-who-asks__age'>{age}</p>
           </div>
 
           <div className="dream-card__content__progress"></div>
@@ -24,9 +31,9 @@ export const DreamCard = () => {
           </div>
 
           <div className="dream-card__content__amount-value">
-            <p className='dream-card__content__amount-value__rate'>32 589</p>
+            <p className='dream-card__content__amount-value__rate'>{amount}</p>
 
-            <p className='dream-card__content__amount-value__rate'>2 000 000</p>
+            <p className='dream-card__content__amount-value__rate'>{sumOfDonates}</p>
           </div>
         </div>
       </div>
