@@ -2,9 +2,14 @@ import { Link } from 'react-router-dom';
 import { DonateButtons } from '../DonateButtons/DonateButtons';
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
+import first from '../../images/1.png';
+import second from '../../images/2.png';
+import third from '../../images/3.png';
+import fourth from '../../images/4.png';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Dream } from '../../types/Dream';
 
 const sliderSettings = {
   dots: false,
@@ -21,7 +26,29 @@ const sliderSettings = {
 export const Details = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isClicked, setIsClicked] = useState(false);
+  const [dreamData, setDreamData] = useState<Dream | null>(null);
+  const img1 = first;
+  const img2 = second;
+  const img3 = third;
+  const img4 = fourth;
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://35.204.183.215:80/api/dream/1');
+        if (!response.ok) {
+          throw new Error('Failed to fetch dream data');
+        }
+        const data = await response.json();
+        console.log(data);
+        setDreamData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,6 +61,10 @@ export const Details = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  if (!dreamData) {
+    return <div>Loading...</div>;
+  }
 
   const mobileVers = windowWidth < 1440;
   const desktopVers = windowWidth >= 1440;
@@ -52,10 +83,10 @@ export const Details = () => {
                 <button className="detailed-page__bread-crumps__dreams-button"></button>
               </Link>
               <div className="detailed-page__bread-crumps__next"></div>
-              <button className="detailed-page__bread-crumps__dream-name">Name</button>
+              <button className="detailed-page__bread-crumps__dream-name">{dreamData.name}</button>
             </div>
 
-            {mobileVers && <h3 className='detailed-page__name'>'s Dream</h3>}
+            {mobileVers && <h3 className='detailed-page__name'>{dreamData.name}name's Dream</h3>}
 
             {mobileVers && <button className="detailed-page__share-button"></button>}
           </div>
@@ -63,17 +94,17 @@ export const Details = () => {
           
 
           {mobileVers && (<Slider className="detailed-page__gallery" {...sliderSettings}>
-            <img className="detailed-page__gallery__image" src="" alt="Image 1" />
-            <img className="detailed-page__gallery__image" src="" alt="Image 2" />
-            <img className="detailed-page__gallery__image" src="" alt="Image 3" />
-            <img className="detailed-page__gallery__image" src="" alt="Image 4" />
+            <img className="detailed-page__gallery__image" src={img1} alt="Image 1" />
+            <img className="detailed-page__gallery__image" src={img2} alt="Image 2" />
+            <img className="detailed-page__gallery__image" src={img3} alt="Image 3" />
+            <img className="detailed-page__gallery__image" src={img4} alt="Image 4" />
           </Slider>)}
 
           {desktopVers && (<div className="detailed-page__gallery">
-            <img className="detailed-page__gallery__image" src="" alt="Image 1" />
-            <img className="detailed-page__gallery__image" src="" alt="Image 2" />
-            <img className="detailed-page__gallery__image" src="" alt="Image 3" />
-            <img className="detailed-page__gallery__image" src="" alt="Image 4" />
+            <img className="detailed-page__gallery__image" src={img3} alt="Image 1" />
+            <img className="detailed-page__gallery__image" src={img2} alt="Image 2" />
+            <img className="detailed-page__gallery__image" src={img1} alt="Image 3" />
+            <img className="detailed-page__gallery__image" src={img4} alt="Image 4" />
           </div>)}
 
 

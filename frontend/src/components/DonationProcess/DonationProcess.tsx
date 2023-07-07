@@ -23,7 +23,7 @@ const donationAmountSliderSettings = {
   centerPadding: '15px',
 };
 
-export const DonationProcess: React.FC<DonationProcessProps> = ({setShowPaymentProcess }) => {
+export const DonationProcess: React.FC<DonationProcessProps> = ({ setShowPaymentProcess }) => {
   const donationOptions = [50, 100, 200, 500, 1000, 2000];
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [donationAmount, setDonationAmount] = useState<string>('');
@@ -41,6 +41,27 @@ export const DonationProcess: React.FC<DonationProcessProps> = ({setShowPaymentP
     setShowSuccessfulCard(false);
     setShowPaymentProcess(false);
   };
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      const width = window.innerWidth;
+      setIsSliderVisible(width < 1440);
+      if (width < 1440) {
+        document.body.style.height = '100vh';
+        document.body.style.overflowY = 'hidden';
+      } else {
+        document.body.style.height = '';
+      }
+    };
+
+    handleWindowResize();
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
   useEffect(() => {
     const handleWindowResize = () => {
       const width = window.innerWidth;
@@ -159,7 +180,6 @@ export const DonationProcess: React.FC<DonationProcessProps> = ({setShowPaymentP
     if (!isDonateButtonDisabled) {
       setDonationCompleted(true);
       setShowSuccessfulCard(true);
-      
     }
   };
 

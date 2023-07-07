@@ -1,0 +1,228 @@
+.non-financial {
+  display: flex;
+  position: fixed;
+  top:72px;
+  left: 50%;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: #FAFAFA;
+
+  border-radius: 20px 20px 0px 0px;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  @include onDesktop {
+    width: 848px;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 48px 108px 64px;
+    border-radius: 30px;
+  }
+
+  &__option{
+    &__city {
+      width: 288px;
+      height: 56px;
+      border-radius: 100px;
+      background-color: #FDFDFD;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px 16px 24px;
+      margin-bottom: 16px;
+      box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+
+      @include onDesktop {
+        width: 632px;
+        margin-bottom: 24px;
+      }
+
+      &::before {
+        content: 'City';
+        font-family: 'Mukta', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #2F2F35;
+
+        @include onDesktop {
+          content: 'Location';
+          color: #878AA6;
+        }
+      }
+      &::after {
+        content: '';
+        width: 11px;
+        height: 20px;
+        background-image: url('../../images/icons/prev.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 11px 20px;
+        rotate: 180deg;
+        cursor: pointer;
+        @include onDesktop {
+          rotate: 270deg;
+        }
+      }
+    }
+    &__type-of-help{
+      width: 288px;
+      height: 56px;
+      border-radius: 100px;
+      background-color: #FDFDFD;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px 16px 24px;
+      margin-bottom: 16px;
+      box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+
+      @include onDesktop {
+        width: 632px;
+        margin-bottom: 24px;
+      }
+
+      &::before {
+        content: 'Type of help';
+        font-family: 'Mukta', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        width: 150px;
+        color: #2F2F35;
+
+        @include onDesktop {
+          color: #878AA6;
+        }
+      }
+      &::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-image: url('../../images/icons/prev.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:12px 20px;
+        rotate: 180deg;
+        cursor: pointer;
+
+        @include onDesktop {
+          rotate: 270deg;
+        }
+      }
+    }
+  }
+
+  &__input {
+    position: relative;
+    width: 288px;
+    height: 44px;
+    border-radius: 100px;
+    border: 1px solid #DADAE1;
+    padding: 11px 24px 11px 24px;
+    background-color: transparent;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    @include onDesktop {
+      width: 632px;
+      margin-bottom: 24px;
+    }
+
+    &::placeholder {
+      color: #DADAE1;
+      font-family: "Mukta", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__p{
+    margin-bottom: 8px;
+    margin-left: 20px;
+  }
+
+  &__content {
+    padding: 16px 16px 24px 16px;
+  }
+
+  &__textarea{
+    align-self: center;
+    width: 288px;
+    height: 76px;
+    border-radius: 16px;
+    border: 1px solid #DADAE1;
+    padding: 12px 24px;
+    background-color: transparent;
+    margin-bottom: 24px;
+    overflow: hidden;
+
+    @include onDesktop {
+      width: 632px;
+      padding: 16px 24px;
+      margin-bottom: 32px;
+    }
+
+    &::placeholder {
+      font-family: "Mukta", sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 19.5px;
+      color: #DADAE1;
+    }
+  }
+  &__city{
+    font-family: "Mukta", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16.8px;
+    color: #C2C4CF;
+    text-align: end;
+    width: 95%;
+    margin-right: 10px;
+  }
+}
+.invalid {
+  border-color: red;
+}
+
+.submit-button {
+  width: 288px;
+  height: 48px;
+  border-radius: 100px;
+  background-color: #6965F6;
+  font-family: 'Futura-medium', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25.5px;
+  color: #FAFAFA;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-bottom: 32px;
+  position: relative;
+
+
+  @include onDesktop {
+    width: 200px;
+    height: 48px;
+    margin-bottom: 0;
+    align-self: flex-end;
+    left: 430px;
+  }
+
+  &:hover {
+    background-color: #9C99FF;;
+  }
+
+  &:disabled {
+    background-color: #DADAE1;
+    color: #BBBAC8;
+    cursor: default;
+  }
+}

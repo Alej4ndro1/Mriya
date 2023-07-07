@@ -22,7 +22,7 @@
     border-radius: 100px;
     border: 1px solid #DADAE1;
     padding: 12px 24px;
-    margin: 8px 0;
+    margin: 8px 0 0 -20px;
 
     &__card-number {
       @include onDesktop {
@@ -67,4 +67,5 @@ label {
   font-weight: 300;
   font-size: 15px;
   line-height: 19.5px;
+  margin-left: 20px;
 }

@@ -1,0 +1,28 @@
+.successfull-help-offer{  width: 288px;
+  height: 281px;
+  background-color: #FAFAFA;
+  border-radius: 20px;
+  position: absolute;
+  top: -380px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  z-index:3;
+  width: 288px;
+
+  @include onDesktop {
+    width: 632px;
+    height:328px;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: green;
+    padding: 16px 24px;
+    border-radius: 30px;
+    justify-content: start;
+  }
+}

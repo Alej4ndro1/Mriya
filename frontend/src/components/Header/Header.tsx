@@ -61,7 +61,7 @@ export const Header = () => {
           className={`header__navigation ${isMobile && isMenuOpen ? 'header__navigation--open' : ''}`}
         >
           <ul className="header__navigation__list">
-            <Link to="/about-us">
+            <Link to="/">
               <li className="header__navigation__list__item">Home</li>
             </Link>
 

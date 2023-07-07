@@ -1,0 +1,130 @@
+.location {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: #FAFAFA;
+
+  border-radius: 20px 20px 0px 0px;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  @include onDesktop {
+    width: 632px;
+    height:328px;
+    top: 210px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 24px;
+    border-radius: 30px;
+    justify-content: start;
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px 42px 16px 42px;
+    margin-bottom: 16px;
+
+    @include onDesktop {
+      font-family: 'Mukta', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #878AA6;
+      justify-content: start;
+      padding: 0 520px 0 0;
+      margin: 0;
+    }
+
+  }
+  &__content {
+    width:288px;
+    padding: 24px 16px 0px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+    overflow-y: auto;
+    max-height: 295px;
+
+    @include onDesktop {
+      width: 584px;
+      height: 184px;
+      padding: 0px 0 0 0;
+      margin-bottom: 0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+
+      @include onDesktop {
+        background-color: #DADAE1;
+        border-radius: 100px;
+      }
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: transparent;
+      @include onDesktop {
+        background-color: #e2e2ec;
+        border-radius: 100px;
+      }
+    }
+
+  }
+  &__checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    align-items: center;
+    height: 24px;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    &__item {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+.navigation__back {
+  background-image: url('../../images/icons/prev.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 12px;
+        height: 20px;
+        position: absolute;
+        top: 26px;
+        left: -66px;
+
+  @include onDesktop {
+    background-image: url('../../images/icons/prev.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 12px;
+        height: 20px;
+        position: absolute;
+        top: 0px;
+        left: 570px;
+        rotate: 90deg;
+  }
+}
