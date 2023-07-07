@@ -1,0 +1,59 @@
+.type-of-help{
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: #FAFAFA;
+
+  border-radius: 20px 20px 0px 0px;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  @include onDesktop {
+    width: 632px;
+    height:328px;
+    top: 210px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 24px;
+    border-radius: 30px;
+    justify-content: start;
+  }
+
+    &__title {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 16px;
+      margin: 0;
+      width: 200px;
+    }
+
+    &__h {
+      display: flex;
+
+      display: inline;
+      height: 30px;
+      padding: 0 0 0 25px;
+      
+      @include onDesktop {
+        font-family: 'Mukta', sans-serif;
+        height: 20px;
+        width: 220px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #878AA6;
+        justify-content: start;
+        padding: 0 500px 0 0;
+        margin: 0;
+      }
+    }
+}

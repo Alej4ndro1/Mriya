@@ -18,7 +18,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     queryParams.set('page', String(currentPage));
-    const newUrl = `${window.location.href.split('?')[0]}?${queryParams.toString()}`;
+    const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
     window.history.replaceState({}, '', newUrl);
     localStorage.setItem('currentPage', String(currentPage));
   }, [currentPage]);
@@ -41,14 +41,21 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
       const page = Number(queryParams.get('page')) || 1;
       setCurrentPage(page);
     };
-    
+
     const handlePathnameChange = () => {
-      const queryParams = new URLSearchParams(window.location.search);
-      queryParams.set('page', String(1));
-      const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
-      window.history.replaceState({}, '', newUrl);
-      setCurrentPage(1);
-      onPageChange(1);
+      if (window.location.pathname !== '/dreams') {
+        const queryParams = new URLSearchParams();
+        queryParams.delete('page');
+        setCurrentPage(1);
+        localStorage.removeItem('currentPage');
+        const newUrl = `${window.location.origin}${window.location.pathname}?${queryParams.toString()}`;
+        window.history.replaceState({}, '', newUrl);
+        onPageChange(1);
+      } else {
+        const queryParams = new URLSearchParams(window.location.search);
+        const page = Number(queryParams.get('page')) || 1;
+        setCurrentPage(page);
+      }
     };
 
     window.addEventListener('popstate', handlePopstate);
@@ -58,7 +65,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
       window.removeEventListener('popstate', handlePopstate);
       window.removeEventListener('hashchange', handlePathnameChange);
     };
-  }, []);
+  }, [window.location.pathname]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -88,7 +95,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
   const renderPageNumbers = () => {
     const pageNumbers: JSX.Element[] = [];
     const maxDisplayPages = 6;
-  
+
     if (totalPages <= maxDisplayPages) {
       // Display all pages
       for (let i = 1; i <= totalPages; i++) {
@@ -106,12 +113,12 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
       const remainingPages = totalPages - currentPage + 1;
       let startPage = currentPage;
       let endPage = currentPage + maxDisplayPages - 1;
-  
+
       if (remainingPages < maxDisplayPages) {
         startPage = Math.max(totalPages - maxDisplayPages + 1, 1);
         endPage = totalPages;
       }
-  
+
       if (startPage > 1) {
         pageNumbers.push(
           <button
@@ -123,7 +130,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
           </button>
         );
       }
-  
+
       for (let i = startPage; i <= endPage; i++) {
         pageNumbers.push(
           <button
@@ -135,7 +142,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
           </button>
         );
       }
-  
+
       if (endPage < totalPages) {
         pageNumbers.push(
           <button
@@ -147,7 +154,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
           </button>
         );
       }
-  
+
       if (!pageNumbers.some((button) => button.key === String(totalPages))) {
         pageNumbers.push(
           <button
@@ -160,10 +167,9 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, onPageChange }) => 
         );
       }
     }
-  
+
     return pageNumbers;
   };
-  
 
   return (
     <div className="pagination">
