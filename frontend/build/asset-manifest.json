@@ -1,12 +1,16 @@
 {
   "files": {
-    "main.css": "/Mriya/static/css/main.99ff580b.css",
-    "main.js": "/Mriya/static/js/main.6686e984.js",
+    "main.css": "/Mriya/static/css/main.7dca4a88.css",
+    "main.js": "/Mriya/static/js/main.6e3eead6.js",
     "static/media/Mukta.ttf": "/Mriya/static/media/Mukta.462ca59f67e267d58182.ttf",
     "static/media/Mukta-Medium.ttf": "/Mriya/static/media/Mukta-Medium.fe9f9db60771d41ab393.ttf",
     "static/media/Mukta-Bold.ttf": "/Mriya/static/media/Mukta-Bold.c2c824523f139bea1451.ttf",
     "static/media/Mukta-Light.ttf": "/Mriya/static/media/Mukta-Light.f9ba0ae54c4fc0c2552d.ttf",
     "static/media/Inter.ttf": "/Mriya/static/media/Inter.e89cb19905e7db5591b0.ttf",
+    "static/media/4.png": "/Mriya/static/media/4.ed10dd97c33618e0db71.png",
+    "static/media/3.png": "/Mriya/static/media/3.527b89ce7ff3b129f0c2.png",
+    "static/media/1.png": "/Mriya/static/media/1.f8d0385d14f33cd01087.png",
+    "static/media/2.png": "/Mriya/static/media/2.c8a8a49e18441e2a9784.png",
     "static/media/dog.png": "/Mriya/static/media/dog.6446b942030401265514.png",
     "static/media/woman.png": "/Mriya/static/media/woman.f4e2b0acab0f5326e47a.png",
     "static/media/hand.png": "/Mriya/static/media/hand.3edd21b490e03e1fca70.png",
@@ -35,11 +39,11 @@
     "static/media/arrow-black.svg": "/Mriya/static/media/arrow-black.1f085353c4d63fca4ad4.svg",
     "index.html": "/Mriya/index.html",
     "static/media/yellow-heart.svg": "/Mriya/static/media/yellow-heart.7bdd20a37f364019f0a6.svg",
-    "main.99ff580b.css.map": "/Mriya/static/css/main.99ff580b.css.map",
-    "main.6686e984.js.map": "/Mriya/static/js/main.6686e984.js.map"
+    "main.7dca4a88.css.map": "/Mriya/static/css/main.7dca4a88.css.map",
+    "main.6e3eead6.js.map": "/Mriya/static/js/main.6e3eead6.js.map"
   },
   "entrypoints": [
-    "static/css/main.99ff580b.css",
-    "static/js/main.6686e984.js"
+    "static/css/main.7dca4a88.css",
+    "static/js/main.6e3eead6.js"
   ]
 }
