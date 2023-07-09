@@ -32,23 +32,23 @@ export const Details = () => {
   const img3 = third;
   const img4 = fourth;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://35.204.183.215:80/api/dream/1');
-        if (!response.ok) {
-          throw new Error('Failed to fetch dream data');
-        }
-        const data = await response.json();
-        console.log(data);
-        setDreamData(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch('http://35.204.183.215:80/api/dream/1');
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch dream data');
+  //       }
+  //       const data = await response.json();
+  //       console.log(data);
+  //       setDreamData(data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,9 +62,9 @@ export const Details = () => {
     };
   }, []);
 
-  if (!dreamData) {
-    return <div>Loading...</div>;
-  }
+  // if (!dreamData) {
+  //   return <div>Loading...</div>;
+  // }
 
   const mobileVers = windowWidth < 1440;
   const desktopVers = windowWidth >= 1440;
@@ -83,10 +83,10 @@ export const Details = () => {
                 <button className="detailed-page__bread-crumps__dreams-button"></button>
               </Link>
               <div className="detailed-page__bread-crumps__next"></div>
-              <button className="detailed-page__bread-crumps__dream-name">{dreamData.name}</button>
+              {/* <button className="detailed-page__bread-crumps__dream-name">{dreamData.name}</button> */}
             </div>
 
-            {mobileVers && <h3 className='detailed-page__name'>{dreamData.name}name's Dream</h3>}
+            {/* {mobileVers && <h3 className='detailed-page__name'>{dreamData.name}name's Dream</h3>} */}
 
             {mobileVers && <button className="detailed-page__share-button"></button>}
           </div>

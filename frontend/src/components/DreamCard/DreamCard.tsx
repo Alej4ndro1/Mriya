@@ -1,8 +1,13 @@
 import React from 'react';
 import { Dream } from '../../types/Dreams';
+import { Image } from '../../types/Images';
 
 type DreamType = {
   dream: Dream
+};
+
+type ImageType = {
+  image: Image
 };
 
 export const DreamCard: React.FC<DreamType> = ({ dream }) => {
@@ -31,9 +36,9 @@ export const DreamCard: React.FC<DreamType> = ({ dream }) => {
           </div>
 
           <div className="dream-card__content__amount-value">
-            <p className='dream-card__content__amount-value__rate'>{amount}</p>
+            <p className='dream-card__content__amount-value__rate'>₴ {sumOfDonates}</p>
 
-            <p className='dream-card__content__amount-value__rate'>{sumOfDonates}</p>
+            <p className='dream-card__content__amount-value__rate'>₴ {amount}</p>
           </div>
         </div>
       </div>
