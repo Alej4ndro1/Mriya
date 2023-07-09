@@ -83,14 +83,14 @@ export const Details = () => {
                 <button className="detailed-page__bread-crumps__dreams-button"></button>
               </Link>
               <div className="detailed-page__bread-crumps__next"></div>
-              {/* <button className="detailed-page__bread-crumps__dream-name">{dreamData.name}</button> */}
+              <button className="detailed-page__bread-crumps__dream-name">Vladilav</button>
             </div>
 
-            {/* {mobileVers && <h3 className='detailed-page__name'>{dreamData.name}name's Dream</h3>} */}
+            {mobileVers && <h3 className='detailed-page__name'>Vladilav's Dream</h3>}
 
             {mobileVers && <button className="detailed-page__share-button"></button>}
           </div>
-          {desktopVers && <h3 className='detailed-page__name'>'s Dream</h3>}
+          {desktopVers && <h3 className='detailed-page__name'>Vladilav's Dream</h3>}
           
 
           {mobileVers && (<Slider className="detailed-page__gallery" {...sliderSettings}>

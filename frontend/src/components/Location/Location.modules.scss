@@ -101,6 +101,7 @@
     &__item {
       width: 24px;
       height: 24px;
+      cursor: pointer;
     }
   }
 }
@@ -114,6 +115,7 @@
         position: absolute;
         top: 26px;
         left: -66px;
+        cursor: pointer;
 
   @include onDesktop {
     background-image: url('../../images/icons/prev.png');

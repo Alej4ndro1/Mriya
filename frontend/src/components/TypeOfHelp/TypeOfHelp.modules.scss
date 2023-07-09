@@ -1,6 +1,6 @@
 .type-of-help{
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 50%;
   flex-direction: column;
@@ -31,28 +31,37 @@
       justify-content: center;
       align-items: center;
       padding: 0;
-      margin-bottom: 16px;
       margin: 0;
       width: 200px;
+
+      @include onDesktop {
+        width: 632px;
+        height: 56px;
+        margin-bottom: 24px;
+        padding: 0 0 0 24px;
+      }
     }
 
     &__h {
       display: flex;
 
-      display: inline;
-      height: 30px;
-      padding: 0 0 0 25px;
+      display:inline-block;
+      height: 20px;
+      width: fit-content;
+      padding: 0 20px 0 25px;
+      margin:25px 0px 0 0;
       
       @include onDesktop {
         font-family: 'Mukta', sans-serif;
-        height: 20px;
-        width: 220px;
+        display: inline;
+        height: 30px;
+        width: 150px;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
         color: #878AA6;
         justify-content: start;
-        padding: 0 500px 0 0;
+        padding: 0 490px 0 0;
         margin: 0;
       }
     }

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import { SuccessfulHelpOffer } from '../SuccessfulHelpOffer/SuccessfulHelpOffer';
 import { Location } from '../Location/Location';
 import { TypeOfHelp } from '../TypeOfHelp/TypeOfHelp';
-import { SuccessfulHelpOffer } from '../SuccessfulHelpOffer/SuccessfulHelpOffer';
 
-type DonationProcessProps = {
+type NonFinancialProps = {
   setShowNonFinancialHelp: (showPaymentProcess: boolean) => void;
 };
 
-export const NonFinancial: React.FC<DonationProcessProps> = ({setShowNonFinancialHelp }) => {
+export const NonFinancial: React.FC<NonFinancialProps> = ({ setShowNonFinancialHelp }) => {
   const [name, setName] = useState('');
+  const [submitted, setSubmitted] = useState(false);
   const [phone, setPhone] = useState('');
   const [additionalInfo, setAdditionalInfo] = useState('');
   const [showSelector, setShowSelector] = useState(false);
@@ -18,37 +19,51 @@ export const NonFinancial: React.FC<DonationProcessProps> = ({setShowNonFinancia
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [initialSelectedTypes, setInitialSelectedTypes] = useState<string[]>([]);
   const [additionalInfoTouched, setAdditionalInfoTouched] = useState(false);
-  const [showSuccessfulCard, setShowSuccessfulCard] = useState(false);
 
-  const handleLocationGoBack = () => {
-    setShowSelector(false);
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitted(true);
   };
 
   const handleOkayClick = () => {
-    window.location.href = '/home';
     setShowNonFinancialHelp(false);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // if (isFormValid) {
-    setShowSuccessfulCard(true);
-    setShowNonFinancialHelp(false);
-    // }
+  if (submitted) {
+    return <SuccessfulHelpOffer onOkayClick={handleOkayClick} />;
+  }
+
+  const handleCitySelection = (selectedCities: string[]) => {
+    setSelectedCities(selectedCities);
+    setInitialSelectedCities(selectedCities);
   };
 
+  const handleHelpGoBack = () => {
+    setShowTypeOfHelp(false);
+  };
+
+  const handleHelpSelection = (selectedTypes: string[]) => {
+    setSelectedTypes(selectedTypes);
+    setInitialSelectedTypes(selectedTypes);
+  };
+
+  const handleTypeOfHelpClick = () => {
+    setShowTypeOfHelp(!showTypeOfHelp);
+  };
   const handleSelectorClick = () => {
     setShowSelector(!showSelector);
   };
 
-  const isFormValid = name.trim() !== '' && phone.trim() !== '' && additionalInfo.trim() !== '' && selectedCities.length !== 0 && selectedTypes.length !== 0;
+  const isFormValid =
+    name.trim() !== '' &&
+    phone.trim() !== '' &&
+    additionalInfo.trim() !== '' &&
+    selectedCities.length !== 0 &&
+    selectedTypes.length !== 0;
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;
-    const formattedValue = inputValue.replace(
-      /[^A-Za-zА-ЯЁа-яЇїІіЄєҐґ\s.'-]/g,
-      ''
-    ).replace(
+    const formattedValue = inputValue.replace(/[^A-Za-zА-ЯЁа-яЇїІіЄєҐґ\s.'-]/g, '').replace(
       /(^|\s)\S/g,
       (match) => match.toUpperCase()
     );
@@ -69,57 +84,38 @@ export const NonFinancial: React.FC<DonationProcessProps> = ({setShowNonFinancia
     setPhone(inputValue);
   };
 
+  const handleLocationGoBack = () => {
+    setShowSelector(false);
+  };
+
   const handleAdditionalInfoChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setAdditionalInfo(event.target.value);
   };
 
-  const handleCitySelection = (selectedCities: string[]) => {
-    setSelectedCities(selectedCities);
-    setInitialSelectedCities(selectedCities);
-  };
-
-  const handleHelpGoBack = () => {
-    setShowTypeOfHelp(false);
-  };
-
-  const handleHelpSelection = (selectedTypes: string[]) => {
-    setSelectedTypes(selectedTypes);
-    setInitialSelectedTypes(selectedTypes);
-  };
-
-  const handleTypeOfHelpClick = () => {
-    setShowTypeOfHelp(!showTypeOfHelp);
-  };
-
-  if (showSuccessfulCard) {
-    return <SuccessfulHelpOffer onOkayClick={handleOkayClick} />;
-  }
-
   return (
-    <div className='non-financial'>
-
+    <div className="non-financial">
       <div className="donation-process__navigation">
         <div className="donation-process__navigation__back" onClick={handleOkayClick}></div>
         <h3 className="donation-process__navigation__title">Non-financial help</h3>
       </div>
 
       <div className="non-financial__content">
-        <div className='non-financial__option'>
-          <div className='non-financial__option__city' onClick={handleSelectorClick}>
-            <p className='non-financial__city'>{initialSelectedCities.slice(0, 2).join(', ')}</p>
+        <div className="non-financial__option">
+          <div className="non-financial__option__city" onClick={handleSelectorClick}>
+            <p className="non-financial__city">{initialSelectedCities.slice(0, 2).join(', ')}</p>
           </div>
           {showSelector && <Location goBack={handleLocationGoBack} onSelect={handleCitySelection} initialSelectedCities={initialSelectedCities} />}
-          <div className='non-financial__option__type-of-help' onClick={handleTypeOfHelpClick}>
-            <p className='non-financial__city'>{initialSelectedTypes.slice(0, 1).join(', ')}</p>
+          <div className="non-financial__option__type-of-help" onClick={handleTypeOfHelpClick}>
+            <p className="non-financial__city">{initialSelectedTypes.slice(0, 1).join(', ')}</p>
           </div>
           {showTypeOfHelp && <TypeOfHelp goBack={handleHelpGoBack} onSelect={handleHelpSelection} initialSelectedTypes={initialSelectedTypes} />}
-          <div className='non-financial__contacts'>
-            <form onSubmit={handleSubmit}>
-              <p className='donation-process__donation-amount__title non-financial__p'>Full Name</p>
+          <div className="non-financial__contacts">
+            <form onSubmit={handleFormSubmit}>
+              <p className="donation-process__donation-amount__title non-financial__p">Full Name</p>
               <input
                 className={`non-financial__input ${name.split(' ').some((word) => word.length < 3) && name.length > 0 ? 'invalid' : ''}`}
-                type='text'
-                placeholder='Enter your name and surname here'
+                type="text"
+                placeholder="Enter your name and surname here"
                 value={name}
                 onChange={handleNameChange}
                 onBlur={() => {
@@ -128,11 +124,11 @@ export const NonFinancial: React.FC<DonationProcessProps> = ({setShowNonFinancia
                   }
                 }}
               />
-              <p className='donation-process__donation-amount__title non-financial__p'>Phone number</p>
+              <p className="donation-process__donation-amount__title non-financial__p">Phone number</p>
               <input
                 className={`non-financial__input non-financial__input__phone ${phone.length !== 13 && phone.length > 0 ? 'invalid' : ''}`}
-                type='tel'
-                placeholder='+38 (000) 000 00 00'
+                type="tel"
+                placeholder="+38 (000) 000 00 00"
                 value={phone}
                 onChange={handlePhoneChange}
                 onBlur={() => {
@@ -141,7 +137,7 @@ export const NonFinancial: React.FC<DonationProcessProps> = ({setShowNonFinancia
                   }
                 }}
               />
-              <p className='donation-process__donation-amount__title non-financial__p'>Additional information</p>
+              <p className="donation-process__donation-amount__title non-financial__p">Additional information</p>
               <textarea
                 name="info"
                 id="1"
@@ -156,16 +152,15 @@ export const NonFinancial: React.FC<DonationProcessProps> = ({setShowNonFinancia
                   }
                 }}
                 className={`non-financial__textarea ${additionalInfoTouched && additionalInfo.length === 0 ? 'invalid' : ''}`}
-                placeholder='Please, describe what help you can provide exactly. We will contact the dream holder on this issue and send this info to them.'
+                placeholder="Please, describe what help you can provide exactly. We will contact the dream holder on this issue and send this info to them."
               ></textarea>
+              <button type="submit" className="submit-button" disabled={!isFormValid}>
+                Submit
+              </button>
             </form>
           </div>
-          <button type="submit" className='submit-button' disabled={!isFormValid}>
-                Submit
-          </button>
         </div>
       </div>
-
     </div>
   );
 };
