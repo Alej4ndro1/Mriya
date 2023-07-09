@@ -1,39 +1,3 @@
-// import React, { useState } from 'react';
-// import { Location } from '../Location/Location';
-// import { TypeOfHelp } from '../TypeOfHelp/TypeOfHelp';
-// import { SuccessfulHelpOffer } from '../SuccessfulHelpOffer/SuccessfulHelpOffer';
-
-// type NonFinancialProps = {
-//   setShowNonFinancialHelp: (showPaymentProcess: boolean) => void;
-// };
-
-// export const NonFinancial: React.FC<NonFinancialProps> = ({ setShowNonFinancialHelp }) => {
-//   const [name, setName] = useState('');
-//   const [phone, setPhone] = useState('');
-//   const [additionalInfo, setAdditionalInfo] = useState('');
-//   const [showSelector, setShowSelector] = useState(false);
-//   const [selectedCities, setSelectedCities] = useState<string[]>([]);
-//   const [initialSelectedCities, setInitialSelectedCities] = useState<string[]>([]);
-//   const [showTypeOfHelp, setShowTypeOfHelp] = useState(false);
-//   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-//   const [initialSelectedTypes, setInitialSelectedTypes] = useState<string[]>([]);
-//   const [additionalInfoTouched, setAdditionalInfoTouched] = useState(false);
-//   const [showSuccessfulCard, setShowSuccessfulCard] = useState(false);
-
-//   const handleLocationGoBack = () => {
-//     setShowSelector(false);
-//   };
-
-//   const handleOkayClick = () => {
-//     setShowNonFinancialHelp(false);
-//   };
-
-//   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-//     event.preventDefault();
-//     setShowSuccessfulCard(true);
-//     setShowNonFinancialHelp(false);
-//   };
-
 import React, { useState } from 'react';
 import { SuccessfulHelpOffer } from '../SuccessfulHelpOffer/SuccessfulHelpOffer';
 import { Location } from '../Location/Location';
@@ -153,7 +117,7 @@ export const NonFinancial: React.FC<NonFinancialProps> = ({ setShowNonFinancialH
                 type="text"
                 placeholder="Enter your name and surname here"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={handleNameChange}
                 onBlur={() => {
                   if (name.trim() === '' || name.split(' ').some((word) => word.length < 3)) {
                     setName('');
@@ -166,7 +130,7 @@ export const NonFinancial: React.FC<NonFinancialProps> = ({ setShowNonFinancialH
                 type="tel"
                 placeholder="+38 (000) 000 00 00"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                onChange={handlePhoneChange}
                 onBlur={() => {
                   if (phone.trim() === '') {
                     setPhone('');
@@ -180,7 +144,7 @@ export const NonFinancial: React.FC<NonFinancialProps> = ({ setShowNonFinancialH
                 cols={40}
                 rows={10}
                 value={additionalInfo}
-                onChange={(e) => setAdditionalInfo(e.target.value)}
+                onChange={handleAdditionalInfoChange}
                 onFocus={() => setAdditionalInfoTouched(true)}
                 onBlur={() => {
                   if (additionalInfo.trim() === '') {

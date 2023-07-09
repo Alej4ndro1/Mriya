@@ -40,7 +40,7 @@ export const TypeOfHelp: React.FC<TypeOfHelpProps> = ({ goBack, onSelect, initia
   };
 
   return (
-    <div className='donation-process type-of-help '>
+    <div className='type-of-help '>
       <div className='donation-process__navigation'>
         <div className='navigation__back' onClick={goBack}></div>
         <h3 className='donation-process__navigation__title location__title type-of-help__h'>Type of help</h3>

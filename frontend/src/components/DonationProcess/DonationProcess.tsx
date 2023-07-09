@@ -10,19 +10,6 @@ type DonationProcessProps = {
   setShowPaymentProcess: (showPaymentProcess: boolean) => void;
 };
 
-const donationAmountSliderSettings = {
-  dots: false,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  centerMode: true,
-  className: 'donation-process__donation-amount__options-slider',
-  prevArrow: <></>,
-  nextArrow: <></>,
-  centerPadding: '15px',
-};
-
 export const DonationProcess: React.FC<DonationProcessProps> = ({ setShowPaymentProcess }) => {
   const donationOptions = [50, 100, 200, 500, 1000, 2000];
   const [selectedOption, setSelectedOption] = useState<string>('');
@@ -201,35 +188,19 @@ export const DonationProcess: React.FC<DonationProcessProps> = ({ setShowPayment
 
       <div className="donation-process__donation-amount">
         <h3 className="donation-process__donation-amount__title">Select or enter the donation amount</h3>
-        {isSliderVisible ? (
-          <Slider {...donationAmountSliderSettings}>
-            {donationOptions.map((option, index) => (
-              <div
-                className={`donation-process__donation-amount__options__option ${
-                  selectedOption === option.toString() ? 'selected' : ''
-                }`}
-                key={index}
-                onClick={() => handleSliderOptionChange(option)}
-              >
-                &#8372; {option}
-              </div>
-            ))}
-          </Slider>
-        ) : (
-          <div className="donation-process__donation-amount__options">
-            {donationOptions.map((option, index) => (
-              <div
-                className={`donation-process__donation-amount__options__option ${
-                  selectedOption === option.toString() ? 'selected' : ''
-                }`}
-                key={index}
-                onClick={() => handleSliderOptionChange(option)}
-              >
-                &#8372; {option}
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="donation-process__donation-amount__options">
+          {donationOptions.map((option, index) => (
+            <div
+              className={`donation-process__donation-amount__options__option ${
+                selectedOption === option.toString() ? 'selected' : ''
+              }`}
+              key={index}
+              onClick={() => handleSliderOptionChange(option)}
+            >
+              &#8372; {option}
+            </div>
+          ))}
+        </div>
         <input
           className="donation-process__donation-amount__input"
           type="text"
