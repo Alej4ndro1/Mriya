@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Pagination from '../components/Pagination/Pagination';
+// import Pagination from '../components/Pagination/Pagination';
 import { DreamCatalog } from '../components/DreamCatalog';
 import { Dream } from 'Dreams';
 import { getDreams } from '../api/dreams';
@@ -27,7 +27,7 @@ export const DreamsPage = () => {
   return (
     <div>
       <DreamCatalog dreams={dreams} />
-      <Pagination totalPages={10} onPageChange={handlePageChange} />
+      {/* <Pagination totalPages={10} onPageChange={handlePageChange} /> */}
     </div>
   );
 };
