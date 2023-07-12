@@ -145,7 +145,7 @@ export const NonFinancial: React.FC<NonFinancialProps> = ({ setShowNonFinancialH
               <textarea
                 name="info"
                 id="1"
-                cols={40}
+                cols={90}
                 rows={10}
                 value={additionalInfo}
                 onChange={handleAdditionalInfoChange}

@@ -1,0 +1,432 @@
+label:nth-child(1) {
+  font-family: 'Mukta', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19.5px;
+  color: #111111;
+  position: relative;
+  margin-bottom: 8px;
+
+  @include onDesktop {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+.sign-up{
+    width: 320px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: #FAFAFA;
+    border-radius: 20px 20px 0px 0px;
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 24px 16px 16px;
+    z-index: 3;
+
+    @include onDesktop {
+      width: 632px;
+      top: 91px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 48px 108px 56px;
+      border-radius: 30px;
+    }
+
+    &__header{
+      position: relative;
+      height: 50px;
+      margin-bottom: 16px;
+
+      &__back {
+        width: 12px;
+        height: 20px;
+        background-image: url('../../images/icons/prev.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-color: transparent;
+        border: none;
+        position:relative;
+        left: -55px;
+
+        @include onDesktop {
+          width: 16px;
+          height: 16px;
+          background-image: url('../../images/icons/cross.png');
+          left: 400px;
+          top:-35px;
+          position: relative;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &__title{
+        display: inline-block;
+        font-family: "Futura-medium", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25.2px;
+        color: #111111;
+        position: relative;
+        left: 15%;
+        top: 0;
+        transform: translate(-25%);
+        margin-bottom: 8px;
+
+        @include onDesktop {
+          font-size: 32px;
+          line-height: 38.4px;
+          left: 15%;
+        }
+
+        &::before {
+          content: "";
+          width: 25px;
+          height: 25px;
+          background-color: $yellow;
+          border-radius: 50% 50% 0 50%;
+          left: -10px;
+          top: -10px;
+          position: absolute;
+          z-index: -1;
+
+          @include onDesktop {
+            width: 38px;
+            height: 38px;
+            top: -15px;
+          }
+        }
+        &::after {
+          content: '';
+          width: 56px;
+          height: 4px;
+          background-color: #EAEBF2;
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          border-radius: 100px;
+          transform: translate(-50%);
+
+          @include onDesktop {
+            display: none;
+          }
+        }
+      }
+      &__paragraph{
+        font-family: 'Mukta', sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 16.8px;
+        color: #2F2F35;
+        position: relative;
+        display: inline-block;
+        left: 40%;
+        transform: translateX(-50%);
+
+        @include onDesktop {
+          left: 32%;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      gap: 8px;
+
+      &__input {
+        &__style {
+          width: 288px;
+          height: 44px;
+          border-radius: 100px;
+          background-color: transparent;
+          padding: 11px 24px 11px 24px;
+          margin-bottom: 8px;
+          border: 1px solid #DADAE1;
+
+            @include onDesktop {
+              width: 416px;
+              height: 48px;
+              margin-bottom: 16px;
+            }
+          }
+
+          &::placeholder{
+            font-family: "Mukta", sans-serif;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 19.5px;
+            color: #DADAE1;
+          }
+        }
+      
+      &__checkbox {
+        display: flex;
+        align-items: center;
+        margin: 8px 0 24px 0;
+
+        &__label{
+          margin: 0 41px 0 8px;
+        }
+
+        &__style {
+          width: 24px;
+          height: 24px;
+          background-color: transparent;
+          border: 1px solid #C2C4CF !important;
+          border-radius: 4px !important;
+          cursor: pointer;
+
+          &:checked {
+          width: 24px;
+          height: 24px;
+          background-color: #6965F6;
+          color: #FAFAFA;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          }
+        }
+      }
+      &__button {
+        width: 288px;
+        height: 48px;
+        border-radius: 100px;
+        background-color: #6965F6;
+        border: none;
+        font-family: "Futura-medium", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25.5px;
+        color: #FAFAFA;
+        cursor: pointer;
+        margin-bottom: 24px;
+
+        @include onDesktop {
+          width: 416px;
+          height: 48px;
+          font-size: 17px;
+          line-height: 25.5px;
+          margin-bottom: 40px;
+        }
+
+        &:hover {
+          background-color: #9C99FF;;
+        }
+      }
+    }
+    &__or{
+      font-family: 'Mukta', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 16.8px;
+      color: #C2C4CF;
+      margin-bottom: 24px;
+
+      @include onDesktop {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 40px;
+      }
+      &::before{
+        content: '- - - - - - - - - - - - - - - - - - - - - - -';
+
+        @include onDesktop {
+          content: '- - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+        }
+      }
+      &::after{
+        content: '- - - - - - - - - - - - - - - - - - - - - - -';
+
+        @include onDesktop {
+          content: '- - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+        }
+      }
+    }
+    &__social {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 47px;
+
+      @include onDesktop {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      &__button{
+        width: 48px;
+        height: 48px;
+        border-radius: 100px;
+        background-color: #FDFDFD;
+        border: none;
+        cursor: pointer;
+        padding: 14px 24px 16px 24px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+
+        @include onDesktop {
+          width: 416px;
+          height: 56px;
+
+        }
+      }
+
+      &__apple{
+        background-image: url('../../images/icons/Apple.png');
+        background-repeat: no-repeat;
+        background-size: 24px;
+        background-position: center;
+
+        @include onDesktop {
+          background-size: 24px;
+          background-position: 120px;
+
+          &::after{
+            content: 'Continue with Apple';
+            font-family: "Futura-medium", sans-serif;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 25.5px;
+            left: 7%;
+            position: relative;
+            color: #2F2F35;
+          }
+        }
+      }
+      &__google{
+        background-image: url('../../images/icons/Goolge.png');
+        background-repeat: no-repeat;
+        background-size: 24px;
+        background-position: center;
+
+        @include onDesktop {
+          background-size: 24px;
+          background-position: 120px;
+
+          &::after{
+            content: 'Continue with Google';
+            font-family: "Futura-medium", sans-serif;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 25.5px;
+            left: 9%;
+            position: relative;
+            color: #2F2F35;
+          }
+        }
+      }
+      &__facebook{
+        background-image: url('../../images/icons/fb.png');
+        background-repeat: no-repeat;
+        background-size: 24px;
+        background-position: center;
+
+        @include onDesktop {
+          background-size: 24px;
+          background-position: 120px;
+
+          &::after{
+            content: 'Continue with Facebook';
+            font-family: "Futura-medium", sans-serif;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 25.5px;
+            left: 12%;
+            position: relative;
+            color: #2F2F35;
+          }
+        }
+      }
+    }
+    &__footer{
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+
+      &__p{
+        font-family: "Mukta", sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        color: #2F2F35;
+
+        @include onDesktop {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+
+      &__button {
+        font-family: 'Mukta', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        color:#6965F6;
+        border:none;
+        background-color: transparent;
+        text-decoration: underline;
+        cursor: pointer;
+
+        @include onDesktop {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+}
+.password-visibility-icon{
+  width: 24px;
+  height: 24px;
+  background-image:url('../../images/icons/password-hidden.png');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+  position: relative;
+  left: 250px;
+  top:-43px;
+  cursor: pointer;
+
+  @include onDesktop{
+    left: 370px;
+  top:-52px;
+  }
+
+
+  &__change{
+    width: 24px;
+  height: 24px;
+  background-image:url('../../images/icons/password-shown.png');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+  position: relative;
+  left: 250px;
+  top:-43px;
+  cursor: pointer;
+
+  @include onDesktop{
+    left: 370px;
+    top:-52px;
+  }
+  }
+}
+.password-input-container {
+  height:52px;
+
+  @include onDesktop {
+    height:64px;
+  }
+}

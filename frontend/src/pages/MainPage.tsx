@@ -9,7 +9,6 @@ import hand from '../images/icons/hand-icon.png';
 import coin from '../images/icons/coin.png';
 import heart from '../images/icons/full-filled-heart.png';
 import star from '../images/icons/stars.png';
-import  { DonationProcess } from '../components/DonationProcess/DonationProcess';
 
 export const MainPage = () => {
   return (

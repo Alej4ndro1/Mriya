@@ -3,10 +3,13 @@ import logo from '../../images/Mriya.png';
 import stars from '../../images/stars.png';
 import back from '../../images/return_alive.png';
 import { Link, useLocation } from 'react-router-dom';
+import { SignUp } from '../SignUp/SignUp';
+import { LogIn } from '../LogIn/LogIn';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [currentForm, setCurrentForm] = useState('');
   const location = useLocation();
 
   const handleWindowResize = () => {
@@ -79,8 +82,13 @@ export const Header = () => {
           </ul>
 
           <div className="header__navigation__profile-buttons">
-            <button className="header__navigation__profile-buttons__sign-up">Sign up</button>
-            <button className="header__navigation__profile-buttons__log-in">Log in</button>
+            <button className="header__navigation__profile-buttons__sign-up" onClick={()=>setCurrentForm('sign-up')}>Sign up</button>
+            {currentForm === 'sign-up' && <SignUp onClose={()=>setCurrentForm('')}
+              onChange={()=>setCurrentForm('login')} />}
+            <button className="header__navigation__profile-buttons__log-in" onClick={()=>setCurrentForm('login')}>Log in</button>
+            {currentForm === 'login' && <LogIn onClose={()=>setCurrentForm('')}
+              onChange={()=>setCurrentForm('sign-up')}/>}
+            {/* <button className="header__navigation__profile-buttons__my-profile">My profile</button> */}
           </div>
         </div>
       ) : null}
