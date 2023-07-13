@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 type SignUpProps = {
   onClose: () => void;
@@ -12,6 +13,7 @@ export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange }) => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   const isEmailValid = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -78,6 +80,31 @@ export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange }) => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
+  const handleRememberMe = () => {
+    setRememberMe((prevRememberMe) => !prevRememberMe);
+  };
+
+  useEffect(() => {
+    if (rememberMe) {
+      Cookies.set('email', email);
+      Cookies.set('password', password);
+    } else {
+      Cookies.remove('email');
+      Cookies.remove('password');
+    }
+  }, [rememberMe, email, password]);
+
+  useEffect(() => {
+    const savedEmail = Cookies.get('email');
+    const savedPassword = Cookies.get('password');
+
+    if (savedEmail && savedPassword) {
+      setEmail(savedEmail);
+      setPassword(savedPassword);
+      setRememberMe(true);
+    }
+  }, []);
+
   return (
     <div className="sign-up">
       <div className="sign-up__header">
@@ -124,7 +151,14 @@ export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange }) => {
             {passwordError && <p className="error-message">{passwordError}</p>}
           </div>
           <div className="sign-up__form__checkbox">
-            <input type="checkbox" name="checkbox" id="checkbox" className="sign-up__form__checkbox__style" />
+            <input
+              type="checkbox"
+              name="checkbox"
+              id="checkbox"
+              className="sign-up__form__checkbox__style"
+              checked={rememberMe}
+              onChange={handleRememberMe}
+            />
             <label htmlFor="checkbox" className="sign-up__form__checkbox__label">
               Remember me
             </label>
