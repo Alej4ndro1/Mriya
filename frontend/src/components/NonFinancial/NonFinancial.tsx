@@ -91,9 +91,13 @@ export const NonFinancial: React.FC<NonFinancialProps> = ({ setShowNonFinancialH
   const handleAdditionalInfoChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setAdditionalInfo(event.target.value);
   };
+  const nonFinancialClasses = `non-financial ${showSelector || showTypeOfHelp ? 'shadowed' : ''}`;
+
+  const cityOptionClasses = `non-financial__option__city ${showTypeOfHelp ? 'type-of-help-open' : ''}`;
+
 
   return (
-    <div className="non-financial">
+    <div className={nonFinancialClasses}>
       <div className="donation-process__navigation">
         <div className="donation-process__navigation__back" onClick={handleOkayClick}></div>
         <h3 className="donation-process__navigation__title">Non-financial help</h3>
@@ -101,7 +105,7 @@ export const NonFinancial: React.FC<NonFinancialProps> = ({ setShowNonFinancialH
 
       <div className="non-financial__content">
         <div className="non-financial__option">
-          <div className="non-financial__option__city" onClick={handleSelectorClick}>
+          <div className={cityOptionClasses} onClick={handleSelectorClick}>
             <p className="non-financial__city">{initialSelectedCities.slice(0, 2).join(', ')}</p>
           </div>
           {showSelector && <Location goBack={handleLocationGoBack} onSelect={handleCitySelection} initialSelectedCities={initialSelectedCities} />}
