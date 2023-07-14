@@ -39,11 +39,11 @@
     "static/media/arrow-black.svg": "/Mriya/static/media/arrow-black.1f085353c4d63fca4ad4.svg",
     "index.html": "/Mriya/index.html",
     "static/media/yellow-heart.svg": "/Mriya/static/media/yellow-heart.7bdd20a37f364019f0a6.svg",
-    "main.11180694.css.map": "/Mriya/static/css/main.11180694.css.map",
-    "main.19e63301.js.map": "/Mriya/static/js/main.19e63301.js.map"
+    "main.d66bef98.css.map": "/Mriya/static/css/main.d66bef98.css.map",
+    "main.39594043.js.map": "/Mriya/static/js/main.39594043.js.map"
   },
   "entrypoints": [
-    "static/css/main.11180694.css",
-    "static/js/main.19e63301.js"
+    "static/css/main.d66bef98.css",
+    "static/js/main.39594043.js"
   ]
 }
