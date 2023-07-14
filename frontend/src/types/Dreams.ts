@@ -18,3 +18,40 @@ export interface Dream {
   sumOfDonates: 125.35,
   userId: 1
 }
+
+// "age": `11 months`,
+//   "amount": 2 000 000,
+//   "categoryIds": "[1, 2, 4, 5]",
+//   "cityId": 1,
+//   "dateEnd": "2023-07-07",
+//   "dateStart": "2023-07-07",
+//   "description": "My dream for my dog...",
+//   "donatesIds": "[1, 2, 4, 5]",
+//   "dreamTypeId": 1,
+//   "filename": "picture.jpg",
+//   "imageData": "string",
+//   "id": 1,
+//   "likes": 10,
+//   "mimeType": "image/jpeg",
+//   "name": "Vladyslav",
+//   "statusName": "string",
+//   "sumOfDonates": 32 589,
+//   "userId": 1
+
+// {  "age": 11,
+//   "amount": 2000000,
+//   "categoryIds": [1, 2, 4, 5],
+//   "cityId": 1, 
+//   "dateEnd": "2023-07-08",
+//   "dateStart": "2023-07-08",
+//   "description": "My dream for my son",
+//   "donatesIds": null,
+//   "dreamTypeId": 1,
+//   "filename": "picture.jpg",
+//   "imageData": null,
+//   "likes": 10,
+//   "mimeType": "image/jpeg",
+//   "name": "Vladyslav",
+//   "statusName": "Done",
+//   "userId": 1
+// }

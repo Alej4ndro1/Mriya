@@ -46,14 +46,14 @@ export const DreamCatalog: React.FC<DreamsType> = ({ dreams }) => {
           }
         </div>
 
-        <Dropdown menu={{ items }} trigger={['click']}>
+        {/* <Dropdown menu={{ items }} trigger={['click']}>
           <a onClick={(e) => e.preventDefault()}>
             <Space>
               Click me
               <DownOutlined />
             </Space>
           </a>
-        </Dropdown>
+        </Dropdown> */}
       </div>
     </div >
   );
