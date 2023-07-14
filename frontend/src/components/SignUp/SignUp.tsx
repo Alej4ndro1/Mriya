@@ -5,9 +5,11 @@ import Cookies from 'js-cookie';
 type SignUpProps = {
   onClose: () => void;
   onChange: () => void;
+  showSignUpPopUp: () => void;
+  onSignUpSuccess: (token: string) => void;
 };
 
-export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange }) => {
+export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange, showSignUpPopUp, onSignUpSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -46,6 +48,10 @@ export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange }) => {
         console.log('User added successfully');
         setEmail('');
         setPassword('');
+        showSignUpPopUp();
+        onClose();
+        const token = response.data.token;
+        onSignUpSuccess(token);
       } else {
         console.log('Error adding user');
       }
@@ -76,10 +82,6 @@ export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange }) => {
     };
   }, [emailError, passwordError]);
 
-  const handleTogglePasswordVisibility = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword);
-  };
-
   const handleRememberMe = () => {
     setRememberMe((prevRememberMe) => !prevRememberMe);
   };
@@ -106,80 +108,82 @@ export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange }) => {
   }, []);
 
   return (
-    <div className="sign-up">
-      <div className="sign-up__header">
-        <button className="sign-up__header__back" onClick={onClose}></button>
+    <>
+      <div className="sign-up">
+        <div className="sign-up__header">
+          <button className="sign-up__header__back" onClick={onClose}></button>
 
-        <h3 className="sign-up__header__title">Welcome to Mriya!</h3>
+          <h3 className="sign-up__header__title">Welcome to Mriya!</h3>
 
-        <p className="sign-up__header__paragraph">Sign up to make your experience better.</p>
-      </div>
-      <div className="sign-up__form">
-        <form onSubmit={handleSignUp}>
-          <div className="sign-up__form__input">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email"
-              className="sign-up__form__input__style"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {emailError && <p className="error-message">{emailError}</p>}
-          </div>
-          <div className="sign-up__form__input">
-            <label htmlFor="password">Password</label>
-            <div className="password-input-container" style={{ lineHeight: 1 }}>
+          <p className="sign-up__header__paragraph">Sign up to make your experience better.</p>
+        </div>
+        <div className="sign-up__form">
+          <form onSubmit={handleSignUp}>
+            <div className="sign-up__form__input">
+              <label htmlFor="email">Email</label>
               <input
-                type={showPassword ? 'text' : 'password'}
-                name="password"
-                id="password"
-                placeholder="Enter your password"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
                 className="sign-up__form__input__style"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              {password.length > 0 && !showPassword && (
-                <div className="password-visibility-icon" onClick={() => setShowPassword(true)} />
-              )}
-              {password.length > 0 && showPassword && (
-                <div className="password-visibility-icon__change" onClick={() => setShowPassword(false)} />
-              )}
+              {emailError && <p className="error-message">{emailError}</p>}
             </div>
-            {passwordError && <p className="error-message">{passwordError}</p>}
+            <div className="sign-up__form__input">
+              <label htmlFor="password">Password</label>
+              <div className="password-input-container" style={{ lineHeight: 1 }}>
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  name="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  className="sign-up__form__input__style"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                {password.length > 0 && !showPassword && (
+                  <div className="password-visibility-icon" onClick={() => setShowPassword(true)} />
+                )}
+                {password.length > 0 && showPassword && (
+                  <div className="password-visibility-icon__change" onClick={() => setShowPassword(false)} />
+                )}
+              </div>
+              {passwordError && <p className="error-message">{passwordError}</p>}
+            </div>
+            <div className="sign-up__form__checkbox">
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="checkbox"
+                className="sign-up__form__checkbox__style"
+                checked={rememberMe}
+                onChange={handleRememberMe}
+              />
+              <label htmlFor="checkbox" className="sign-up__form__checkbox__label">
+                Remember me
+              </label>
+            </div>
+            <button type="submit" className="sign-up__form__button">
+              Sign up
+            </button>
+          </form>
+          <p className="sign-up__or">or</p>
+          <div className="sign-up__social">
+            <button className="sign-up__social__button sign-up__social__apple"></button>
+            <button className="sign-up__social__button sign-up__social__google"></button>
+            <button className="sign-up__social__button sign-up__social__facebook"></button>
           </div>
-          <div className="sign-up__form__checkbox">
-            <input
-              type="checkbox"
-              name="checkbox"
-              id="checkbox"
-              className="sign-up__form__checkbox__style"
-              checked={rememberMe}
-              onChange={handleRememberMe}
-            />
-            <label htmlFor="checkbox" className="sign-up__form__checkbox__label">
-              Remember me
-            </label>
+          <div className="sign-up__footer">
+            <p className="sign-up__footer__p">Already have an account?</p>
+            <button className="sign-up__footer__button" onClick={onChange}>
+              Log in
+            </button>
           </div>
-          <button type="submit" className="sign-up__form__button">
-            Sign up
-          </button>
-        </form>
-        <p className="sign-up__or">or</p>
-        <div className="sign-up__social">
-          <button className="sign-up__social__button sign-up__social__apple"></button>
-          <button className="sign-up__social__button sign-up__social__google"></button>
-          <button className="sign-up__social__button sign-up__social__facebook"></button>
-        </div>
-        <div className="sign-up__footer">
-          <p className="sign-up__footer__p">Already have an account?</p>
-          <button className="sign-up__footer__button" onClick={onChange}>
-            Log in
-          </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };

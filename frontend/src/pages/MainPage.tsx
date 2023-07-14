@@ -9,13 +9,10 @@ import hand from '../images/icons/hand-icon.png';
 import coin from '../images/icons/coin.png';
 import heart from '../images/icons/full-filled-heart.png';
 import star from '../images/icons/stars.png';
-import { SignUpPopUp } from '../components/SignUpPopUp';
-import { LogInPopUp } from '../components/LogInPopUp';
 
 export const MainPage = () => {
   return (
     <>
-      {/* <LogInPopUp /> */}
       <MakeItHappen />
       <Ticker imageSrc={star} word="DREAM" />
       <JustJoinTheProcess />
