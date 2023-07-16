@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-type LocationProps = {
+type DreamHolderType = {
   goBack: () => void;
-  onSelect: (selectedCities: string[]) => void;
-  initialSelectedCities: string[];
+  onSelect: (initialSelectedDreamHolderType: string[]) => void;
+  initialSelectedDreamHolderType: string[];
 };
 
-export const Location: React.FC<LocationProps> = ({ goBack, onSelect, initialSelectedCities }) => {
-  const [cities, setCities] = useState<string[]>([]);
-  const [selectedCities, setSelectedCities] = useState<string[]>(initialSelectedCities);
+export const DreamHolderType: React.FC<DreamHolderType> = ({ goBack, onSelect, initialSelectedDreamHolderType }) => {
+  const [dreams, setDream] = useState<string[]>([]);
+  const [selectedDreams, setSelectedDreams] = useState<string[]>(initialSelectedDreamHolderType);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchCities = async () => {
       try {
-        const response = await axios.get('http://35.204.183.215:80/api/city');
+        const response = await axios.get('http://35.204.183.215:80/api/category/parents/1/children');
         if (response.status !== 200) {
-          throw new Error('Failed to fetch cities');
+          throw new Error('Failed to fetch dreamHolders');
         }
-        const citiesData = response.data.map((city: { id: number; name: string }) => city.name);
-        setCities(citiesData);
+        const dreamsData = response.data.map((dream: { id: number; name: string }) => dream.name);
+        setDream(dreamsData);
         setIsLoading(false);
       } catch (error) {
         console.error(error);
-        setError('Failed to fetch cities');
+        setError('Failed to fetch dreamHolders');
         setIsLoading(false);
       }
     };
@@ -37,23 +37,23 @@ export const Location: React.FC<LocationProps> = ({ goBack, onSelect, initialSel
     const { value, checked } = event.target;
 
     if (checked) {
-      setSelectedCities((prevSelectedCities) => [...prevSelectedCities, value]);
+      setSelectedDreams((prevSelectedDreams) => [...prevSelectedDreams, value]);
     } else {
-      setSelectedCities((prevSelectedCities) =>
-        prevSelectedCities.filter((city) => city !== value)
+      setSelectedDreams((prevSelectedDreams) =>
+        prevSelectedDreams.filter((dream) => dream !== value)
       );
     }
   };
 
-  const isApplyDisabled = selectedCities.length === 0;
+  const isApplyDisabled = selectedDreams.length === 0;
 
   const handleApplyClick = () => {
-    onSelect(selectedCities);
+    onSelect(selectedDreams);
     goBack();
   };
 
   if (isLoading) {
-    return <p>Loading cities...</p>;
+    return <p>Loading dreamholders...</p>;
   }
 
   if (error) {
@@ -64,21 +64,21 @@ export const Location: React.FC<LocationProps> = ({ goBack, onSelect, initialSel
     <div className='location'>
       <div className='donation-process__navigation'>
         <div className='navigation__back' onClick={goBack}></div>
-        <h3 className='donation-process__navigation__title location__title'>Location</h3>
+        <h3 className='donation-process__navigation__title location__title'>Dreamholder</h3>
       </div>
 
       <div className='location__content'>
-        {cities.map((city, index) => (
+        {dreams.map((dream, index) => (
           <div key={index} className='location__checkbox'>
             <input
               type='checkbox'
               id={`city-${index}`}
-              value={city}
+              value={dream}
               className='location__checkbox__item'
               onChange={handleCheckboxChange}
-              checked={selectedCities.includes(city)}
+              checked={selectedDreams.includes(dream)}
             />
-            <label htmlFor={`city-${index}`}>{city}</label>
+            <label htmlFor={`dream-${index}`}>{dream}</label>
           </div>
         ))}
       </div>
