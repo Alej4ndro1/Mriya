@@ -3,6 +3,7 @@ import logo from '../../images/Mriya.png';
 import stars from '../../images/stars.png';
 import back from '../../images/return_alive.png';
 import { Link, useLocation } from 'react-router-dom';
+import { PostButton } from '../PostButton';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

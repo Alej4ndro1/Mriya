@@ -11,12 +11,8 @@ import { ContactsPage } from './pages/ContactsPage';
 import { AskForHelpPage } from './pages/AskForHelpPage';
 import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-// import { getDreams } from './api/dreams';
 
 function App() {
-  // useEffect(() => {
-  //   getDreams();
-  // }, []);
 
   return (
     <div className="page">
