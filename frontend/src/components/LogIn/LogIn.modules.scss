@@ -1,0 +1,26 @@
+.sign-up__form__checkbox__forgot {
+  font-family: 'Mukta', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  color:#6965F6;
+  border:none;
+  background-color: transparent;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.log-in__forgot-button{
+  margin-left: 0px;
+  @include onDesktop{
+    margin-left: 120px;
+  }
+}
+.login__back{
+  left:-70px;
+  @include onDesktop {
+    left:375px;
+  }
+}
+.login__p{
+  left:35%;
+}

@@ -153,7 +153,7 @@
 
   &__textarea{
     align-self: center;
-    width: 288px;
+    max-width: 288px;
     height: 76px;
     border-radius: 16px;
     border: 1px solid #DADAE1;
@@ -163,7 +163,7 @@
     overflow: hidden;
 
     @include onDesktop {
-      width: 632px;
+      max-width: 632px;
       padding: 16px 24px;
       margin-bottom: 32px;
     }
@@ -226,3 +226,10 @@
     cursor: default;
   }
 }
+.shadowed {
+  background-color: #DADAE1;
+}
+.type-of-help-open {
+  background-color: #DADAE1;
+}
+

@@ -206,7 +206,7 @@
         }
 
         @include onDesktop {
-          font-size: 20px;
+          font-size: 17px;
           line-height: 100%;
           margin-bottom: 0;
           align-items: center;
@@ -305,6 +305,67 @@
           order: -1;
         }
       }
+
+      &__my-profile{
+        width: 288px;
+        padding: 10px 10px 12px;
+        font-family: 'Futura-medium', sans-serif;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 25.5px;
+        display: flex;
+        text-align: center;
+        justify-content: start;
+        align-items: center;
+        border-radius: 100px;
+        box-shadow: 0px 2px 4px rgba(17, 17, 17, 0.05);
+        background-color: transparent;
+        border: none;
+
+        @include onDesktop{
+          width: 200px;
+          height: 48px;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 25.5px;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        &::before{
+          content: '';
+          width: 18px;
+          height: 18px;
+          margin-right: 10px;
+          background-image: url('../../images/icons/profile.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          margin:0 8px;
+        }
+
+        &:after{
+          content: '';
+          width: 12px;
+          height: 20px;
+          position: relative;
+          background-image: url('../../images/icons/prev.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          left: 140px;
+          transform: rotate(180deg);
+          cursor: pointer;
+
+          @include onDesktop{
+            display: none;
+          }
+        }
+      }
     }
   }
+}
+.custom-background{
+  background-color: #DADAE1;
 }

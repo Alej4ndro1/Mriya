@@ -33,11 +33,11 @@ export const DonationProcess: React.FC<DonationProcessProps> = ({ setShowPayment
     const handleWindowResize = () => {
       const width = window.innerWidth;
       setIsSliderVisible(width < 1440);
-      if (width < 1440) {
-        document.body.style.height = '100vh';
-        document.body.style.overflowY = 'hidden';
+      if (selectedOption === 'option3') {
+        document.body.style.height = width < 1440 ? '903px' : '';
       } else {
-        document.body.style.height = '';
+        document.body.style.height = width < 1440 ? '568px' : '';
+
       }
     };
 
@@ -48,7 +48,8 @@ export const DonationProcess: React.FC<DonationProcessProps> = ({ setShowPayment
     return () => {
       window.removeEventListener('resize', handleWindowResize);
     };
-  }, []);
+  }, [selectedOption]);
+
   useEffect(() => {
     const handleWindowResize = () => {
       const width = window.innerWidth;
