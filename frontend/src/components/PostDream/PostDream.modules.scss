@@ -1,0 +1,193 @@
+.post-dream{
+  width: 320px;
+  height: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  padding: 0 16px;
+  &__bread-crumps{
+    display: none;
+  }
+  &__title{
+    font-family: "Futura-medium", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25.2px;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 8px;
+
+    &::before{
+      content: "";
+      display: block;
+      width: 25px;
+      height: 25px;
+      background-color: $yellow;
+      border-radius: 50% 50% 0 50%;
+      position: relative;
+      left: 85px;
+      top: 15px;
+      z-index: -1;
+    }
+  }
+  &__form{
+    &__steps{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3px;
+      height: 20px;
+      margin-bottom: 24px;
+
+      &__1{
+        font-family: 'Mukta', sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        color: #6965F6;
+        align-items: center;
+
+        &::before{
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background-image: url('../../images/icons/violet-heart.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          left: 100px;
+          top: 15px;
+          z-index: -1;
+          margin-right: 3px;
+        }
+        &::after{
+          content: " - - - - - - - - ";
+          display: inline-block;
+          height: 16px;
+          color: #C2C4CF;
+        }
+      }
+      &__2{
+        font-family: 'Mukta', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16.8px;
+        color: #C2C4CF;
+        align-items: center;
+
+        &::before{
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background-image: url('../../images/icons/grey-heart.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          position: relative;
+          left:0px;
+          z-index: -1;
+          margin-right: 3px;
+        }
+        &::after{
+          content: " - - - - - - - - ";
+          display: inline-block;
+          height: 16px;
+          color: #C2C4CF;
+          position: relative;
+          left: 5px;
+        }
+      }
+      &__3{
+        font-family: 'Mukta', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16.8px;
+        color: #C2C4CF;
+        align-items: center;
+
+        &::before{
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background-image: url('../../images/icons/grey-heart.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          position: relative;
+          left:0px;
+          z-index: -1;
+          margin-right: 3px;
+        }
+      }
+    }
+    &__notification{
+      font-family: 'Mukta', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16.8px;
+      color: #C2C4CF;
+      margin-bottom: 24px;
+      text-align: end;
+    }
+  }
+}
+.checked{
+  font-family: 'Mukta', sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        color: #6965F6;
+        align-items: center;
+
+        &::before{
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background-image: url('../../images/icons/violet-heart.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          left: 0px;
+          top: 0px;
+          z-index: -1;
+          margin-right: 3px;
+        }
+        &::after{
+          content: " - - - - - - - ";
+          display: inline-block;
+          height: 16px;
+          color: #C2C4CF;
+          left: 5px;
+          position: relative;
+        }
+}
+
+.checked3{
+  font-family: 'Mukta', sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        color: #6965F6;
+        align-items: center;
+
+        &::before{
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background-image: url('../../images/icons/violet-heart.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          left: 0px;
+          top: 0px;
+          z-index: -1;
+          margin-right: 3px;
+        }
+
+}
