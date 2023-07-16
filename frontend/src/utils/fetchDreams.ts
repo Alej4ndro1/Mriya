@@ -11,7 +11,7 @@ type RequestMethod = 'GET';
 function request<T>(
   url: string,
   method: RequestMethod = 'GET',
-  data = null, 
+  data = null,
 ): Promise<T> {
   const options: RequestInit = { method };
 
@@ -19,6 +19,9 @@ function request<T>(
     options.body = JSON.stringify(data);
     options.headers = {
       'Content-Type': 'application/json; charset=UTF-8',
+      'Access-Control-Allow-Origin': 'http://127.0.0.1:3000',
+      'Access-Control-Allow-Methods': 'POST, PUT, PATCH, GET, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization'
     };
   }
 
@@ -34,5 +37,5 @@ function request<T>(
 }
 
 export const client = {
-  get: <T>(url: string) => request<T>(url), 
+  get: <T>(url: string) => request<T>(url),
 };

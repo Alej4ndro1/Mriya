@@ -1,13 +1,8 @@
 import React from 'react';
-import { Dream } from '../../types/Dreams';
-import { Image } from '../../types/Images';
+import { Dream } from '../../types/Dream';
 
 type DreamType = {
   dream: Dream
-};
-
-type ImageType = {
-  image: Image
 };
 
 export const DreamCard: React.FC<DreamType> = ({ dream }) => {

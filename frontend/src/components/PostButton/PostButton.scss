@@ -1,0 +1,30 @@
+.postButton {
+  &__button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px 12px;
+
+    width: 250px;
+    height: 48px;
+
+    background: white;
+    box-shadow: 0px 2px 4px rgba(17, 17, 17, 0.05);
+    border-radius: 100px;
+    border: none;
+    font-family: 'Futura-medium', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25.5px;
+
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+      background: gray;
+    }
+  }
+}
