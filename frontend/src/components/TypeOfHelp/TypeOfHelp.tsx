@@ -61,6 +61,7 @@ export const TypeOfHelp: React.FC<TypeOfHelpProps> = ({ goBack, onSelect, initia
           </div>
         ))}
       </div>
+      
       <button
         type='submit'
         className='donation-process__donate-button'

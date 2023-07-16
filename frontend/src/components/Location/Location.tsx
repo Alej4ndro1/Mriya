@@ -78,6 +78,7 @@ export const Location: React.FC<LocationProps> = ({ goBack, onSelect, initialSel
           </div>
         ))}
       </div>
+
       <button
         type='submit'
         className='donation-process__donate-button'
