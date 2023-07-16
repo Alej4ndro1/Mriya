@@ -74,16 +74,15 @@ export const NonFinancial: React.FC<NonFinancialProps> = ({ setShowNonFinancialH
   const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let inputValue = event.target.value;
     inputValue = inputValue.replace(/[^0-9/+/]/g, '');
-  
+
     if (inputValue.length === 1) {
       inputValue = '+38' + inputValue;
     } else if (inputValue.length > 3 && inputValue.substr(0, 3) !== '+38') {
       inputValue = '+38' + inputValue.substr(3);
     }
-  
+
     setPhone(inputValue);
   };
-  
 
   const handleLocationGoBack = () => {
     setShowSelector(false);

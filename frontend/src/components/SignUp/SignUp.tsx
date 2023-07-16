@@ -18,7 +18,7 @@ export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange, showSignUpPop
   const [rememberMe, setRememberMe] = useState(false);
 
   const isEmailValid = (email: string) => {
-    const emailRegex = /^[^\s@]+@gmail\.com$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
@@ -28,9 +28,7 @@ export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange, showSignUpPop
     e.preventDefault();
 
     if (!isEmailValid(email)) {
-      if (!email.endsWith('@gmail.com')) {
-        setEmailError('Please enter a valid Gmail address');
-      }
+      setEmailError('Please enter a valid email address');
       return;
     }
     if (!mediumStrongPasswordRegex.test(password)) {
@@ -44,8 +42,7 @@ export const SignUp: React.FC<SignUpProps> = ({ onClose, onChange, showSignUpPop
       const response = await axios.post('http://35.204.183.215:80/api/auth/sign-up', {
         email,
         password,
-      },
-      );
+      });
 
       if (response.status === 200) {
         console.log('User added successfully');
