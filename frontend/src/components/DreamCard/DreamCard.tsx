@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dream } from '../../types/Dreams';
+import { Dream } from '../../types/Dream';
 
 type DreamType = {
   dream: Dream
@@ -31,9 +31,9 @@ export const DreamCard: React.FC<DreamType> = ({ dream }) => {
           </div>
 
           <div className="dream-card__content__amount-value">
-            <p className='dream-card__content__amount-value__rate'>{amount}</p>
+            <p className='dream-card__content__amount-value__rate'>₴ {sumOfDonates}</p>
 
-            <p className='dream-card__content__amount-value__rate'>{sumOfDonates}</p>
+            <p className='dream-card__content__amount-value__rate'>₴ {amount}</p>
           </div>
         </div>
       </div>

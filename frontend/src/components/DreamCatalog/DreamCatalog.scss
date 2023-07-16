@@ -1,5 +1,5 @@
 .dreamCatalog {
-  padding: 24px 16px 80px;
+  padding: 24px 80px 80px;
 
   &__title {
     margin-bottom: 24px;
@@ -12,6 +12,8 @@
     text-align: center;
 
     @include onDesktop {
+      margin-bottom: 48px;
+
       font-family: 'Futura-medium', sans-serif;
       font-size: 56px;
       font-weight: 500;
