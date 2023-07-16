@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Mriya/static/css/main.df1a4810.css",
+    "main.css": "/Mriya/static/css/main.18949172.css",
     "main.js": "/Mriya/static/js/main.bafc166b.js",
     "static/media/Mukta.ttf": "/Mriya/static/media/Mukta.462ca59f67e267d58182.ttf",
     "static/media/Mukta-Medium.ttf": "/Mriya/static/media/Mukta-Medium.fe9f9db60771d41ab393.ttf",
@@ -40,11 +40,11 @@
     "index.html": "/Mriya/index.html",
     "static/media/violet-heart.svg": "/Mriya/static/media/violet-heart.c41304f6ae9c45e83375.svg",
     "static/media/yellow-heart.svg": "/Mriya/static/media/yellow-heart.7bdd20a37f364019f0a6.svg",
-    "main.df1a4810.css.map": "/Mriya/static/css/main.df1a4810.css.map",
+    "main.18949172.css.map": "/Mriya/static/css/main.18949172.css.map",
     "main.bafc166b.js.map": "/Mriya/static/js/main.bafc166b.js.map"
   },
   "entrypoints": [
-    "static/css/main.df1a4810.css",
+    "static/css/main.18949172.css",
     "static/js/main.bafc166b.js"
   ]
 }
