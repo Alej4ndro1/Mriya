@@ -58,12 +58,6 @@ export const Header = () => {
     }
   }, [currentForm, showSignUpPopUp, showLogInPopUp]);
 
-  const handlePostDreamClick = () => {
-    if (!token) {
-      setCurrentForm('sign-up');
-    }
-  };
-
   return (
     <div className="header">
       <div className="header__container">
@@ -101,14 +95,9 @@ export const Header = () => {
               <li className="header__navigation__list__item">Dreams</li>
             </Link>
 
-            {!token ? (<li className="header__navigation__list__item" onClick={handlePostDreamClick}>
-                Post dream
-            </li>):(<Link to="/ask-for-help">
-              <li className="header__navigation__list__item">
-                Post dream
-              </li>
-            </Link>)}
-            
+            <Link to="/ask-for-help">
+              <li className="header__navigation__list__item">Post dream</li>
+            </Link>
 
             <Link to="/contacts">
               <li className="header__navigation__list__item">Contacts</li>

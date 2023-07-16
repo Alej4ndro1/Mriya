@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 
 type LocationProps = {
   goBack: () => void;
@@ -8,30 +7,35 @@ type LocationProps = {
 };
 
 export const Location: React.FC<LocationProps> = ({ goBack, onSelect, initialSelectedCities }) => {
-  const [cities, setCities] = useState<string[]>([]);
+  const cities = [
+    'Cherkasy',
+    'Chernihiv',
+    'Chernivtsi',
+    'Dnipro',
+    'Donetsk',
+    'Ivano-Frankivsk',
+    'Kharkiv',
+    'Kherson',
+    'Khmelnytskyi',
+    'Kropyvnytskyi',
+    'Kyiv',
+    'Luhansk',
+    'Lutsk',
+    'Lviv',
+    'Mykolaiv',
+    'Odesa',
+    'Poltava',
+    'Rivne',
+    'Sevastopol',
+    'Sumy',
+    'Ternopil',
+    'Uzhgorod',
+    'Vinnytsia',
+    'Zaporizhzhia',
+    'Zhytomyr'
+  ];
+
   const [selectedCities, setSelectedCities] = useState<string[]>(initialSelectedCities);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    const fetchCities = async () => {
-      try {
-        const response = await axios.get('http://35.204.183.215:80/api/city');
-        if (response.status !== 200) {
-          throw new Error('Failed to fetch cities');
-        }
-        const citiesData = response.data.map((city: { id: number; name: string }) => city.name);
-        setCities(citiesData);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(error);
-        setError('Failed to fetch cities');
-        setIsLoading(false);
-      }
-    };
-
-    fetchCities();
-  }, []);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
@@ -52,18 +56,10 @@ export const Location: React.FC<LocationProps> = ({ goBack, onSelect, initialSel
     goBack();
   };
 
-  if (isLoading) {
-    return <p>Loading cities...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
-
   return (
     <div className='location'>
       <div className='donation-process__navigation'>
-        <div className='navigation__back' onClick={goBack}></div>
+        <div className='navigation__back ' onClick={goBack}></div>
         <h3 className='donation-process__navigation__title location__title'>Location</h3>
       </div>
 
