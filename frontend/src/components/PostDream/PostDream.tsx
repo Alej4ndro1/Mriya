@@ -41,7 +41,6 @@ export const PostDream = () => {
   useEffect(() => {
     console.log('Personal Info:', personalInfo);
   }, [personalInfo]);
-
   useEffect(() => {
     console.log('Details Info:', detailsInfo);
   }, [detailsInfo]);

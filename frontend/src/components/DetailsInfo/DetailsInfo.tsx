@@ -78,6 +78,7 @@ export const DetailsInfo:React.FC<DetailsInfoProps> = ({onContinue}) => {
             />
           )}
         </div>
+        
         <div className={`personal-info__location ${showError ? 'invalid' : ''}`}>
           <label className='personal-info__label personal-info__location__label'>Type of help</label>
           <div className='personal-info__location__input' onClick={toggleTypeOfhelp}>

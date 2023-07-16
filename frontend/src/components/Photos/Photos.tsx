@@ -60,6 +60,7 @@ export const Photos = () => {
                 );
               }
             })}
+            
             {photos.length < 4 ? (
               <div>
                 <input type="file" accept="image/*" multiple onChange={handlePhotoUpload} style={{ display: 'none' }} ref={fileInputRef} />

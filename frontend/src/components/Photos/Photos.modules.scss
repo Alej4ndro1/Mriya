@@ -23,8 +23,8 @@
   grid-template-columns: repeat(2, 136px);
   gap: 16px;
   margin-top: 20px;
-  width: 288px; /* Added width property */
-  justify-content: space-between; /* Added to evenly distribute the columns within the container */
+  width: 288px;
+  justify-content: space-between;
 }
 
 .photo__square {
@@ -41,8 +41,8 @@
   grid-template-columns: repeat(2, 136px);
   gap: 16px;
   margin-top: 20px;
-  width: 288px; /* Added width property */
-  justify-content: space-between; /* Added to evenly distribute the columns within the container */
+  width: 288px;
+  justify-content: space-between;
 }
 
 .photo__empty-square {

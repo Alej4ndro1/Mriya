@@ -82,6 +82,7 @@ export const DreamHolderType: React.FC<DreamHolderType> = ({ goBack, onSelect, i
           </div>
         ))}
       </div>
+
       <button
         type='submit'
         className='donation-process__donate-button'

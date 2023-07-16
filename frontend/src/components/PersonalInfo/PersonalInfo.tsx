@@ -218,7 +218,6 @@ export const PersonalInfo:React.FC<PersonalInfoProps> = ({ onContinue }) => {
             <p className='personal-info__error'>Please enter a valid email address (example: example@gmail.com).</p>
           )}
         </div>
-
         <button className='personal-info__button' disabled={!isFormValid}>
           Continue
         </button>
