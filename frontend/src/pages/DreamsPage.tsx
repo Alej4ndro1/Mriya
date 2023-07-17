@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import Pagination from '../components/Pagination/Pagination';
+import Pagination from '../components/Pagination/Pagination';
 import { DreamCatalog } from '../components/DreamCatalog';
 import { Dream } from 'Dream';
 import { City } from 'City';
@@ -26,13 +26,13 @@ export const DreamsPage = () => {
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    //loadData(page);
+    // loadData(page);
   };
 
   return (
     <div>
       <DreamCatalog citys={citys} />
-      {/* <Pagination totalPages={10} onPageChange={handlePageChange} /> */}
+      <Pagination totalPages={10} onPageChange={handlePageChange} />
     </div>
   );
 };
