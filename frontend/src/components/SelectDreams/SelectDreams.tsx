@@ -31,7 +31,7 @@ export const SelectDreams: React.FC<Props> = ({
   }));
   const selectDreams: SelectType[] = dreams.map((dream) => ({
     value: dream.id,
-    label: dream.name,
+    label: dream.description,
   }));
 
   const sortList: { value: string; label: string }[] = [
@@ -39,40 +39,44 @@ export const SelectDreams: React.FC<Props> = ({
     { value: 'id:DESC', label: 'Id (old first)' },
   ];
 
+  console.log(citys);
+  console.log(dreams);
+  
   return (
-    <div className="select__wrapper">
-      <div className="dreamCatalog__citySelector">
-        <Select
-          isMulti
-          value={currentCities}
-          onChange={(e) => {
-            setSelectedCities(e as SelectType[]);
-          }}
-          options={selectCities}
-        />
+    <div className='select'>
+      <div className="select__wrapper">
+        <div className="select__citySelector">
+          <Select
+            isMulti
+            value={currentCities}
+            onChange={(e) => {
+              setSelectedCities(e as SelectType[]);
+            }}
+            options={selectCities}
+          />
+        </div>
+        <div className="select__typeSelector">
+          <Select
+            isMulti
+            onChange={(e: any) => {
+              setCurrentDreams(e);
+            }}
+            value={currentDreams}
+            options={selectDreams}
+          />
+        </div>
+        <div className="select__sortSelector">
+          <Select
+            onChange={(e: any) => setCurrentSort(e)}
+            value={currentSort}
+            options={sortList}
+          />
+        </div>
+        {/*
+        <div className="dreamCatalog__citySelector">
+          <Select onChange={onChange} value={getValue()} options={citys} />
+        </div> */}
       </div>
-      <div className="dreamCatalog__citySelector">
-        <Select
-          isMulti
-          onChange={(e: any) => {
-            setCurrentDreams(e);
-          }}
-          value={currentDreams}
-          options={selectDreams}
-        />
-      </div>
-
-      <div className="dreamCatalog__citySelector">
-        <Select
-          onChange={(e: any) => setCurrentSort(e)}
-          value={currentSort}
-          options={sortList}
-        />
-      </div>
-      {/*
-      <div className="dreamCatalog__citySelector">
-        <Select onChange={onChange} value={getValue()} options={citys} />
-      </div> */}
     </div>
   );
 };

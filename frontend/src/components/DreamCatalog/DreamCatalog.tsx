@@ -23,7 +23,7 @@ export const DreamCatalog: React.FC<DreamsType> = ({ citys }) => {
 
   const params = useMemo(() => {
     const cities = currentCities.map((city) => city.value);
-    const dreams = currentDreams.map((dream) => dream.value);
+    const dreams = currentDreams.map((dream) => dream.label);
     const result = {
       cities: cities.join(','),
       filter: dreams.join(','),
@@ -40,15 +40,6 @@ export const DreamCatalog: React.FC<DreamsType> = ({ citys }) => {
       })
       .catch((err: any) => console.log(err));
   }, [params]);
-  // console.log(citys);
-  // console.log(dreams);
-
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [DreamsPerPage, setDreamsPerPage] = useState(9);
-
-  // const lastDreamIndex = currentPage * DreamsPerPage;
-  // const firstDreamIndex = lastDreamIndex - DreamsPerPage;
-  // const currentDream = dreams.slice(firstDreamIndex, lastDreamIndex);
 
   return (
     <div className="dreamCatalog">
