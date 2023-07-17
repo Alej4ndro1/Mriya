@@ -2,6 +2,7 @@ import { PersonalInfo } from '../PersonalInfo';
 import React, { useState, useEffect } from 'react';
 import { DetailsInfo } from '../DetailsInfo';
 import { Photos } from '../Photos';
+import { Link } from 'react-router-dom';
 
 export const PostDream = () => {
   const [personalInfo, setPersonalInfo] = useState<{
@@ -48,8 +49,10 @@ export const PostDream = () => {
   return (
     <div className='post-dream'>
       <div className='post-dream__bread-crumps'>
-        <div className='post-dream__bread-crumps__item'>Home</div>
-        <div className='post-dream__bread-crumps__item'>Post dream</div>
+        <Link to='/'>
+          <div className='post-dream__bread-crumps__item'></div>  
+        </Link>
+        <div className='post-dream__bread-crumps__item__2'>Post dream</div>
       </div>
 
       <h3 className='post-dream__title'>Post dream</h3>

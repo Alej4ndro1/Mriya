@@ -6,6 +6,9 @@
   color: #111111;
   display: inline-block;
   text-align: start;
+     @include onDesktop{
+      
+     }
 
   &::after{
     content: " * ";
